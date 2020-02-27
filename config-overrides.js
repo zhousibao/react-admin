@@ -16,7 +16,7 @@ module.exports = override(
   fixBabelImports('import', {
     libraryName: 'antd',
     libraryDirectory: 'es', // 在antd的es目录项查找
-    style: 'css' // 依赖加载css文件
+    style: true // 依赖加载css文件
   }),
   // WebpackAlias
   addWebpackAlias({
@@ -27,8 +27,8 @@ module.exports = override(
   disableEsLint(),
   // less 
   addLessLoader({
-    strictMath: true,
-    noIeCompat: true,
     localIdentName: '[local]--[hash:base64:5]' // if you use CSS Modules, and custom `localIdentName`,default is '[local]--[hash:base64:5]'.
+    javascriptEnabled: true,
++   modifyVars: { '@primary-color': '#1DA57A' },
   })
 );
