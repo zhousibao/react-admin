@@ -27,8 +27,9 @@ module.exports = override(
   disableEsLint(),
   // less 
   addLessLoader({
-    localIdentName: '[local]--[hash:base64:5]' // if you use CSS Modules, and custom `localIdentName`,default is '[local]--[hash:base64:5]'.
     javascriptEnabled: true,
-+   modifyVars: { '@primary-color': '#1DA57A' },
+    modifyVars: { '@primary-color': '#1890ff' },
+    localIdentName: '[local]--[hash:base64:5]' // if you use CSS Modules, and custom `localIdentName`,default is '[local]--[hash:base64:5]'.
+    
   })
 );
