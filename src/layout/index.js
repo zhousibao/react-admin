@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import NavLeft from './components/NavLeft'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import './Admin.less'
+import NavLeft from './NavLeft'
+import Header from './Header'
+import Footer from './Footer'
+import './index.less'
 
-export default class Admin extends Component {
+export default class Layout extends Component {
   render() {
     return (
       <div className="admin">
@@ -14,7 +14,7 @@ export default class Admin extends Component {
         <div className="admin-content">
           <Header/>
           <div className="content">
-            content
+            {this.props.children}
           </div>
           <Footer/>
         </div>
