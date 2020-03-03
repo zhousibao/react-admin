@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Row, Col} from 'antd'
 import NavLeft from './components/NavLeft'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -8,18 +7,18 @@ import './Admin.less'
 export default class Admin extends Component {
   render() {
     return (
-      <Row className="admin">
-        <Col span={3} className="navleft">
+      <div className="admin">
+        <div className="navleft">
           <NavLeft/>
-        </Col>
-        <Col span={21}>
+        </div>
+        <div className="admin-content">
           <Header/>
-          <Row>
+          <div className="content">
             content
-          </Row>
+          </div>
           <Footer/>
-        </Col>
-      </Row>
+        </div>
+      </div>
     )
   }
 }

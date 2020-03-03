@@ -1,8 +1,22 @@
 .admin{
+  display: flex;
+  background: #f9f9f9;
+
   .navleft{
     height: 100vh;
+    width: 200px;
     overflow: auto;
     background: #001529
+  }
+
+  .admin-content{
+    flex-grow: 1;
+
+    .content{
+      min-height: calc(100vh - 110px);
+      padding: 10px;
+      box-sizing: border-box;
+    }
   }
 
 }
