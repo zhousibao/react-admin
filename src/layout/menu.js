@@ -16,18 +16,6 @@ const menuList = [
               key: '/admin/ui/modals',
           },
           {
-              title: 'Loading',
-              key: '/admin/ui/loadings',
-          },
-          {
-              title: '通知提醒',
-              key: '/admin/ui/notification',
-          },
-          {
-              title: '全局Message',
-              key: '/admin/ui/messages',
-          },
-          {
               title: 'Tab页签',
               key: '/admin/ui/tabs',
           },

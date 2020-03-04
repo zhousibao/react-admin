@@ -6,6 +6,10 @@ import Login from './pages/login'
 import NoFound from './pages/noFound'
 import Home from './pages/home'
 
+import Buttons from './pages/ui/buttons'
+import Modals from './pages/ui/modals'
+import Tabs from './pages/ui/tabs'
+
 
 export default class Router extends Component {
   render() {
@@ -20,7 +24,10 @@ export default class Router extends Component {
             <Layout>
               <Switch>
                 <Route path="/admin/home" component={Home}/>
-              </Switch>
+                <Route path="/admin/ui/buttons" component={Buttons}/>
+                <Route path="/admin/ui/modals" component={Modals}/>
+                <Route path="/admin/ui/tabs" component={Tabs}/>
+              </Switch> 
             </Layout>
           }/>
           <Route component={NoFound} />
