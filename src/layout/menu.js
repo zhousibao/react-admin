@@ -39,7 +39,7 @@ const menuList = [
           },
           {
               title: '注册',
-              key: '/admin/form/reg',
+              key: '/admin/form/register',
           }
       ]
   },

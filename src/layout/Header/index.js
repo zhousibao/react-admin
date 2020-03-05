@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './index.less'
 import { Button } from 'antd'
 import { LogoutOutlined } from '@ant-design/icons';
-import {formateDate} from '@/utils'
+import { formatDate } from '@/utils'
 import Axios from '@/utils/axios'
 
 export default class Header extends Component {
@@ -18,7 +18,7 @@ export default class Header extends Component {
   componentDidMount(){
     this.timerId = setInterval(() => {
       this.setState({
-        date:formateDate(new Date())
+        date:formatDate(new Date())
       })
     },1000)
 
