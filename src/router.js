@@ -10,6 +10,7 @@ import Buttons from './pages/ui/buttons'
 import Modals from './pages/ui/modals'
 import Tabs from './pages/ui/tabs'
 import Gallery from './pages/ui/gallery'
+import Carousel from './pages/ui/carousel'
 
 
 export default class Router extends Component {
@@ -29,6 +30,7 @@ export default class Router extends Component {
                 <Route path="/admin/ui/modals" component={Modals}/>
                 <Route path="/admin/ui/tabs" component={Tabs}/>
                 <Route path="/admin/ui/gallery" component={Gallery}/>
+                <Route path="/admin/ui/carousel" component={Carousel}/>
               </Switch> 
             </Layout>
           }/>
