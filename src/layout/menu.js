@@ -20,7 +20,7 @@ const menuList = [
               key: '/admin/ui/tabs',
           },
           {
-              title: '图片画廊',
+              title: 'gallery图片画廊',
               key: '/admin/ui/gallery',
           },
           {
