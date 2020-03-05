@@ -11,6 +11,7 @@ import Modals from './pages/ui/modals'
 import Tabs from './pages/ui/tabs'
 import Gallery from './pages/ui/gallery'
 import Carousel from './pages/ui/carousel'
+import FormLogin from './pages/form/login'
 
 
 export default class Router extends Component {
@@ -31,6 +32,7 @@ export default class Router extends Component {
                 <Route path="/admin/ui/tabs" component={Tabs}/>
                 <Route path="/admin/ui/gallery" component={Gallery}/>
                 <Route path="/admin/ui/carousel" component={Carousel}/>
+                <Route path="/admin/form/login" component={FormLogin}/>
               </Switch> 
             </Layout>
           }/>

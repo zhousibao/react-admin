@@ -22,23 +22,11 @@ export default class Buttons extends Component {
         </Card>
 
         <Card title="图形按钮" style={{marginBottom:'20px'}}>
-          <Button icon="primary">
-            <PlusOutlined/>
-            创建
-          </Button>
-          <Button icon="primary">
-            删除
-            <MinusOutlined />
-          </Button>
-          <Button type="primary">
-            <DownloadOutlined />
-          </Button>
-          <Button type="primary" shape="circle">
-            <DownloadOutlined />
-          </Button>
-          <Button type="primary" shape="round">
-            <DownloadOutlined />
-          </Button>
+          <Button type="primary" icon={<PlusOutlined/>}>创建</Button>
+          <Button type="primary" icon={<MinusOutlined/>}>删除</Button>
+          <Button type="primary" icon={<DownloadOutlined />} />
+          <Button type="primary" icon={<DownloadOutlined />} shape="circle"/>
+          <Button type="primary" icon={<DownloadOutlined />} shape="round"/>
         </Card>
 
         <Card title="按钮组" style={{marginBottom:'20px'}}>
