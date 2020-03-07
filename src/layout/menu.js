@@ -4,7 +4,7 @@ const menuList = [
       key: '/admin/home'
   },
   {
-      title: 'UI',
+      title: '组件',
       key: '/admin/ui',
       children: [
           {
@@ -56,8 +56,8 @@ const menuList = [
               key: '/admin/table/selection',
           },
           {
-            title: '高级表格',
-            key: '/admin/table/high',
+            title: '伸缩表格',
+            key: '/admin/table/resize',
           }
       ]
   },

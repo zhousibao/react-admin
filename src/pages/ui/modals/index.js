@@ -46,7 +46,6 @@ export default class Modals extends Component {
       <div>
         <Card title="基础模态框" style={{marginBottom:'20px'}}>
           <Button type="primary" onClick={this.open}>Modal</Button>
-          <Button type="primary" onClick={()=> this.confirm('s')}>Confirm</Button>
         </Card>
 
         <Card title="信息确认框" style={{marginBottom:'20px'}}>

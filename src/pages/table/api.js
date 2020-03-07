@@ -17,3 +17,10 @@ export function tableList(){
     method:'GET'
   })
 }
+
+export function tableList1(){
+  return Axios.ajax({
+    url:'/table/list1',
+    method:'GET'
+  })
+}

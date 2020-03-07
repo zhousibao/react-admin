@@ -27,7 +27,11 @@ export default class Basic extends Component{
           dataSource:res.data.list
         })
       }
-    }).catch(err => {})
+    }).catch(err => {
+      this.setState({
+        loading:false
+      })
+    })
   }
 
   delete = (item) => {
@@ -145,7 +149,6 @@ export default class Basic extends Component{
       },
       {
         title: '操作',
-        key: 'action',
         width: 130,
         fixed:'right',
         render: (item) => (

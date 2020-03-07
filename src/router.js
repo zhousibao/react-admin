@@ -15,6 +15,7 @@ import FormLogin from './pages/form/login'
 import FormRegister from './pages/form/register'
 import Basic from './pages/table/basic'
 import Selection from './pages/table/selection'
+import Resize from './pages/table/resize'
 
 
 export default class Router extends Component {
@@ -39,6 +40,7 @@ export default class Router extends Component {
                 <Route path="/admin/form/register" component={FormRegister}/>
                 <Route path="/admin/table/basic" component={Basic}/>
                 <Route path="/admin/table/selection" component={Selection}/>
+                <Route path="/admin/table/resize" component={Resize}/>
               </Switch> 
             </Layout>
           }/>
