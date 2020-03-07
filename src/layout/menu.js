@@ -52,8 +52,12 @@ const menuList = [
               key: '/admin/table/basic',
           },
           {
-              title: '高级表格',
-              key: '/admin/table/high',
+              title: '选择表格',
+              key: '/admin/table/selection',
+          },
+          {
+            title: '高级表格',
+            key: '/admin/table/high',
           }
       ]
   },

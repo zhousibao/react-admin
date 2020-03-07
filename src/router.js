@@ -14,6 +14,7 @@ import Carousel from './pages/ui/carousel'
 import FormLogin from './pages/form/login'
 import FormRegister from './pages/form/register'
 import Basic from './pages/table/basic'
+import Selection from './pages/table/selection'
 
 
 export default class Router extends Component {
@@ -37,6 +38,7 @@ export default class Router extends Component {
                 <Route path="/admin/form/login" component={FormLogin}/>
                 <Route path="/admin/form/register" component={FormRegister}/>
                 <Route path="/admin/table/basic" component={Basic}/>
+                <Route path="/admin/table/selection" component={Selection}/>
               </Switch> 
             </Layout>
           }/>
