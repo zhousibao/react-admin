@@ -5,6 +5,13 @@ import {NavLink} from 'react-router-dom'
 import './index.less'
 
 export default class NavLeft extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      openKeys:[]
+    }
+  }
 
   // 菜单渲染
   renderMenu = (data) => {
@@ -24,6 +31,20 @@ export default class NavLeft extends Component {
     })
   }
 
+  // 打开父菜单 // 仅展开一个菜单
+  onOpenChange = (openKeys) => {
+    if(!openKeys.length){
+      this.setState({
+        openKeys:[]
+      })
+    } else{
+      const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+      this.setState({
+        openKeys:[latestOpenKey]
+      })
+    }
+  }
+
 
   render() {
     const menuTreeNode = menuConfig
@@ -34,9 +55,11 @@ export default class NavLeft extends Component {
           <p>管理后台系统</p>
         </div>
         <Menu
-          defaultSelectedKeys={'/home'}
+          defaultSelectedKeys={['/admin/home']}
           mode="inline"
           theme="dark"
+          openKeys={this.state.openKeys}
+          onOpenChange={this.onOpenChange}
         >
           {this.renderMenu(menuTreeNode)}
         </Menu>
