@@ -20,7 +20,7 @@ import Resize from './pages/table/resize'
 
 import City from './pages/city'
 import Order from './pages/order'
-import OrderDetail from './pages/order/orderDetail'
+import OrderDetail from './pages/order/detail'
 
 
 export default class Router extends Component {

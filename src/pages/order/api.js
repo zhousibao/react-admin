@@ -27,3 +27,11 @@ export function closeOrder(data){
     data
   })
 }
+// 结束订单
+export function orderDetail(params){
+  return Axios.ajax({
+    url:'/order/detail',
+    method:'POST',
+    params
+  })
+}
