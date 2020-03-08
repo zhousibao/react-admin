@@ -10,7 +10,7 @@ export default class Modals extends Component {
       visible:false
     }
   }
-  open = (id) => {
+  open = () => {
     this.setState({
       visible:true
     })

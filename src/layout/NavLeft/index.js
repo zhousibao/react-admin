@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import menuConfig from '../menu'
 import { Menu, Button } from 'antd';
 import {NavLink} from 'react-router-dom'
 import './index.less'
 
-export default class NavLeft extends Component {
+export default class NavLeft extends PureComponent {
   constructor(props){
     super(props)
 
     this.state = {
-      openKeys:[]
+      openKeys:[],
+      defaultSelectedKeys:[window.location.hash.substring(1)]
     }
   }
 
@@ -55,7 +56,7 @@ export default class NavLeft extends Component {
           <p>管理后台系统</p>
         </div>
         <Menu
-          defaultSelectedKeys={['/admin/home']}
+          defaultSelectedKeys={this.state.defaultSelectedKeys}
           mode="inline"
           theme="dark"
           openKeys={this.state.openKeys}

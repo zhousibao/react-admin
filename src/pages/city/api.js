@@ -19,3 +19,12 @@ export function cityList(data){
     data
   })
 }
+
+// 开通城市
+export function addCity(data){
+  return Axios.ajax({
+    url:'/city/add',
+    method:'POST',
+    data
+  })
+}
