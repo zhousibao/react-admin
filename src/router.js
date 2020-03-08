@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 
-import Layout from './layout'
+import Admin from './layout/admin'
+import Commom from './layout/common'
 import Login from './pages/login'
 import NoFound from './pages/noFound'
 import Home from './pages/home'
@@ -19,6 +20,7 @@ import Resize from './pages/table/resize'
 
 import City from './pages/city'
 import Order from './pages/order'
+import OrderDetail from './pages/order/orderDetail'
 
 
 export default class Router extends Component {
@@ -26,12 +28,13 @@ export default class Router extends Component {
     return (
       <HashRouter>
         <Switch>
-          <Route path="/login" component={Login}/>
 
+          <Route path="/login" component={Login}/>
+          
           <Redirect exact from="/" to="/admin/home" />
           <Redirect exact from="/admin" to="/admin/home" />
           <Route path="/admin" render={() => 
-            <Layout>
+            <Admin>
               <Switch>
                 <Route path="/admin/home" component={Home}/>
                 <Route path="/admin/ui/buttons" component={Buttons}/>
@@ -48,7 +51,14 @@ export default class Router extends Component {
                 <Route path="/admin/city" component={City}/>
                 <Route path="/admin/order" component={Order}/>
               </Switch> 
-            </Layout>
+            </Admin>
+          }/>
+          <Route path="/common" render={() => 
+            <Commom>
+              <Switch>
+                <Route path="/common/orderDetail/:id" component={OrderDetail}/>
+              </Switch>
+            </Commom>
           }/>
           <Route component={NoFound} />
         </Switch>

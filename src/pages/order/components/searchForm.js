@@ -49,7 +49,7 @@ export default function SearchForm({callback,...rest}){
       >
         <Select allowClear placeholder="状态" style={{ width: 120 }}>
           <Option value={1}>进行中</Option>
-          <Option value={2}>结束行程</Option>
+          <Option value={2}>已结束</Option>
         </Select>
       </Form.Item>
       <Form.Item

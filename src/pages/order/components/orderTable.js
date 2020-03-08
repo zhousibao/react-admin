@@ -42,7 +42,8 @@ export default function OrderTable({loading,pagination:paginationParams,list,cal
     {
       title: '状态',
       dataIndex: 'status',
-      width:80
+      width:80,
+      render: (status) => status === 1 ? '进行中' : '已结束'
     },
     {
       title: '开始时间',
@@ -66,12 +67,14 @@ export default function OrderTable({loading,pagination:paginationParams,list,cal
     },
     {
       title: '操作',
-      width: 200,
+      width: 120,
       fixed:'right',
       render:(item)=> (
         <div>
-          <Button type="primary" size="small" onClick={() => goDetail(item)}>详情</Button>
-          <Button type="danger" size="small" onClick={() => closeConfirm(item)}>结束订单</Button>
+          {item.status === 2 ? 
+            <Button type="primary" size="small" onClick={() => goDetail(item)}>详情</Button>:
+            <Button type="danger" size="small" onClick={() => closeConfirm(item)}>结束订单</Button>
+          }
         </div>
       )
     }
@@ -79,7 +82,8 @@ export default function OrderTable({loading,pagination:paginationParams,list,cal
 
   const changePage = (pageNum,pageSize) => callback('change',pageNum,pageSize)
   const goDetail = (item) => {
-    console.log(item)
+    const href = `/#/common/orderDetail/${item.id}`
+    window.open(href)
   }
   const closeConfirm = (item) => {
     Modal.confirm({
@@ -92,7 +96,6 @@ export default function OrderTable({loading,pagination:paginationParams,list,cal
         close(item)
       }
     })
-    console.log(item)
   }
   const close = (item) => {
     const data = {

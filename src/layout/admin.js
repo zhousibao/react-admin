@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import './index.less'
 
-export default class Layout extends Component {
+export default class Admin extends Component {
   render() {
     return (
       <div className="admin">
