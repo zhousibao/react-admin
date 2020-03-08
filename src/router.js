@@ -17,6 +17,8 @@ import Basic from './pages/table/basic'
 import Selection from './pages/table/selection'
 import Resize from './pages/table/resize'
 
+import City from './pages/city'
+
 
 export default class Router extends Component {
   render() {
@@ -41,6 +43,8 @@ export default class Router extends Component {
                 <Route path="/admin/table/basic" component={Basic}/>
                 <Route path="/admin/table/selection" component={Selection}/>
                 <Route path="/admin/table/resize" component={Resize}/>
+                
+                <Route path="/admin/city" component={City}/>
               </Switch> 
             </Layout>
           }/>

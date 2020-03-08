@@ -83,6 +83,11 @@ export default class Axios{
             return reject(res.data)
           }
 
+          if(res.data.code === '1'){
+            message.error(res.data.message)
+            return reject(res.data)
+          }
+
           // resolve
           return resolve(res.data)
         }
