@@ -61,7 +61,7 @@ export default class Basic extends Component{
         title: '年龄',
         dataIndex: 'age',
         align:'center',
-        width: 80,
+        width: 80
       },
       {
         title: '性别',
@@ -80,7 +80,7 @@ export default class Basic extends Component{
             <div>
               {
                 likeList.map(item => (
-                <p key={item}>{item}</p>
+                  <p key={item}>{item}</p>
                 ))
               }
             </div>
@@ -126,35 +126,32 @@ export default class Basic extends Component{
               {stateList[state]}
             </Tag>
           )
-          
-          
-          return stateList[state]
         }
       },
       {
         title: '住址',
         dataIndex: 'address',
-        width: 300,
+        width: 300
 
       },
       {
         title: '网址',
         dataIndex: 'url',
-        width: 200,
+        width: 200
       },
       {
         title:'邮箱',
         dataIndex:'email',
-        width: 200,
+        width: 200
       },
       {
         title: '操作',
         width: 130,
         fixed:'right',
         render: (item) => (
-            <Button type="danger" size="small" onClick={() => this.delete(item)}>删除</Button>
+          <Button type="danger" size="small" onClick={() => this.delete(item)}>删除</Button>
         )
-      },
+      }
     ];
 
     return (

@@ -45,8 +45,6 @@ export default class NoFound extends Component {
   }
 
 
-
-
   /**
    * 更新阶段
    */
@@ -55,25 +53,24 @@ export default class NoFound extends Component {
   // 是否重新渲染
   shouldComponentUpdate(nextProps, nextState){
     console.log('shouldComponentUpdate')
-      // 默认返回true，需要重新render。返回false则不触发渲染。
-      // 使用 forceUpdate() 时不会调用该方法。
-      // 使用PureComponent代替
-      return true
+    // 默认返回true，需要重新render。返回false则不触发渲染。
+    // 使用 forceUpdate() 时不会调用该方法。
+    // 使用PureComponent代替
+    return true
   }
   // render() {}
   getSnapshotBeforeUpdate(prevProps, prevState){
     console.log('getSnapshotBeforeUpdate')
-      // 在最近一次渲染输出（提交到 DOM 节点）之前调用
-      // 它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）
-      // 此生命周期的任何返回值将作为传递给componentDidUpdate()的第三参数。
-      return null
+    // 在最近一次渲染输出（提交到 DOM 节点）之前调用
+    // 它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）
+    // 此生命周期的任何返回值将作为传递给componentDidUpdate()的第三参数。
+    return null
   }
   // 组件更新完成
   componentDidUpdate(prevProps, prevState, snapshot){
     console.log('componentDidUpdate')
-      // 谨慎调用setState(),否则会导致死循环
+    // 谨慎调用setState(),否则会导致死循环
   }
-
 
 
   /**
@@ -83,7 +80,6 @@ export default class NoFound extends Component {
     console.log('componentWillUnmount')
     // 一般在这删除之前订阅的事件 
   } 
-
 
 
   /**
@@ -100,7 +96,6 @@ export default class NoFound extends Component {
     console.log('componentDidCatch')
     // 此生命周期在后代组件抛出错误后被调用
   }
-
 
 
   /**

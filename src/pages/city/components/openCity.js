@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Form, Select, Radio, message} from 'antd'
-const {Option} = Select
 import { addCity } from '../api'
+const {Option} = Select
 
 export default function openCity({visible,callback}) {
   const [form] = Form.useForm();
@@ -29,14 +29,13 @@ export default function openCity({visible,callback}) {
   }
 
 
-
   const layout = {
     labelCol: {
-      span: 6,
+      span: 6
     },
     wrapperCol: {
       span: 14
-    },
+    }
   };
 
   return (
@@ -67,7 +66,7 @@ export default function openCity({visible,callback}) {
             rules={[
               {
                 required: true,
-                message: '请选择城市!',
+                message: '请选择城市!'
               }
             ]}
           >
@@ -84,7 +83,7 @@ export default function openCity({visible,callback}) {
             rules={[
               {
                 required: true,
-                message: '请选择用车模式!',
+                message: '请选择用车模式!'
               }
             ]}
           >
@@ -99,7 +98,7 @@ export default function openCity({visible,callback}) {
             rules={[
               {
                 required: true,
-                message: '请选择运营模式!',
+                message: '请选择运营模式!'
               }
             ]}
           >

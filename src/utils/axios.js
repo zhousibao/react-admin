@@ -27,25 +27,24 @@ axios.interceptors.response.use(function(response) {
 })
 
 
-
 export default class Axios{
   // jsonp
   static jsonp(options){
     return new Promise((resolve,reject) => {
       JSONP(options.url, {
         param: 'callback'
-    }, function (err, response) {
-        if (response.status == 'success') {
-            resolve(response);
+      }, function (err, response) {
+        if (response.status === 'success') {
+          resolve(response);
         } else {
-            reject(response.messsage);
+          reject(response.messsage);
         }
-    })
+      })
     })
   }
 
   // http
-  static ajax({url, method = 'POST', json = true, params = '', data= '',}){
+  static ajax({url, method = 'POST', json = true, params = '', data= ''}){
     // easyMock
     const baseURL = 'https://www.studyinghome.com/mock/5e61bd0a597ac8103c4762fd/react-admin-api'
     return new Promise((resolve,reject) => {
@@ -59,7 +58,7 @@ export default class Axios{
         timeout: 10000, // 请求超时时间
         headers: {
           'content-type':json ? 'application/json; charset=UTF-8' : 'application/x-www-form-urlencoded; charset=UTF-8'
-        },
+        }
       }).then(res => {
         /**
          * response格式
@@ -92,7 +91,7 @@ export default class Axios{
           return resolve(res.data)
         }
 
-        message.error(err.message)
+        message.error(res.message)
         return reject(res.data)
       }).catch(err => {
         message.error(err.message)

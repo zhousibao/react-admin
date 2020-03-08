@@ -35,43 +35,43 @@ export default class Resize extends Component{
           title: '姓名',
           dataIndex: 'name',
           align:'center',
-          width: 200,
+          width: 200
         },
         {
           title: '姓名',
           dataIndex: 'name',
           align:'center',
-          width: 200,
+          width: 200
         },
         {
           title: '姓名',
           dataIndex: 'name',
           align:'center',
-          width: 200,
+          width: 200
         },
         {
           title: '姓名',
           dataIndex: 'name',
           align:'center',
-          width: 200,
+          width: 200
         },
         {
           title: '年龄',
           dataIndex: 'age',
           align:'center',
-          width: 200,
+          width: 200
         },
         {
           title: '性别',
           dataIndex: 'sex',
           align:'center',
-          width: 200,
+          width: 200
         },
         {
           title: '薪资',
           dataIndex: 'salary',
           align:'center',
-          width: 200,
+          width: 200
         }
       ]
     }
@@ -79,7 +79,7 @@ export default class Resize extends Component{
 
   components = {
     header: {
-      cell: ResizeableTitle,
+      cell: ResizeableTitle
     }
   }
 
@@ -110,7 +110,7 @@ export default class Resize extends Component{
       const nextColumns = [...columns];
       nextColumns[index] = {
         ...nextColumns[index],
-        width: size.width,
+        width: size.width
       };
       return { columns: nextColumns };
     });
@@ -121,8 +121,8 @@ export default class Resize extends Component{
       ...col,
       onHeaderCell: column => ({
         width: column.width,
-        onResize: this.handleResize(index),
-      }),
+        onResize: this.handleResize(index)
+      })
     }));
 
     return (

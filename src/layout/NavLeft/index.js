@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import menuConfig from '../menu'
-import { Menu, Button } from 'antd';
+import { Menu } from 'antd';
 import {NavLink} from 'react-router-dom'
 import './index.less'
 
@@ -20,7 +20,7 @@ export default class NavLeft extends PureComponent {
       if(item.children){
         return (
           <Menu.SubMenu title={item.title} key={item.key}>
-              { this.renderMenu(item.children)}
+            { this.renderMenu(item.children)}
           </Menu.SubMenu>
         )
       }

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Card, Tabs, Button, message, Icon} from 'antd'
+import { Card, Tabs, message} from 'antd'
 import { AppleOutlined, AndroidOutlined } from '@ant-design/icons';
-const { TabPane } = Tabs;
 
 import './index.less'
+const { TabPane } = Tabs;
 export default class Tab extends React.Component {
   constructor(props){
     super(props)
@@ -16,12 +16,12 @@ export default class Tab extends React.Component {
         title: 'Tab 3',
         content: 'Content of Tab 3',
         key: '3',
-        closable: false,
-      },
+        closable: false
+      }
     ];
     this.state = {
       activeKey: panes[0].key,
-      panes,
+      panes
     };
   }
 

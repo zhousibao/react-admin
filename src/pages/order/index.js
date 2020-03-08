@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import {Card, Button} from 'antd'
+import {Card} from 'antd'
 import SearchForm from './components/searchForm'
-import CityTable from './components/cityTable'
-import OpenCity from './components/openCity'
-import { cityList } from './api'
+import OrderTable from './components/orderTable'
+import { orderList } from './api'
+import {formatDate} from '@/utils'
 
 const initialValues = {
   cityId:undefined,
-  mode:undefined,
-  op_mode:undefined,
-  auth_status:undefined,
+  time:null,
+  status:undefined,
   search:undefined
 }
 export default class CityList extends Component {
@@ -26,29 +25,32 @@ export default class CityList extends Component {
         pageSize:10,
         total:0
       },
-      cityList:[],
-      loading:false,
-
-      visible:false
+      list:[],
+      loading:false
     }
 
   }
 
   componentDidMount(){
-    this.getCityList()
+    this.getList()
   }
-  getCityList = () => {
+  getList = () => {
     this.setState({
       loading:true
     })
     const data = {
       ...this.state.pagination,
-      ...this.state.form
+      ...this.state.form,
+      time:'' // 去除time为数组
     }
-    cityList(data).then(res => {
+    if(this.state.form.time){
+      data.startTime = formatDate(this.state.form.time[0])
+      data.endTime = formatDate(this.state.form.time[0])
+    }
+    orderList(data).then(res => {
       if(res.code === '0'){
         this.setState({
-          cityList:res.data.list,
+          list:res.data.list,
           pagination:{ ...this.state.pagination, total:res.data.total}
         })
       }
@@ -64,27 +66,18 @@ export default class CityList extends Component {
       form:{...data},
       pagination:{...this.state.pagination,pageNum:1}
     })
-    this.getCityList()
+    this.getList()
   }
   
-  changePage = (pageNum,pageSize) => {
-    this.setState((state,props) => {
-      return {pagination: {...state.pagination,pageNum,pageSize}};
-    }, () => this.getCityList());
-  }
-
-  openCityModal = () => {
-    this.setState({
-      visible:true
-    })
-  }
-
-  closeCityModal = (type) => {
-    this.setState({
-      visible:false
-    })
-
-    type && this.getCityList()
+  changePage = (type,pageNum,pageSize) => {
+    if(type === 'change'){
+      this.setState((state,props) => {
+        return {pagination: {...state.pagination,pageNum,pageSize}};
+      }, () => this.getList());
+    }
+    if(type === 'close'){
+      this.getList()
+    }
   }
   
 
@@ -98,17 +91,10 @@ export default class CityList extends Component {
           />
         </Card>
         <Card>
-          <Button type="primary" onClick={this.openCityModal}>开通城市</Button>
-          <OpenCity
-            visible={this.state.visible}
-            callback={this.closeCityModal}
-          />
-        </Card>
-        <Card>
-          <CityTable
+          <OrderTable
             loading={this.state.loading}
             pagination={this.state.pagination}
-            cityList={this.state.cityList}
+            list={this.state.list}
             callback={this.changePage}
           />
         </Card>

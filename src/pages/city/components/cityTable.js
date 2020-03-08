@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Table, Button} from 'antd'
+import {Table} from 'antd'
 import {formatDate, pagination} from '@/utils'
 
 export default function CityTable({loading,pagination:paginationParams,cityList,callback}){
@@ -35,7 +35,7 @@ export default function CityTable({loading,pagination:paginationParams,cityList,
       dataIndex: 'city_admins',
       render(arr){
         return arr.map((item)=>{
-            return item.user_name;
+          return item.user_name;
         }).join(',');
       }
     },

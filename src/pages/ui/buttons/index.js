@@ -30,11 +30,11 @@ export default class Buttons extends Component {
         </Card>
 
         <Card title="按钮组" style={{marginBottom:'20px'}}>
-        <Radio.Group>
-          <Radio.Button value="large">Large</Radio.Button>
-          <Radio.Button value="default">Default</Radio.Button>
-          <Radio.Button value="small">Small</Radio.Button>
-        </Radio.Group>
+          <Radio.Group>
+            <Radio.Button value="large">Large</Radio.Button>
+            <Radio.Button value="default">Default</Radio.Button>
+            <Radio.Button value="small">Small</Radio.Button>
+          </Radio.Group>
         </Card>
         
       </div>

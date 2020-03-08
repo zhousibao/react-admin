@@ -12,13 +12,13 @@ export function formatDate(val, formate = 'YYYY-MM-DD HH:mm:ss'){
 export function pagination({pageNum,pageSize = 10,total}, callback){
   return {
     onChange:(pageNum,pageSize)=>{
-        callback(pageNum,pageSize)
+      callback(pageNum,pageSize)
     },
     current:pageNum,
     pageSize,
     total,
     showTotal:()=>{
-        return `共${total}条`
+      return `共${total}条`
     },
     showQuickJumper:true
   }

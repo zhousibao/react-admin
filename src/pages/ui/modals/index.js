@@ -30,14 +30,14 @@ export default class Modals extends Component {
 
   handleConfirm = (type)=>{
     Modal[type]({
-        title:'确认？',
-        content:'你确定你学会了React了吗？',
-        onOk(){
-            console.log('Ok')
-        },
-        onCancel(){
-            console.log('Cancel')
-        }
+      title:'确认？',
+      content:'你确定你学会了React了吗？',
+      onOk(){
+        console.log('Ok')
+      },
+      onCancel(){
+        console.log('Cancel')
+      }
     })
   }
 
@@ -68,7 +68,6 @@ export default class Modals extends Component {
           <p>Some contents...</p>
           <p>Some contents...</p>
         </Modal>
-
        
         
       </div>

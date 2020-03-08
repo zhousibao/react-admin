@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import {UploadOutlined,PlusOutlined} from '@ant-design/icons'
+import React from 'react'
+import {PlusOutlined} from '@ant-design/icons'
 import locale from 'antd/es/date-picker/locale/zh_CN';
 import moment from 'moment';
 import { formatDate } from '@/utils'
@@ -15,9 +15,7 @@ import {
   Select,
   Switch,
   DatePicker,
-  TimePicker,
-  Upload,
-  message
+  Upload
 } from 'antd'
 const { Option } = Select;
 const { RangePicker } = DatePicker;
@@ -27,17 +25,17 @@ export default function Register() {
   const hobbyList = ['篮球','游泳','泡妹子','打游戏','看书','聊天','睡觉']
   const layout = {
     labelCol: {
-      span: 8,
+      span: 8
     },
     wrapperCol: {
       span: 12
-    },
+    }
   };
   const tailLayout = {
     wrapperCol: {
       offset: 8,
       span: 12
-    },
+    }
   };
 
   
@@ -49,7 +47,6 @@ export default function Register() {
     }
     return e && e.fileList;
   };
- 
 
 
   const onFinish = values => {
@@ -79,7 +76,7 @@ export default function Register() {
             birthday:moment('2008-08-08', 'YYYY-MM-DD'),
             workTime:[],
             address:'',
-            agree:true,
+            agree:true
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -90,8 +87,8 @@ export default function Register() {
             rules={[
               {
                 required: true,
-                message: '请输入用户名!',
-              },
+                message: '请输入用户名!'
+              }
             ]}
           >
             <Input placeholder="请输入用户名"/>
@@ -102,7 +99,7 @@ export default function Register() {
             rules={[
               {
                 required: true,
-                message: '请输入密码!',
+                message: '请输入密码!'
               },
               {
                 len:6,
@@ -122,7 +119,7 @@ export default function Register() {
             rules={[
               {
                 required: true,
-                message: '请选择性别!',
+                message: '请选择性别!'
               }
             ]}
           >
@@ -200,7 +197,7 @@ export default function Register() {
               listType="picture-card"
               action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
             >
-                <PlusOutlined />
+              <PlusOutlined />
             </Upload>
           </Form.Item>
 

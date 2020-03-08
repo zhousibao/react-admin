@@ -1,24 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Card, Form, Input, Button,Checkbox} from 'antd'
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-const FormItem = Form.Item  
+import { UserOutlined, LockOutlined } from '@ant-design/icons';  
 
 import './index.less'
+const FormItem = Form.Item
 
 export default function Login() {
   const layout = {
     labelCol: {
-      span: 8,
+      span: 8
     },
     wrapperCol: {
       span: 8
-    },
+    }
   };
   const tailLayout = {
     wrapperCol: {
       offset: 8,
-      span: 8,
-    },
+      span: 8
+    }
   };
 
   const onFinish = values => {
@@ -49,7 +49,7 @@ export default function Login() {
         <Form
           {...layout}
           initialValues={{
-            remember:true,
+            remember:true
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -60,8 +60,8 @@ export default function Login() {
             rules={[
               {
                 required: true,
-                message: '请输入用户名!',
-              },
+                message: '请输入用户名!'
+              }
             ]}
           >
             <Input prefix={<UserOutlined/>} placeholder="请输入用户名"/>
@@ -72,7 +72,7 @@ export default function Login() {
             rules={[
               {
                 required: true,
-                message: '请输入密码!',
+                message: '请输入密码!'
               },
               {
                 len:6,

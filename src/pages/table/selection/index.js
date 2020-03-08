@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {Card , Table } from 'antd'
 import { tableList } from '../api'
 
-export default Selection = () => {
+export default function Selection(){
 
   const [list,setList] = useState([])
   const [selectedRowKeys,setSelectedRowKeys] = useState([1])
@@ -20,11 +20,11 @@ export default Selection = () => {
     {
       title: '姓名',
       dataIndex: 'name',
-      align:'center',
+      align:'center'
     },
     {
       title: '年龄',
-      dataIndex: 'age',
+      dataIndex: 'age'
     },
     {
       title: '性别',
