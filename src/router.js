@@ -22,6 +22,8 @@ import Resize from './pages/table/resize'
 import City from './pages/city'
 import Order from './pages/order'
 import OrderDetail from './pages/order/detail'
+import Bar from './pages/echarts/bar'
+import Pie from './pages/echarts/pie'
 
 
 export default class Router extends Component {
@@ -52,6 +54,9 @@ export default class Router extends Component {
                 
                   <Route path="/admin/city" component={City}/>
                   <Route path="/admin/order" component={Order}/>
+
+                  <Route path="/admin/echarts/bar" component={Bar}/>
+                  <Route path="/admin/echarts/pie" component={Pie}/>
                 </Switch> 
               </Admin>
             }/>
