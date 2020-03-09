@@ -1,6 +1,5 @@
 import React from 'react'
 import {PlusOutlined} from '@ant-design/icons'
-import locale from 'antd/es/date-picker/locale/zh_CN';
 import moment from 'moment';
 import { formatDate } from '@/utils'
 import './index.less'
@@ -171,13 +170,13 @@ export default function Register() {
             label="生日"
             name="birthday"
           >
-            <DatePicker locale={locale} showTime format="YYYY-MM-DD HH:mm:ss" placeholder="请选择日期"/>
+            <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" placeholder="请选择日期"/>
           </Form.Item>
           <Form.Item
             label="工龄"
             name="workTime"
           >
-            <RangePicker locale={locale} showTime/>
+            <RangePicker showTime/>
           </Form.Item>
           <Form.Item
             label="详细地址"

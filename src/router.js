@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
+import App from './App';
 
 import Admin from './layout/admin'
 import Commom from './layout/common'
@@ -26,43 +27,46 @@ import OrderDetail from './pages/order/detail'
 export default class Router extends Component {
   render() {
     return (
-      <HashRouter>
-        <Switch>
+      <App>
+        <HashRouter>
+          <Switch>
 
-          <Route path="/login" component={Login}/>
+            <Route path="/login" component={Login}/>
           
-          <Redirect exact from="/" to="/admin/home" />
-          <Redirect exact from="/admin" to="/admin/home" />
-          <Route path="/admin" render={() => 
-            <Admin>
-              <Switch>
-                <Route path="/admin/home" component={Home}/>
-                <Route path="/admin/ui/buttons" component={Buttons}/>
-                <Route path="/admin/ui/modals" component={Modals}/>
-                <Route path="/admin/ui/tabs" component={Tabs}/>
-                <Route path="/admin/ui/gallery" component={Gallery}/>
-                <Route path="/admin/ui/carousel" component={Carousel}/>
-                <Route path="/admin/form/login" component={FormLogin}/>
-                <Route path="/admin/form/register" component={FormRegister}/>
-                <Route path="/admin/table/basic" component={Basic}/>
-                <Route path="/admin/table/selection" component={Selection}/>
-                <Route path="/admin/table/resize" component={Resize}/>
+            <Redirect exact from="/" to="/admin/home" />
+            <Redirect exact from="/admin" to="/admin/home" />
+            <Route path="/admin" render={() => 
+              <Admin>
+                <Switch>
+                  <Route path="/admin/home" component={Home}/>
+                  <Route path="/admin/ui/buttons" component={Buttons}/>
+                  <Route path="/admin/ui/modals" component={Modals}/>
+                  <Route path="/admin/ui/tabs" component={Tabs}/>
+                  <Route path="/admin/ui/gallery" component={Gallery}/>
+                  <Route path="/admin/ui/carousel" component={Carousel}/>
+                  <Route path="/admin/form/login" component={FormLogin}/>
+                  <Route path="/admin/form/register" component={FormRegister}/>
+                  <Route path="/admin/table/basic" component={Basic}/>
+                  <Route path="/admin/table/selection" component={Selection}/>
+                  <Route path="/admin/table/resize" component={Resize}/>
                 
-                <Route path="/admin/city" component={City}/>
-                <Route path="/admin/order" component={Order}/>
-              </Switch> 
-            </Admin>
-          }/>
-          <Route path="/common" render={() => 
-            <Commom>
-              <Switch>
-                <Route path="/common/orderDetail/:id" component={OrderDetail}/>
-              </Switch>
-            </Commom>
-          }/>
-          <Route component={NoFound} />
-        </Switch>
-      </HashRouter>
+                  <Route path="/admin/city" component={City}/>
+                  <Route path="/admin/order" component={Order}/>
+                </Switch> 
+              </Admin>
+            }/>
+            <Route path="/common" render={() => 
+              <Commom>
+                <Switch>
+                  <Route path="/common/orderDetail/:id" component={OrderDetail}/>
+                </Switch>
+              </Commom>
+            }/>
+            <Route component={NoFound} />
+          </Switch>
+        </HashRouter>
+      </App>
+      
     ) 
   }
 }
