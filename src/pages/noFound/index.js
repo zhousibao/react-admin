@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { Result, Button } from 'antd';
+import { Link } from 'react-router-dom'
 import './index.less'
+
 export default class NoFound extends Component {
   /**
    * 挂载阶段
@@ -9,15 +12,7 @@ export default class NoFound extends Component {
   constructor(props){
     console.log('constructor')
     super(props)
-    this.state = {
-      title:'404'
-    }
-  }
-  // 普通函数
-  add = () => {
-    this.setState({
-      title:'你好'
-    })
+    this.state = { }
   }
   
   static getDerivedStateFromProps(props, state){
@@ -32,8 +27,16 @@ export default class NoFound extends Component {
     // 不要在render里面修改state,会触发死循环导致栈溢出。
     return (
       <div>
-        <div className="not" onClick={this.add}>{this.state.title}</div>
-        <h1 className="no-found">NoFound!</h1>
+        <Result
+          status="404"
+          title="404"
+          subTitle="抱歉，你访问的页面不存在。"
+          extra={
+            <Link to="/admin/home">
+              <Button type="primary">返回首页</Button>
+            </Link>
+          }
+        />
       </div>
     )
   }

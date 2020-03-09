@@ -11,19 +11,10 @@ import Axios from '@/utils/axios'
  *
  */
 
-// 城市列表
-export function cityList(data){
+// 登录
+export function login(data){
   return Axios.ajax({
-    url:'/city/list',
-    method:'POST',
-    data
-  })
-}
-
-// 开通城市
-export function addCity(data){
-  return Axios.ajax({
-    url:'/city/add',
+    url:'/login',
     method:'POST',
     data
   })
