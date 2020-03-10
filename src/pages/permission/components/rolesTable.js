@@ -4,13 +4,10 @@ import { rolesList } from '../api'
 import { formatDate } from '@/utils'
 import emitter from '@/utils/eventBus';
 
-// const MyComponent = React.memo(function MyComponent(props) {
-//   /* 使用 props 渲染 */
-// });
-
 export default function RolesTable({callback}){
   const [list,setList] = useState([])
   const [loading,setLoading] = useState(false)
+  const [selectedRowKeys,setSelectedRowKeys] = useState([])
 
   useEffect(() => {
     getRolesList()
@@ -31,6 +28,7 @@ export default function RolesTable({callback}){
       if(res.code === '0'){
         setList(res.data.list)
         setLoading(false)
+        setSelectedRowKeys([])
       }
     }).catch(err => {
       setLoading(false)
@@ -39,8 +37,10 @@ export default function RolesTable({callback}){
 
   const rowSelection = {
     type: 'radio',
+    selectedRowKeys,
     onSelect: (item) => {
-      callback(item.id)
+      callback(item.id, item.role_name)
+      setSelectedRowKeys([item.key])
     }
   };
 

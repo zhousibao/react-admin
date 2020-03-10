@@ -1,11 +1,12 @@
-import React from 'react'
-import { Modal, Form, Input, Radio, message} from 'antd'
-import { createRoles } from '../api'
+import React, {useState} from 'react'
+import { Modal, Form, Input, Radio, message,Tree} from 'antd'
+import { permissionDo } from '../api'
 import emitter from '@/utils/eventBus';
+import menu from '@/layout/menu.js'
 
-export default function CreateRoles({visible,callback}) {
+
+export default function Setpermission({visible,rolesId,rolesName,callback}) {
   const [form] = Form.useForm();
-
 
   const onOk = () => {
     form.validateFields().then(values => {
@@ -18,8 +19,13 @@ export default function CreateRoles({visible,callback}) {
     callback(false)
   }
 
-  const submit = (data)=> {
-    createRoles(data).then(res => {
+  const submit = (values)=> {
+    const data = {
+      ...values,
+      rolesId,
+      permission:checkedKeys
+    }
+    permissionDo(data).then(res => {
       if(res.code === '0'){
         message.success(res.message)
         form.resetFields(); // 清空表单
@@ -38,12 +44,25 @@ export default function CreateRoles({visible,callback}) {
       span: 14
     }
   };
+
+  const treeData = [{
+    title: '平台',
+    key: '/all',
+    children:menu
+  }]
+
+  // 控制选择的
+  const [checkedKeys, setCheckedKeys] = useState(["/admin/home"]);
+  const onCheck = checkedKeys => {
+    // console.log('onCheck', checkedKeys);
+    setCheckedKeys(checkedKeys);
+  };
   
 
   return (
     <div>
       <Modal
-        title="创建角色"
+        title="设置权限"
         visible={visible}
         okText="确认"
         cancelText="取消"
@@ -56,21 +75,15 @@ export default function CreateRoles({visible,callback}) {
           {...layout}
           form={form} 
           initialValues={{
-            name:undefined,
+            rolesName,
             status:1
           }}
         >
           <Form.Item
             label="角色名称"
-            name="name"
-            rules={[
-              {
-                required: true,
-                message: '请输入角色名称!'
-              }
-            ]}
+            name="rolesName"
           >
-            <Input placeholder="请输入角色名称"/>
+            <Input disabled />
           </Form.Item>
           
           <Form.Item
@@ -83,6 +96,15 @@ export default function CreateRoles({visible,callback}) {
             </Radio.Group>
           </Form.Item>
         </Form>
+
+        <Tree
+          checkable
+          defaultExpandAll
+          checkedKeys={checkedKeys}
+          onCheck={onCheck}
+          treeData={treeData}
+        />
+
       </Modal>
     </div>
   )

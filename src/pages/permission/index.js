@@ -1,42 +1,76 @@
 import React, { Component } from 'react'
-import {Card, Button} from 'antd'
+import {Card, Button, Modal} from 'antd'
 import RolesTable from './components/rolesTable'
 import CreateRoles from './components/createRoles'
-
+import SetPermission from './components/setPermission'
+import Authorization from './components/authorization'
 
 export default class Permission extends Component {
   constructor(props){
     super(props)
     this.state = {
-      showCreateRoles:false
+      showCreateRoles:false,
+      showSetPermission:false,
+      showAuthorization:false
     }
   }
-  rolesId:''
+
+  rolesId = ''
+  rolesName = ''
+  
 
   openModal = (type) => {
-    this.setState({
-      [type]:true
-    })
+    if(type === 'showCreateRoles'){
+      this.setState({
+        [type]:true
+      })
+    }else{
+      if(!this.rolesId){
+        Modal.warning({
+          title:'提醒',
+          content:'请先选择角色',
+          onOk(){
+            // console.log('Ok')
+          },
+          onCancel(){
+            // console.log('Cancel')
+          }
+        })
+      } else {
+        this.setState({
+          [type]:true
+        })
+      }
+    }
+    
   }
   // 回调
-  chooseRole = (id) => {
+  chooseRole = (id,name) => {
     this.rolesId = id
+    this.rolesName= name
   }
   
 
-  close = () => {
+  close = (type) => {
     this.setState({
-      showCreateRoles:false
+      showCreateRoles:false,
+      showSetPermission:false,
+      showAuthorization:false
     })
+    if(type){
+      this.rolesId = ''
+      this.rolesName= ''
+    }
+    
   }
+  
   render() {
-    console.log('renden permission')
     return (
       <div>
         <Card>
           <Button type="primary" onClick={() => this.openModal('showCreateRoles')}>创建角色</Button>
-          <Button type="primary" onClick={() => this.openModal('showCreateRoles')}>设置权限</Button>
-          <Button type="primary" onClick={() => this.openModal('showCreateRoles')}>用户授权</Button>
+          <Button type="primary" onClick={() => this.openModal('showSetPermission')}>设置权限</Button>
+          <Button type="primary" onClick={() => this.openModal('showAuthorization')}>用户授权</Button>
         </Card>
         <Card>
           <RolesTable callback={this.chooseRole}/>
@@ -47,6 +81,23 @@ export default class Permission extends Component {
           visible={this.state.showCreateRoles}
           callback={this.close}
         />
+        {
+          this.state.showSetPermission ? (<SetPermission
+            visible={this.state.showSetPermission}
+            rolesId={this.rolesId}
+            rolesName ={this.rolesName}
+            callback={this.close}
+          />):null
+        }
+        {
+          this.state.showAuthorization ? (<Authorization
+            visible={this.state.showAuthorization}
+            rolesId={this.rolesId}
+            rolesName ={this.rolesName}
+            callback={this.close}
+          />):null
+        }
+        
       </div>
     )
   }

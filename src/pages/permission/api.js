@@ -29,3 +29,21 @@ export function createRoles(data){
   })
 }
 
+// 设置权限、用户授权
+export function permissionDo(data){
+  return Axios.ajax({
+    url:'/permission/do',
+    method:'POST',
+    data
+  })
+}
+
+// 角色用户详情
+export function rolesDetail(data){
+  return Axios.ajax({
+    url:'/permission/rolesDetail',
+    method:'POST',
+    data
+  })
+}
+
