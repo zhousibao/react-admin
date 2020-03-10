@@ -62,10 +62,6 @@ const menuList = [
     ]
   },
   {
-    title: '富文本',
-    key: '/admin/rich'
-  },
-  {
     title: '城市管理',
     key: '/admin/city'
   },
@@ -98,6 +94,10 @@ const menuList = [
         key: '/admin/echarts/line'
       }
     ]
+  },
+  {
+    title: '富文本',
+    key: '/admin/editor'
   },
   {
     title: '权限设置',

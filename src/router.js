@@ -25,6 +25,7 @@ import OrderDetail from './pages/order/detail'
 import Bar from './pages/echarts/bar'
 import Pie from './pages/echarts/pie'
 import Line from './pages/echarts/line'
+import Editor from './pages/editor'
 
 
 export default class Router extends Component {
@@ -59,6 +60,7 @@ export default class Router extends Component {
                   <Route path="/admin/echarts/bar" component={Bar}/>
                   <Route path="/admin/echarts/pie" component={Pie}/>
                   <Route path="/admin/echarts/line" component={Line}/>
+                  <Route path="/admin/editor" component={Editor}/>
                 </Switch> 
               </Admin>
             }/>
