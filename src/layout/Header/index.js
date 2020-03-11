@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import './index.less'
 import { Button } from 'antd'
 import { LogoutOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
 import Axios from '@/utils/axios'
 
-export default class Header extends Component {
+@connect(
+  state => ({app:state.app})
+)
+class Header extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -46,7 +50,7 @@ export default class Header extends Component {
     return (
       <div className="header">
         <div className="left">
-        导航栏
+          {this.props.app.menuTitle}
         </div>
         <div className="right">
           <div className="date">{this.state.date}</div>
@@ -63,3 +67,4 @@ export default class Header extends Component {
     )
   }
 }
+export default Header

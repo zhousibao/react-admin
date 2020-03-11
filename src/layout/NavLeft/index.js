@@ -1,14 +1,20 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import menuConfig from '../menu'
 import { Menu } from 'antd';
 import {NavLink} from 'react-router-dom'
 import './index.less'
 
-export default class NavLeft extends PureComponent {
+@connect(
+  null,
+  {
+    changeMenuTitle:(title) => ({type:'changeMenuTitle', payload:title})
+  }
+)
+class NavLeft extends PureComponent {
   constructor(props){
     super(props)
     
-
     this.state = {
       openKeys:[],
       defaultSelectedKeys:[window.location.hash.replace(/#|\?.*$/g,'')]
@@ -48,6 +54,11 @@ export default class NavLeft extends PureComponent {
     }
   }
 
+  onSelect = ({item}) => {
+    // console.log(item.props.title)
+    this.props.changeMenuTitle(item.props.title)
+  }
+
 
   render() {
     const menuTreeNode = menuConfig
@@ -63,6 +74,7 @@ export default class NavLeft extends PureComponent {
           theme="dark"
           openKeys={this.state.openKeys}
           onOpenChange={this.onOpenChange}
+          onSelect={this.onSelect}
         >
           {this.renderMenu(menuTreeNode)}
         </Menu>
@@ -70,3 +82,4 @@ export default class NavLeft extends PureComponent {
     )
   }
 }
+export default NavLeft 
