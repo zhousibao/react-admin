@@ -1,7 +1,8 @@
 .header{
   background: #fff;
   height: 60px;
-  padding: 0 10px;
+  min-height: 60px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,6 +10,19 @@
 
   .left{
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    .left-icon{
+      font-size: 22px;
+    }
+
+    .menu-title{
+      height: 30px;
+      line-height: 30px;
+      margin-left: 20px;
+      font-size: 14px;
+    }
   }
   .right{
     flex-shrink: 0;
@@ -19,10 +33,28 @@
       padding-right: 20px;
     }
     .weather{
-      padding-right: 20px;
+      padding-right: 5px;
     }
-    .name{
-      padding-right: 20px;
+    .weather-img{
+      height: 16px;
+    }
+
+    .user{
+      height: 60px;
+      line-height: 60px;
+      padding: 0 10px;
+      margin: 0  0 0 10px; 
+
+      img{
+        height: 20px;
+        padding-right: 5px;
+      }
+      span{
+        font-size: 14px;
+      }
+    }
+    .user:hover{
+      background: #f9f9f9;
     }
   }
 }

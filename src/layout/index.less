@@ -1,20 +1,35 @@
 .admin{
-  display: flex;
   background: #f9f9f9;
 
-  .navleft{
+  .admin-sider{
     height: 100vh;
-    min-width: 200px;
     overflow: auto;
-    background: #001529;
+
+    .logo{
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #002140;
+      img{
+        height: 35px;
+        padding: 0 5px;
+      }
+      p{
+        padding: 0 5px;
+        font-size: 18px;
+        color: #fff;
+        margin: 0;
+      }
+      
+    }
   }
 
-  .admin-content{
+  .site-layout{
     height: 100vh;
     overflow: auto;
-    flex-grow: 1;
 
-    .content{
+    .admin-content{
       min-height: calc(100vh - 110px);
       padding: 10px;
       box-sizing: border-box;
@@ -32,3 +47,6 @@
     min-height: calc(100vh - 60px);
   }
 }
+
+
+

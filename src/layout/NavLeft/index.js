@@ -2,11 +2,24 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import menuConfig from '../menu'
 import { Menu } from 'antd';
+import { 
+  HomeOutlined,
+  AppstoreOutlined,
+  FormOutlined,
+  TableOutlined,
+  ApartmentOutlined,
+  ProfileOutlined,
+  DashboardOutlined,
+  BarChartOutlined,
+  PieChartOutlined,
+  LineChartOutlined,
+  EditOutlined,
+  KeyOutlined,
+} from '@ant-design/icons'
 import {NavLink} from 'react-router-dom'
-import './index.less'
 
 @connect(
-  state => ({app:state.app}),
+  null,
   {
     changeMenuTitle:(title) => ({type:'changeMenuTitle', payload:title}),
   },
@@ -21,6 +34,40 @@ class NavLeft extends PureComponent {
     }
     
   }
+
+  showIcon = (name) => {
+    switch (name){
+    case 'home':
+      return <HomeOutlined/>
+    case 'components':
+      return <AppstoreOutlined/>
+    case 'form':
+      return <FormOutlined />
+    case 'table':
+      return <TableOutlined />
+    case 'city':
+      return <ApartmentOutlined />
+    case 'order':
+      return <ProfileOutlined />
+    case 'dashboard':
+      return <DashboardOutlined />
+    case 'bar':
+      return <BarChartOutlined />
+    case 'pie':
+      return <PieChartOutlined />
+    case 'line':
+      return <LineChartOutlined />
+    case 'edit':
+      return <EditOutlined />
+    case 'permission':
+      return <KeyOutlined />
+
+
+    default:
+      return null
+
+    }
+  }
   
 
   // 菜单渲染
@@ -28,13 +75,22 @@ class NavLeft extends PureComponent {
     return data.map((item)=>{
       if(item.children){
         return (
-          <Menu.SubMenu title={item.title} key={item.key}>
+          <Menu.SubMenu 
+            title={
+              <span>
+                {this.showIcon(item.icon)}
+                <span>{item.title}</span>
+              </span>
+            }
+            key={item.key}
+          >
             { this.renderMenu(item.children)}
           </Menu.SubMenu>
         )
       }
       return (
         <Menu.Item title={item.title} key={item.key}>
+          {this.showIcon(item.icon)}
           <NavLink to={item.key}>{item.title}</NavLink>
         </Menu.Item>
       )
@@ -60,28 +116,21 @@ class NavLeft extends PureComponent {
     this.props.changeMenuTitle(item.props.title)
   }
 
-
   render() {
     const menuTreeNode = menuConfig
     return (
-      <div>
-        {/* <div className="logo">
-          <img src="/assets/logo-ant.svg" alt="logo"/>
-          <p>管理后台系统</p>
-        </div> */}
-        <Menu
-          inlineCollapsed={this.props.app.collapsed}
-          defaultSelectedKeys={this.state.defaultSelectedKeys}
-          mode="inline"
-          theme="dark"
-          openKeys={this.state.openKeys}
-          onOpenChange={this.onOpenChange}
-          onSelect={this.onSelect}
-          className="menu"
-        >
-          {this.renderMenu(menuTreeNode)}
-        </Menu>
-      </div>
+      <Menu
+        defaultSelectedKeys={this.state.defaultSelectedKeys}
+        mode="inline"
+        theme="dark"
+        openKeys={this.state.openKeys}
+        onOpenChange={this.onOpenChange}
+        onSelect={this.onSelect}
+        className="menu"
+      >
+        {this.renderMenu(menuTreeNode)}
+      </Menu>
+     
     )
   }
 }

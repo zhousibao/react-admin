@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './index.less'
-import { Button } from 'antd'
-import { MenuUnfoldOutlined, MenuFoldOutlined, LogoutOutlined } from '@ant-design/icons';
+import { Dropdown, Menu } from 'antd'
+import { MenuUnfoldOutlined, MenuFoldOutlined, LoginOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
 import Axios from '@/utils/axios'
 
+@withRouter
 @connect(
   state => ({app:state.app}),
   {
@@ -55,27 +57,46 @@ class Header extends Component {
       collapsed: !this.state.collapsed,
     });
   };
+
+  // 退出登录
+  logout = () => {
+    this.props.history.push('/login')
+  }
+
+  
   render() {
+    const menu = (
+      <Menu>
+        <Menu.Item onClick={this.logout}>
+          <LoginOutlined /> 退出登录
+        </Menu.Item>
+      </Menu>
+    )
     return (
       <div className="header">
         <div className="left">
-          <Button type="primary" onClick={this.props.toggleCollapsed} style={{ marginBottom: 16 }}>
-            {
-              this.props.app.collapsed ? (<MenuUnfoldOutlined/>) : (<MenuFoldOutlined/>)
-            }
-          </Button>
-          {/* {this.props.app.menuTitle} */}
+          {
+            this.props.app.collapsed ? 
+              (<MenuUnfoldOutlined className="left-icon" onClick={this.props.toggleCollapsed}/>) : (<MenuFoldOutlined className="left-icon" onClick={this.props.toggleCollapsed}/>)
+          }
+          <div className="menu-title">
+            {this.props.app.menuTitle}
+          </div>
+          
         </div>
+            
         <div className="right">
           <div className="date">{this.state.date}</div>
-          <div className="weather">
-            {this.state.weather}
-            <img src={this.state.weatherPicUrl} alt="weather" height="16"/>
-          </div>
-          <div className="name">{this.state.useName}</div>
-          <Button type="danger" shape="circle" size="small">
-            <LogoutOutlined />
-          </Button>
+          <div className="weather">{this.state.weather}</div>
+          <img src={this.state.weatherPicUrl} alt="weather" className="weather-img"/>
+         
+
+          <Dropdown overlay={menu}>
+            <div className="user">
+              <img src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" alt="avatar"/>
+              <span>{this.state.useName}</span>
+            </div>
+          </Dropdown>
         </div>
       </div>
     )
