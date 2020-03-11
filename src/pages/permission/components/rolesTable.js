@@ -8,7 +8,7 @@ export default function RolesTable({callback}){
   const [list,setList] = useState([])
   const [loading,setLoading] = useState(false)
   const [selectedRowKeys,setSelectedRowKeys] = useState([])
-
+  
   useEffect(() => {
     getRolesList()
     const eventEmitter = emitter.addListener('reloadRolesTable', () => {
@@ -16,7 +16,9 @@ export default function RolesTable({callback}){
     });
 
     return () => {
-      emitter.removeListener(eventEmitter);
+      emitter.removeListener(eventEmitter,() => {
+        console.log('移除事件监听')
+      });
     } 
   },[])
 

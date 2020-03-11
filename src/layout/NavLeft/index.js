@@ -7,12 +7,14 @@ import './index.less'
 export default class NavLeft extends PureComponent {
   constructor(props){
     super(props)
+    
 
     this.state = {
       openKeys:[],
-      defaultSelectedKeys:[window.location.hash.substring(1)]
+      defaultSelectedKeys:[window.location.hash.replace(/#|\?.*$/g,'')]
     }
   }
+  
 
   // 菜单渲染
   renderMenu = (data) => {
