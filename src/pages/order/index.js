@@ -9,7 +9,7 @@ const initialValues = {
   cityId:undefined,
   time:null,
   status:undefined,
-  search:undefined
+  search:undefined,
 }
 export default class CityList extends Component {
   constructor(props){
@@ -17,16 +17,16 @@ export default class CityList extends Component {
 
     this.state = {
       form:{
-        ...initialValues
+        ...initialValues,
       },
 
       pagination:{
         pageNum:1,
         pageSize:10,
-        total:0
+        total:0,
       },
       list:[],
-      loading:false
+      loading:false,
     }
 
   }
@@ -36,12 +36,12 @@ export default class CityList extends Component {
   }
   getList = () => {
     this.setState({
-      loading:true
+      loading:true,
     })
     const data = {
       ...this.state.pagination,
       ...this.state.form,
-      time:'' // 去除time为数组
+      time:'', // 去除time为数组
     }
     if(this.state.form.time){
       data.startTime = formatDate(this.state.form.time[0])
@@ -51,12 +51,12 @@ export default class CityList extends Component {
       if(res.code === '0'){
         this.setState({
           list:res.data.list,
-          pagination:{ ...this.state.pagination, total:res.data.total}
+          pagination:{ ...this.state.pagination, total:res.data.total},
         })
       }
     }).finally(() => {
       this.setState({
-        loading:false
+        loading:false,
       })
     })
   }
@@ -64,15 +64,15 @@ export default class CityList extends Component {
   searchList = (data) => {
     this.setState({
       form:{...data},
-      pagination:{...this.state.pagination,pageNum:1}
+      pagination:{...this.state.pagination, pageNum:1},
     })
     this.getList()
   }
   
-  changePage = (type,pageNum,pageSize) => {
+  changePage = (type, pageNum, pageSize) => {
     if(type === 'change'){
-      this.setState((state,props) => {
-        return {pagination: {...state.pagination,pageNum,pageSize}};
+      this.setState((state, props) => {
+        return {pagination: {...state.pagination, pageNum, pageSize}};
       }, () => this.getList());
     }
     if(type === 'close'){

@@ -16,7 +16,7 @@ export function orderList(data){
   return Axios.ajax({
     url:'/order/list',
     method:'POST',
-    data
+    data,
   })
 }
 // 结束订单
@@ -24,7 +24,7 @@ export function closeOrder(data){
   return Axios.ajax({
     url:'/order/close',
     method:'POST',
-    data
+    data,
   })
 }
 // 结束订单
@@ -32,6 +32,6 @@ export function orderDetail(params){
   return Axios.ajax({
     url:'/order/detail',
     method:'POST',
-    params
+    params,
   })
 }

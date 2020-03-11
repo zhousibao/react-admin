@@ -9,15 +9,15 @@ export default class Header extends Component {
     super(props)
     this.state = {
       date:'',
-      useName:'超级管理员'
+      useName:'超级管理员',
     }
   }
   componentDidMount(){
     this.timerId = setInterval(() => {
       this.setState({
-        date:formatDate(new Date())
+        date:formatDate(new Date()),
       })
-    },1000)
+    }, 1000)
 
   }
   componentWillUnmount(){

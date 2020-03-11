@@ -10,7 +10,7 @@ const initialValues = {
   mode:undefined,
   op_mode:undefined,
   auth_status:undefined,
-  search:undefined
+  search:undefined,
 }
 export default class CityList extends Component {
   constructor(props){
@@ -18,18 +18,18 @@ export default class CityList extends Component {
 
     this.state = {
       form:{
-        ...initialValues
+        ...initialValues,
       },
 
       pagination:{
         pageNum:1,
         pageSize:10,
-        total:0
+        total:0,
       },
       cityList:[],
       loading:false,
 
-      visible:false
+      visible:false,
     }
 
   }
@@ -39,22 +39,22 @@ export default class CityList extends Component {
   }
   getCityList = () => {
     this.setState({
-      loading:true
+      loading:true,
     })
     const data = {
       ...this.state.pagination,
-      ...this.state.form
+      ...this.state.form,
     }
     cityList(data).then(res => {
       if(res.code === '0'){
         this.setState({
           cityList:res.data.list,
-          pagination:{ ...this.state.pagination, total:res.data.total}
+          pagination:{ ...this.state.pagination, total:res.data.total},
         })
       }
     }).finally(() => {
       this.setState({
-        loading:false
+        loading:false,
       })
     })
   }
@@ -62,26 +62,26 @@ export default class CityList extends Component {
   searchList = (data) => {
     this.setState({
       form:{...data},
-      pagination:{...this.state.pagination,pageNum:1}
+      pagination:{...this.state.pagination, pageNum:1},
     })
     this.getCityList()
   }
   
-  changePage = (pageNum,pageSize) => {
-    this.setState((state,props) => {
-      return {pagination: {...state.pagination,pageNum,pageSize}};
+  changePage = (pageNum, pageSize) => {
+    this.setState((state, props) => {
+      return {pagination: {...state.pagination, pageNum, pageSize}};
     }, () => this.getCityList());
   }
 
   openCityModal = () => {
     this.setState({
-      visible:true
+      visible:true,
     })
   }
 
   closeCityModal = (type) => {
     this.setState({
-      visible:false
+      visible:false,
     })
 
     type && this.getCityList()

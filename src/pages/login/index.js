@@ -10,7 +10,7 @@ export default class Login extends Component {
     login(values).then(res => {
       if(res.code === '0'){
         message.success(res.message)
-        console.log('token:',res.data.token)
+        console.log('token:', res.data.token)
         this.props.history.push('/admin/home')
       }
     })
@@ -33,7 +33,7 @@ export default class Login extends Component {
             className="form-con"
             size="large"
             initialValues={{
-              remember:true
+              remember:true,
             }}
             onFinish={this.onFinish}
           >
@@ -42,8 +42,8 @@ export default class Login extends Component {
               rules={[
                 {
                   required: true,
-                  message: '请输入用户名!'
-                }
+                  message: '请输入用户名!',
+                },
               ]}
             >
               <Input prefix={<UserOutlined/>} placeholder="请输入用户名"/>
@@ -53,12 +53,12 @@ export default class Login extends Component {
               rules={[
                 {
                   required: true,
-                  message: '请输入密码!'
+                  message: '请输入密码!',
                 },
                 {
                   len:6,
-                  message: '请输入6位数密码'
-                }
+                  message: '请输入6位数密码',
+                },
               ]}
             >
               <Input.Password 

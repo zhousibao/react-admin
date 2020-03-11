@@ -3,7 +3,7 @@ import { Modal, Form, Input, Radio, message} from 'antd'
 import { createRoles } from '../api'
 import emitter from '@/utils/eventBus';
 
-export default function CreateRoles({visible,callback}) {
+export default function CreateRoles({visible, callback}) {
   const [form] = Form.useForm();
 
 
@@ -32,11 +32,11 @@ export default function CreateRoles({visible,callback}) {
 
   const layout = {
     labelCol: {
-      span: 6
+      span: 6,
     },
     wrapperCol: {
-      span: 14
-    }
+      span: 14,
+    },
   };
   
 
@@ -57,7 +57,7 @@ export default function CreateRoles({visible,callback}) {
           form={form} 
           initialValues={{
             name:undefined,
-            status:1
+            status:1,
           }}
         >
           <Form.Item
@@ -66,8 +66,8 @@ export default function CreateRoles({visible,callback}) {
             rules={[
               {
                 required: true,
-                message: '请输入角色名称!'
-              }
+                message: '请输入角色名称!',
+              },
             ]}
           >
             <Input placeholder="请输入角色名称"/>

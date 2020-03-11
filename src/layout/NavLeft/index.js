@@ -6,10 +6,10 @@ import {NavLink} from 'react-router-dom'
 import './index.less'
 
 @connect(
-  null,
+  state => ({app:state.app}),
   {
-    changeMenuTitle:(title) => ({type:'changeMenuTitle', payload:title})
-  }
+    changeMenuTitle:(title) => ({type:'changeMenuTitle', payload:title}),
+  },
 )
 class NavLeft extends PureComponent {
   constructor(props){
@@ -17,8 +17,9 @@ class NavLeft extends PureComponent {
     
     this.state = {
       openKeys:[],
-      defaultSelectedKeys:[window.location.hash.replace(/#|\?.*$/g,'')]
+      defaultSelectedKeys:[window.location.hash.replace(/#|\?.*$/g, '')],
     }
+    
   }
   
 
@@ -44,12 +45,12 @@ class NavLeft extends PureComponent {
   onOpenChange = (openKeys) => {
     if(!openKeys.length){
       this.setState({
-        openKeys:[]
+        openKeys:[],
       })
     } else{
       const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
       this.setState({
-        openKeys:[latestOpenKey]
+        openKeys:[latestOpenKey],
       })
     }
   }
@@ -64,17 +65,19 @@ class NavLeft extends PureComponent {
     const menuTreeNode = menuConfig
     return (
       <div>
-        <div className="logo">
+        {/* <div className="logo">
           <img src="/assets/logo-ant.svg" alt="logo"/>
           <p>管理后台系统</p>
-        </div>
+        </div> */}
         <Menu
+          inlineCollapsed={this.props.app.collapsed}
           defaultSelectedKeys={this.state.defaultSelectedKeys}
           mode="inline"
           theme="dark"
           openKeys={this.state.openKeys}
           onOpenChange={this.onOpenChange}
           onSelect={this.onSelect}
+          className="menu"
         >
           {this.renderMenu(menuTreeNode)}
         </Menu>

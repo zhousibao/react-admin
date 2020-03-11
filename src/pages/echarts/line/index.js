@@ -15,90 +15,90 @@ import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
 
 // 注册主题
-echarts.registerTheme('theme',theme)
+echarts.registerTheme('theme', theme)
 
 
 export default class Pie extends Component {
   getOption = () => ({
     title: {
       text: '用户骑行订单',
-      x: 'center'
+      x: 'center',
     }, 
     tooltip: {
-      trigger : 'axis'
+      trigger : 'axis',
     },
     xAxis:{
-      data:['周一','周二','周三','周四','周五','周六','周日']
+      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     yAxis:{
-      type:'value'
+      type:'value',
     },
     series: [
       {
         name : '订单量',
         type : 'line',
-        data:[1000,1000,2000,1500,3000,2000,1200]
-      }
-    ]
+        data:[1000, 1000, 2000, 1500, 3000, 2000, 1200],
+      },
+    ],
   })
 
   getOption2 = () => ({
     title: {
-      text: '用户骑行订单'
+      text: '用户骑行订单',
     }, 
     tooltip: {
-      trigger : 'axis'
+      trigger : 'axis',
     },
     legend:{
-      data:['OFO订单量','摩拜订单量']
+      data:['OFO订单量', '摩拜订单量'],
     },
     xAxis:{
       type: 'category',
       
-      data:['周一','周二','周三','周四','周五','周六','周日']
+      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     yAxis:{
-      type:'value'
+      type:'value',
     },
     series: [
       {
         name : 'OFO订单量',
         type : 'line',
-        data:[1000,1000,2000,1500,3000,2000,1200]
+        data:[1000, 1000, 2000, 1500, 3000, 2000, 1200],
       },
       {
         name: '摩拜订单量',
         type: 'line',
-        data: [1000,2000,5500,6000,8000,10000,12000]
-      }
-    ]
+        data: [1000, 2000, 5500, 6000, 8000, 10000, 12000],
+      },
+    ],
   })
 
 
   getOption3 = () => ({
     title: {
       text: '用户骑行订单',
-      x: 'center'
+      x: 'center',
     }, 
     tooltip: {
-      trigger : 'axis'
+      trigger : 'axis',
     },
     xAxis:{
       type: 'category',
       boundaryGap: false,
-      data:['周一','周二','周三','周四','周五','周六','周日']
+      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     yAxis:{
-      type:'value'
+      type:'value',
     },
     series: [
       {
         name : '订单量',
         type : 'line',
         areaStyle: {},
-        data:[1000,1000,2000,1500,3000,2000,1200]
-      }
-    ]
+        data:[1000, 1000, 2000, 1500, 3000, 2000, 1200],
+      },
+    ],
   })
 
   render() {

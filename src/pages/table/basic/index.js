@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Card,Table,Tag,Button,Popover,Modal,message} from 'antd'
+import {Card, Table, Tag, Button, Popover, Modal, message} from 'antd'
 import {RightOutlined} from '@ant-design/icons'
 import {tableList} from '../api'
 
@@ -8,7 +8,7 @@ export default class Basic extends Component{
     super(props)
 
     this.state = {
-      loading:false
+      loading:false,
     }
   }
 
@@ -18,18 +18,18 @@ export default class Basic extends Component{
 
   getTableList = () => {
     this.setState({
-      loading:true
+      loading:true,
     })
     tableList().then(res => {
       if(res.code === '0'){
         this.setState({
           loading:false,
-          dataSource:res.data.list
+          dataSource:res.data.list,
         })
       }
     }).catch(err => {
       this.setState({
-        loading:false
+        loading:false,
       })
     })
   }
@@ -43,7 +43,7 @@ export default class Basic extends Component{
       },
       onOk:() => {
         message.success('删除成功')
-      }
+      },
     })
   }
 
@@ -55,20 +55,20 @@ export default class Basic extends Component{
         dataIndex: 'name',
         align:'center',
         width:100,
-        fixed:'left'
+        fixed:'left',
       },
       {
         title: '年龄',
         dataIndex: 'age',
         align:'center',
-        width: 80
+        width: 80,
       },
       {
         title: '性别',
         dataIndex: 'sex',
         align:'center',
         width: 80,
-        render: sex => sex === 1 ? '男':'女'
+        render: sex => sex === 1 ? '男':'女',
       },
       {
         title: '爱好',
@@ -90,7 +90,7 @@ export default class Basic extends Component{
               <Button>{likeList[0]} <RightOutlined/></Button>
             </Popover>
           )
-        }
+        },
       },
       {
         title: '状态',
@@ -103,7 +103,7 @@ export default class Basic extends Component{
             2:'咸鱼一条',
             3:'技术大佬',
             4:'创业者',
-            5:'已修仙'
+            5:'已修仙',
           }
 
           if(state === 1 || state === 2){
@@ -126,23 +126,23 @@ export default class Basic extends Component{
               {stateList[state]}
             </Tag>
           )
-        }
+        },
       },
       {
         title: '住址',
         dataIndex: 'address',
-        width: 300
+        width: 300,
 
       },
       {
         title: '网址',
         dataIndex: 'url',
-        width: 200
+        width: 200,
       },
       {
         title:'邮箱',
         dataIndex:'email',
-        width: 200
+        width: 200,
       },
       {
         title: '操作',
@@ -150,8 +150,8 @@ export default class Basic extends Component{
         fixed:'right',
         render: (item) => (
           <Button type="danger" size="small" onClick={() => this.delete(item)}>删除</Button>
-        )
-      }
+        ),
+      },
     ];
 
     return (
@@ -165,7 +165,7 @@ export default class Basic extends Component{
             loading={this.state.loading}
             scroll={{
               x:true,
-              y:500
+              y:500,
             }}
           />
         </Card>

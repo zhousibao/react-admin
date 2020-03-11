@@ -14,7 +14,7 @@ import app from './modules/app'
 // const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-  app
+  app,
 });
 const store = createStore(rootReducer,applyMiddleware(logger))
 // const store = createStore(rootReducer,applyMiddleware(logger,thunk,sagaMiddleware))

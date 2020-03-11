@@ -4,7 +4,7 @@ import { SearchOutlined } from '@ant-design/icons'
 import moment from 'moment'
 const { Option } = Select
 
-export default function SearchForm({callback,...rest}){
+export default function SearchForm({callback, ...rest}){
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -19,7 +19,7 @@ export default function SearchForm({callback,...rest}){
       form={form} 
       layout="inline"
       initialValues={{
-        ...rest
+        ...rest,
       }}
       onFinish={onFinish}
     >
@@ -40,7 +40,7 @@ export default function SearchForm({callback,...rest}){
           format="YYYY-MM-DD HH:mm:ss"
           showTime={{
             disabled: true,
-            defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('23:59:59', 'HH:mm:ss')]
+            defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('23:59:59', 'HH:mm:ss')],
           }}
         />
       </Form.Item>

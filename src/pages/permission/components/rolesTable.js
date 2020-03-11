@@ -5,9 +5,9 @@ import { formatDate } from '@/utils'
 import emitter from '@/utils/eventBus';
 
 export default function RolesTable({callback}){
-  const [list,setList] = useState([])
-  const [loading,setLoading] = useState(false)
-  const [selectedRowKeys,setSelectedRowKeys] = useState([])
+  const [list, setList] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [selectedRowKeys, setSelectedRowKeys] = useState([])
   
   useEffect(() => {
     getRolesList()
@@ -16,11 +16,11 @@ export default function RolesTable({callback}){
     });
 
     return () => {
-      emitter.removeListener(eventEmitter,() => {
+      emitter.removeListener(eventEmitter, () => {
         console.log('移除事件监听')
       });
     } 
-  },[])
+  }, [])
 
   
   const getRolesList = () => {
@@ -43,37 +43,37 @@ export default function RolesTable({callback}){
     onSelect: (item) => {
       callback(item.id, item.role_name)
       setSelectedRowKeys([item.key])
-    }
+    },
   };
 
   const columns = [
     {
       title: '角色ID',
-      dataIndex: 'id'
+      dataIndex: 'id',
     }, 
     {
       title: '角色名称',
-      dataIndex: 'role_name'
+      dataIndex: 'role_name',
     },
     {
       title: '创建时间',
       dataIndex: 'create_time',
-      render: create_time => formatDate(create_time)
+      render: create_time => formatDate(create_time),
     }, 
     {
       title: '使用状态',
       dataIndex: 'status',
-      render: status => status === 1 ? "启用":"关闭" 
+      render: status => status === 1 ? "启用":"关闭", 
     }, 
     {
       title: '授权时间',
       dataIndex: 'authorize_time',
-      render: authorize_time => formatDate(authorize_time)
+      render: authorize_time => formatDate(authorize_time),
     }, 
     {
       title: '授权人',
-      dataIndex: 'authorize_user_name'
-    }
+      dataIndex: 'authorize_user_name',
+    },
   ];
 
     
@@ -83,7 +83,7 @@ export default function RolesTable({callback}){
       bordered
       scroll={{
         x:true,
-        y:400
+        y:400,
       }}
       columns={columns}
       dataSource={list}

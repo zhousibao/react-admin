@@ -16,12 +16,12 @@ export default class Tab extends React.Component {
         title: 'Tab 3',
         content: 'Content of Tab 3',
         key: '3',
-        closable: false
-      }
+        closable: false,
+      },
     ];
     this.state = {
       activeKey: panes[0].key,
-      panes
+      panes,
     };
   }
 

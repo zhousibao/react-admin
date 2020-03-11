@@ -15,24 +15,24 @@ import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
 
 // 注册主题
-echarts.registerTheme('themeLight',themeLight)
+echarts.registerTheme('themeLight', themeLight)
 
 
 export default class Pie extends Component {
   getOption = () => ({
     title: {
       text: '用户骑行订单',
-      x: 'center'
+      x: 'center',
     },
     legend : {
       orient: 'vertical',
       right: 10,
       top: 20,
-      data: ['周一','周二','周三','周四','周五','周六','周日']
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     tooltip: {
       trigger : 'item',
-      formatter : "{a} <br/>{b} : {c} ({d}%)"
+      formatter : "{a} <br/>{b} : {c} ({d}%)",
     },
     series: [
       {
@@ -40,63 +40,63 @@ export default class Pie extends Component {
         type : 'pie',
         radius : '65%',
         center : [
-          '50%', '55%'
+          '50%', '55%',
         ],
         data:[
           {
             value:1000,
-            name:'周一'
+            name:'周一',
           },
           {
             value: 1000,
-            name: '周二'
+            name: '周二',
           },
           {
             value: 2000,
-            name: '周三'
+            name: '周三',
           },
           {
             value: 1500,
-            name: '周四'
+            name: '周四',
           },
           {
             value: 3000,
-            name: '周五'
+            name: '周五',
           },
           {
             value: 2000,
-            name: '周六'
+            name: '周六',
           },
           {
             value: 1200,
-            name: '周日'
-          }
+            name: '周日',
+          },
         ],
         itemStyle : {
           emphasis: {
             shadowBlur: 10,
             shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        }
-      }
-    ]
+            shadowColor: 'rgba(0, 0, 0, 0.5)',
+          },
+        },
+      },
+    ],
   })
 
   getOption2 = () => ({
     title: {
       text: '用户骑行订单',
-      x: 'center'
+      x: 'center',
     },
     legend : {
       orient: 'vertical',
       right: 10,
       top: 20,
-      data: ['周一','周二','周三','周四','周五','周六','周日']
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     tooltip: {
       trigger : 'item',
-      formatter : "{a} <br/>{b} : {c} ({d}%)"
+      formatter : "{a} <br/>{b} : {c} ({d}%)",
     },
     series: [
       {
@@ -104,64 +104,64 @@ export default class Pie extends Component {
         type : 'pie',
         radius: ['50%', '80%'],
         center : [
-          '50%', '55%'
+          '50%', '55%',
         ],
         data:[
           {
             value:1000,
-            name:'周一'
+            name:'周一',
           },
           {
             value: 1000,
-            name: '周二'
+            name: '周二',
           },
           {
             value: 2000,
-            name: '周三'
+            name: '周三',
           },
           {
             value: 1500,
-            name: '周四'
+            name: '周四',
           },
           {
             value: 3000,
-            name: '周五'
+            name: '周五',
           },
           {
             value: 2000,
-            name: '周六'
+            name: '周六',
           },
           {
             value: 1200,
-            name: '周日'
-          }
+            name: '周日',
+          },
         ],
         itemStyle : {
           emphasis: {
             shadowBlur: 10,
             shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        }
-      }
-    ]
+            shadowColor: 'rgba(0, 0, 0, 0.5)',
+          },
+        },
+      },
+    ],
   })
 
 
   getOption3 = () => ({
     title: {
       text: '用户骑行订单',
-      x: 'center'
+      x: 'center',
     },
     legend : {
       orient: 'vertical',
       right: 10,
       top: 20,
-      data: ['周一','周二','周三','周四','周五','周六','周日']
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     tooltip: {
       trigger : 'item',
-      formatter : "{a} <br/>{b} : {c} ({d}%)"
+      formatter : "{a} <br/>{b} : {c} ({d}%)",
     },
     series: [
       {
@@ -169,46 +169,46 @@ export default class Pie extends Component {
         type : 'pie',
         radius : '80%',
         center : [
-          '50%', '55%'
+          '50%', '55%',
         ],
         data:[
           {
             value:1000,
-            name:'周一'
+            name:'周一',
           },
           {
             value: 1000,
-            name: '周二'
+            name: '周二',
           },
           {
             value: 2000,
-            name: '周三'
+            name: '周三',
           },
           {
             value: 1500,
-            name: '周四'
+            name: '周四',
           },
           {
             value: 3000,
-            name: '周五'
+            name: '周五',
           },
           {
             value: 2000,
-            name: '周六'
+            name: '周六',
           },
           {
             value: 1200,
-            name: '周日'
-          }
+            name: '周日',
+          },
         ].sort(function (a, b) { return a.value - b.value; }),
         roseType: 'radius',
         animationType: 'scale',
         animationEasing: 'elasticOut',
         animationDelay: function (idx) {
           return Math.random() * 200;
-        }
-      }
-    ]
+        },
+      },
+    ],
   })
 
   render() {

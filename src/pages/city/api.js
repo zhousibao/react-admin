@@ -16,7 +16,7 @@ export function cityList(data){
   return Axios.ajax({
     url:'/city/list',
     method:'POST',
-    data
+    data,
   })
 }
 
@@ -25,6 +25,6 @@ export function addCity(data){
   return Axios.ajax({
     url:'/city/add',
     method:'POST',
-    data
+    data,
   })
 }

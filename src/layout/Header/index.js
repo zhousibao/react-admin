@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './index.less'
 import { Button } from 'antd'
-import { LogoutOutlined } from '@ant-design/icons';
+import { MenuUnfoldOutlined, MenuFoldOutlined, LogoutOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
 import Axios from '@/utils/axios'
 
 @connect(
-  state => ({app:state.app})
+  state => ({app:state.app}),
+  {
+    toggleCollapsed:() => ({type:'toggleCollapsed'}),
+  },
 )
 class Header extends Component {
   constructor(props){
@@ -16,15 +19,16 @@ class Header extends Component {
       date:'',
       weather:'',
       weatherPicUrl:'',
-      useName:'超级管理员'
+      useName:'超级管理员',
     }
+
   }
   componentDidMount(){
     this.timerId = setInterval(() => {
       this.setState({
-        date:formatDate(new Date())
+        date:formatDate(new Date()),
       })
-    },1000)
+    }, 1000)
 
     this.getWeather()
   }
@@ -35,22 +39,32 @@ class Header extends Component {
   getWeather(){
     const city = '北京';
     Axios.jsonp({
-      url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2'
+      url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
     }).then((res)=>{
       if(res.status ==='success'){
         let data = res.results[0].weather_data[0];
         this.setState({
           weather:data.weather,
-          weatherPicUrl:data.dayPictureUrl
+          weatherPicUrl:data.dayPictureUrl,
         })
       }
     })
   }
+  toggleCollapsed = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  };
   render() {
     return (
       <div className="header">
         <div className="left">
-          {this.props.app.menuTitle}
+          <Button type="primary" onClick={this.props.toggleCollapsed} style={{ marginBottom: 16 }}>
+            {
+              this.props.app.collapsed ? (<MenuUnfoldOutlined/>) : (<MenuFoldOutlined/>)
+            }
+          </Button>
+          {/* {this.props.app.menuTitle} */}
         </div>
         <div className="right">
           <div className="date">{this.state.date}</div>

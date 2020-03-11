@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button,Card,Modal} from 'antd'
+import {Button, Card, Modal} from 'antd'
 import {Editor} from 'react-draft-wysiwyg'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import draftjs from 'draftjs-to-html'
@@ -11,7 +11,7 @@ export default class RichText extends React.Component{
     this.state = {
       showModal:false, // 是否显示模态框
       editorContent: '', // 文本内容
-      editorState:''  // 编辑器状态
+      editorState:'',  // 编辑器状态
     }
   }
 
@@ -19,23 +19,23 @@ export default class RichText extends React.Component{
   // 清空
   handleClearContent = ()=>{
     this.setState({
-      editorState:''
+      editorState:'',
     })
   }
 
   handleGetText = ()=>{
     this.setState({
-      showModal:true
+      showModal:true,
     })
   }
   onEditorChange = (editorContent) => {
     this.setState({
-      editorContent
+      editorContent,
     });
   };
   onEditorStateChange = (editorState) => {
     this.setState({
-      editorState
+      editorState,
     });
   };
 
@@ -62,7 +62,7 @@ export default class RichText extends React.Component{
           visible={showModal}
           onCancel={()=>{
             this.setState({
-              showModal:false
+              showModal:false,
             })
           }}
           footer={null}

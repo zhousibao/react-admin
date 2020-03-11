@@ -17,9 +17,9 @@ import './index.less'
     AsyncChangeMenuTitle:(title) => dispatch => {
       setTimeout(() => {
         dispatch({type:'changeMenuTitle', payload:title})
-      },1000)
-    }
-  }
+      }, 1000)
+    },
+  },
   // 完整写法
   // dispatch => ({
   //   add:() => dispatch({type:'add'}),

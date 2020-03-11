@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import {Card , Table } from 'antd'
+import {Card, Table } from 'antd'
 import { tableList } from '../api'
 
 export default function Selection(){
 
-  const [list,setList] = useState([])
-  const [selectedRowKeys,setSelectedRowKeys] = useState([1])
+  const [list, setList] = useState([])
+  const [selectedRowKeys, setSelectedRowKeys] = useState([1])
 
   useEffect(() => {
     tableList().then(res => {
@@ -13,43 +13,43 @@ export default function Selection(){
         setList(res.data.list)
       }
     })
-  },[])
+  }, [])
 
 
   const columns = [
     {
       title: '姓名',
       dataIndex: 'name',
-      align:'center'
+      align:'center',
     },
     {
       title: '年龄',
-      dataIndex: 'age'
+      dataIndex: 'age',
     },
     {
       title: '性别',
       dataIndex: 'sex',
-      render: sex => sex === 1 ? '男':'女'
-    }
+      render: sex => sex === 1 ? '男':'女',
+    },
   ]
 
   const pagination = {
     pageSize:5,
-    showTotal: total => `共 ${total} 条`
+    showTotal: total => `共 ${total} 条`,
   }
 
   const rowSelection = {
     type: 'radio',
     onSelect: (item) => {
-      console.log('选择项:',item);
-    }
+      console.log('选择项:', item);
+    },
   };
 
   const rowSelection1 = {
     type: 'checkbox',
     selectedRowKeys,
     onChange: (selectedRowKeys, selectedRows) => {
-      console.log('共选择:',selectedRows);
+      console.log('共选择:', selectedRows);
     },
     onSelectAll: (selected, selectedRows) => {
       const arr = []
@@ -59,7 +59,7 @@ export default function Selection(){
         })
       }
       setSelectedRowKeys(arr)
-    }
+    },
   };
 
   const onRow = (item) => ({
@@ -68,9 +68,9 @@ export default function Selection(){
         const arr = selectedRowKeys.filter(i => i !== item.key)
         setSelectedRowKeys(arr)
       } else {
-        setSelectedRowKeys([...selectedRowKeys,item.key])
+        setSelectedRowKeys([...selectedRowKeys, item.key])
       }
-    }
+    },
   })
   
   return (

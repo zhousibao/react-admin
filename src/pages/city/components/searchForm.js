@@ -3,7 +3,7 @@ import {Form, Input, Select, Button} from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 const { Option } = Select
 
-export default function SearchForm({callback,...rest}){
+export default function SearchForm({callback, ...rest}){
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -18,7 +18,7 @@ export default function SearchForm({callback,...rest}){
       form={form} 
       layout="inline"
       initialValues={{
-        ...rest
+        ...rest,
       }}
       onFinish={onFinish}
     >

@@ -16,7 +16,7 @@ export function rolesList(data){
   return Axios.ajax({
     url:'/permission/rolesList',
     method:'POST',
-    data
+    data,
   })
 }
 
@@ -25,7 +25,7 @@ export function createRoles(data){
   return Axios.ajax({
     url:'/permission/createRoles',
     method:'POST',
-    data
+    data,
   })
 }
 
@@ -34,7 +34,7 @@ export function permissionDo(data){
   return Axios.ajax({
     url:'/permission/do',
     method:'POST',
-    data
+    data,
   })
 }
 
@@ -43,7 +43,7 @@ export function rolesDetail(data){
   return Axios.ajax({
     url:'/permission/rolesDetail',
     method:'POST',
-    data
+    data,
   })
 }
 

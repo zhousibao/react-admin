@@ -14,27 +14,27 @@ import {
   Select,
   Switch,
   DatePicker,
-  Upload
+  Upload,
 } from 'antd'
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 
 
 export default function Register() {
-  const hobbyList = ['篮球','游泳','泡妹子','打游戏','看书','聊天','睡觉']
+  const hobbyList = ['篮球', '游泳', '泡妹子', '打游戏', '看书', '聊天', '睡觉']
   const layout = {
     labelCol: {
-      span: 8
+      span: 8,
     },
     wrapperCol: {
-      span: 12
-    }
+      span: 12,
+    },
   };
   const tailLayout = {
     wrapperCol: {
       offset: 8,
-      span: 12
-    }
+      span: 12,
+    },
   };
 
   
@@ -70,12 +70,12 @@ export default function Register() {
             sex:1,
             age:20,
             state:1,
-            like:['篮球','打游戏'],
+            like:['篮球', '打游戏'],
             marry:false,
             birthday:moment('2008-08-08', 'YYYY-MM-DD'),
             workTime:[],
             address:'',
-            agree:true
+            agree:true,
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -86,8 +86,8 @@ export default function Register() {
             rules={[
               {
                 required: true,
-                message: '请输入用户名!'
-              }
+                message: '请输入用户名!',
+              },
             ]}
           >
             <Input placeholder="请输入用户名"/>
@@ -98,12 +98,12 @@ export default function Register() {
             rules={[
               {
                 required: true,
-                message: '请输入密码!'
+                message: '请输入密码!',
               },
               {
                 len:6,
-                message: '请输入6位数密码'
-              }
+                message: '请输入6位数密码',
+              },
             ]}
           >
             <Input.Password 
@@ -118,8 +118,8 @@ export default function Register() {
             rules={[
               {
                 required: true,
-                message: '请选择性别!'
-              }
+                message: '请选择性别!',
+              },
             ]}
           >
             <Radio.Group>
@@ -154,7 +154,7 @@ export default function Register() {
             <Select mode="multiple">
               {
                 hobbyList.map(item => 
-                  <Option value={item} key={item}>{item}</Option>
+                  <Option value={item} key={item}>{item}</Option>,
                 )
               }
             </Select>

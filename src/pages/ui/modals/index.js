@@ -7,24 +7,24 @@ export default class Modals extends Component {
     super(props)
 
     this.state = {
-      visible:false
+      visible:false,
     }
   }
   open = () => {
     this.setState({
-      visible:true
+      visible:true,
     })
   }
   close = () => {
     console.log('取消')
     this.setState({
-      visible:false
+      visible:false,
     })
   }
   ok = () => {
     console.log('确认')
     this.setState({
-      visible:false
+      visible:false,
     })
   }
 
@@ -37,7 +37,7 @@ export default class Modals extends Component {
       },
       onCancel(){
         console.log('Cancel')
-      }
+      },
     })
   }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Card, Button,Radio} from 'antd'
-import {PlusOutlined, MinusOutlined,DownloadOutlined} from '@ant-design/icons'
+import {Card, Button, Radio} from 'antd'
+import {PlusOutlined, MinusOutlined, DownloadOutlined} from '@ant-design/icons'
 
 import './index.less'
 export default class Buttons extends Component {

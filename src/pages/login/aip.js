@@ -16,6 +16,6 @@ export function login(data){
   return Axios.ajax({
     url:'/login',
     method:'POST',
-    data
+    data,
   })
 }

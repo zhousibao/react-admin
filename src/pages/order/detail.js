@@ -8,7 +8,7 @@ export default class Detail extends Component {
     super(props)
 
     this.state ={
-      info:{}
+      info:{},
     }
   }
   componentDidMount(){
@@ -16,12 +16,12 @@ export default class Detail extends Component {
   }
   getDetail = () => {
     const params = {
-      id:this.props.match.params.id
+      id:this.props.match.params.id,
     }
     orderDetail(params).then(res => {
       if(res.code === '0'){
         this.setState({
-          info:res.data
+          info:res.data,
         })
         this.renderMap(res.data)
       }
@@ -31,7 +31,7 @@ export default class Detail extends Component {
   // 地图
   renderMap = (result)=>{
     this.map = new window.BMap.Map('mapCon');
-    this.map.centerAndZoom('北京',11);
+    this.map.centerAndZoom('北京', 11);
     // 添加地图控件
     this.addMapControl();
     // 调用路线图绘制方法
@@ -54,10 +54,10 @@ export default class Detail extends Component {
     if (positionList.length>0){
       let first = positionList[0];
       let last = positionList[positionList.length-1];
-      startPoint = new window.BMap.Point(first.lon,first.lat);
-      let startIcon = new window.BMap.Icon('/assets/start_point.png',new window.BMap.Size(36,42),{
-        imageSize:new window.BMap.Size(36,42),
-        anchor: new window.BMap.Size(18, 42)
+      startPoint = new window.BMap.Point(first.lon, first.lat);
+      let startIcon = new window.BMap.Icon('/assets/start_point.png', new window.BMap.Size(36, 42), {
+        imageSize:new window.BMap.Size(36, 42),
+        anchor: new window.BMap.Size(18, 42),
       })
 
       let startMarker = new window.BMap.Marker(startPoint, { icon: startIcon});
@@ -66,7 +66,7 @@ export default class Detail extends Component {
       endPoint = new window.BMap.Point(last.lon, last.lat);
       let endIcon = new window.BMap.Icon('/assets/end_point.png', new window.BMap.Size(36, 42), {
         imageSize: new window.BMap.Size(36, 42),
-        anchor: new window.BMap.Size(18, 42)
+        anchor: new window.BMap.Size(18, 42),
       })
       let endMarker = new window.BMap.Marker(endPoint, { icon: endIcon });
       this.map.addOverlay(endMarker);
@@ -78,10 +78,10 @@ export default class Detail extends Component {
         trackPoint.push(new window.BMap.Point(point.lon, point.lat));
       }
 
-      let polyline = new window.BMap.Polyline(trackPoint,{
+      let polyline = new window.BMap.Polyline(trackPoint, {
         strokeColor:'#1869AD',
         strokeWeight:3,
-        strokeOpacity:1
+        strokeOpacity:1,
       })
       this.map.addOverlay(polyline);
       this.map.centerAndZoom(endPoint, 11);
@@ -103,7 +103,7 @@ export default class Detail extends Component {
       strokeWeight: 4,
       strokeOpacity: 1,
       fillColor: '#ff8605',
-      fillOpacity:0.4
+      fillOpacity:0.4,
     })
     this.map.addOverlay(polygon);
   }

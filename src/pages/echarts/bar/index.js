@@ -15,66 +15,66 @@ import 'echarts/lib/component/legend';
 import 'echarts/lib/component/markPoint';
 
 // 注册主题
-echarts.registerTheme('echartsTheme',echartsTheme)
+echarts.registerTheme('echartsTheme', echartsTheme)
 
 
 export default class Bar extends Component {
   getOption = () => ({
     title:{
-      text:'用户骑行订单'
+      text:'用户骑行订单',
     },
     tooltip : {
-      trigger: 'axis'
+      trigger: 'axis',
     },
     xAxis:{
       type: 'category',
-      data:['周一','周二','周三','周四','周五','周六','周日']
+      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     yAxis:{
-      type:'value'
+      type:'value',
     },
     series:[
       {
         name:'订单量',
         type:'bar',
-        data:[1000,2000,2500,3000,2000,1000,1500]
-      }
-    ]
+        data:[1000, 2000, 2500, 3000, 2000, 1000, 1500],
+      },
+    ],
   })
 
   getOption2 = () => ({
     title: {
-      text: '用户骑行订单'
+      text: '用户骑行订单',
     },
     tooltip : {
-      trigger: 'axis'
+      trigger: 'axis',
     },
     legend:{
-      data:['OFO','摩拜','小蓝']
+      data:['OFO', '摩拜', '小蓝'],
     },
     xAxis: {
-      data:['周一','周二','周三','周四','周五','周六','周日']
+      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
     },
     series: [
       {
         name: 'OFO',
         type: 'bar',
-        data: [2000,3000,5500,7000,8000,12000,20000]
+        data: [2000, 3000, 5500, 7000, 8000, 12000, 20000],
       },
       {
         name: '摩拜',
         type: 'bar',
-        data: [1500,3000,4500,6000,8000,10000,15000]
+        data: [1500, 3000, 4500, 6000, 8000, 10000, 15000],
       },
       {
         name: '小蓝',
         type: 'bar',
-        data: [1000,2000,2500,4000,6000,7000,8000]
-      }
-    ]
+        data: [1000, 2000, 2500, 4000, 6000, 7000, 8000],
+      },
+    ],
   })
 
   render() {

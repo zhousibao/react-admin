@@ -11,7 +11,7 @@ export default class Permission extends Component {
     this.state = {
       showCreateRoles:false,
       showSetPermission:false,
-      showAuthorization:false
+      showAuthorization:false,
     }
   }
 
@@ -22,7 +22,7 @@ export default class Permission extends Component {
   openModal = (type) => {
     if(type === 'showCreateRoles'){
       this.setState({
-        [type]:true
+        [type]:true,
       })
     }else{
       if(!this.rolesId){
@@ -34,18 +34,18 @@ export default class Permission extends Component {
           },
           onCancel(){
             // console.log('Cancel')
-          }
+          },
         })
       } else {
         this.setState({
-          [type]:true
+          [type]:true,
         })
       }
     }
     
   }
   // 回调
-  chooseRole = (id,name) => {
+  chooseRole = (id, name) => {
     this.rolesId = id
     this.rolesName= name
   }
@@ -55,7 +55,7 @@ export default class Permission extends Component {
     this.setState({
       showCreateRoles:false,
       showSetPermission:false,
-      showAuthorization:false
+      showAuthorization:false,
     })
     if(type){
       this.rolesId = ''

@@ -30,9 +30,9 @@ axios.interceptors.response.use(function(response) {
 export default class Axios{
   // jsonp
   static jsonp(options){
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       JSONP(options.url, {
-        param: 'callback'
+        param: 'callback',
       }, function (err, response) {
         if (response.status === 'success') {
           resolve(response);
@@ -47,7 +47,7 @@ export default class Axios{
   static ajax({url, method = 'POST', json = true, params = '', data= ''}){
     // easyMock
     const baseURL = 'https://www.studyinghome.com/mock/5e61bd0a597ac8103c4762fd/react-admin-api'
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       axios({
         baseURL,
         url,
@@ -57,8 +57,8 @@ export default class Axios{
         data,
         timeout: 10000, // 请求超时时间
         headers: {
-          'content-type':json ? 'application/json; charset=UTF-8' : 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
+          'content-type':json ? 'application/json; charset=UTF-8' : 'application/x-www-form-urlencoded; charset=UTF-8',
+        },
       }).then(res => {
         /**
          * response格式

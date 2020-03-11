@@ -9,10 +9,10 @@ export function formatDate(val, formate = 'YYYY-MM-DD HH:mm:ss'){
 /** *
  *分页s
  */
-export function pagination({pageNum,pageSize = 10,total}, callback){
+export function pagination({pageNum, pageSize = 10, total}, callback){
   return {
-    onChange:(pageNum,pageSize)=>{
-      callback(pageNum,pageSize)
+    onChange:(pageNum, pageSize)=>{
+      callback(pageNum, pageSize)
     },
     current:pageNum,
     pageSize,
@@ -20,6 +20,6 @@ export function pagination({pageNum,pageSize = 10,total}, callback){
     showTotal:()=>{
       return `共${total}条`
     },
-    showQuickJumper:true
+    showQuickJumper:true,
   }
 }

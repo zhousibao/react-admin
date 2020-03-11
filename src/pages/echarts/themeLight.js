@@ -13,7 +13,7 @@ var colorPalette = [
   '#C6E579',
   '#F4E001',
   '#F0805A',
-  '#26C0C0'
+  '#26C0C0',
 ];
 export default {
 
@@ -22,20 +22,20 @@ export default {
   title: {
     textStyle: {
       fontWeight: 'normal',
-      color: '#27727B'
-    }
+      color: '#27727B',
+    },
   },
 
   visualMap: {
-    color: ['#C1232B', '#FCCE10']
+    color: ['#C1232B', '#FCCE10'],
   },
 
   toolbox: {
     iconStyle: {
       normal: {
-        borderColor: colorPalette[0]
-      }
-    }
+        borderColor: colorPalette[0],
+      },
+    },
   },
 
   tooltip: {
@@ -44,61 +44,61 @@ export default {
       type: 'line',
       lineStyle: {
         color: '#27727B',
-        type: 'dashed'
+        type: 'dashed',
       },
       crossStyle: {
-        color: '#27727B'
+        color: '#27727B',
       },
       shadowStyle: {
-        color: 'rgba(200,200,200,0.3)'
-      }
-    }
+        color: 'rgba(200,200,200,0.3)',
+      },
+    },
   },
 
   dataZoom: {
     dataBackgroundColor: 'rgba(181,195,52,0.3)',
     fillerColor: 'rgba(181,195,52,0.2)',
-    handleColor: '#27727B'
+    handleColor: '#27727B',
   },
 
   categoryAxis: {
     axisLine: {
       lineStyle: {
-        color: '#27727B'
-      }
+        color: '#27727B',
+      },
     },
     splitLine: {
-      show: false
-    }
+      show: false,
+    },
   },
 
   valueAxis: {
     axisLine: {
-      show: false
+      show: false,
     },
     splitArea: {
-      show: false
+      show: false,
     },
     splitLine: {
       lineStyle: {
         color: ['#ccc'],
-        type: 'dashed'
-      }
-    }
+        type: 'dashed',
+      },
+    },
   },
 
   timeline: {
     lineStyle: {
-      color: '#27727B'
+      color: '#27727B',
     },
     controlStyle: {
       normal: {
         color: '#27727B',
-        borderColor: '#27727B'
-      }
+        borderColor: '#27727B',
+      },
     },
     symbol: 'emptyCircle',
-    symbolSize: 3
+    symbolSize: 3,
   },
 
   line: {
@@ -107,15 +107,15 @@ export default {
         borderWidth: 2,
         borderColor: '#fff',
         lineStyle: {
-          width: 3
-        }
+          width: 3,
+        },
       },
       emphasis: {
-        borderWidth: 0
-      }
+        borderWidth: 0,
+      },
     },
     symbol: 'circle',
-    symbolSize: 3.5
+    symbolSize: 3.5,
   },
 
   candlestick: {
@@ -126,38 +126,38 @@ export default {
         lineStyle: {
           width: 1,
           color: '#C1232B',
-          color0: '#B5C334'
-        }
-      }
-    }
+          color0: '#B5C334',
+        },
+      },
+    },
   },
 
   graph: {
-    color: colorPalette
+    color: colorPalette,
   },
 
   map: {
     label: {
       normal: {
         textStyle: {
-          color: '#C1232B'
-        }
+          color: '#C1232B',
+        },
       },
       emphasis: {
         textStyle: {
-          color: 'rgb(100,0,0)'
-        }
-      }
+          color: 'rgb(100,0,0)',
+        },
+      },
     },
     itemStyle: {
       normal: {
         areaColor: '#ddd',
-        borderColor: '#eee'
+        borderColor: '#eee',
       },
       emphasis: {
-        areaColor: '#fe994e'
-      }
-    }
+        areaColor: '#fe994e',
+      },
+    },
   },
 
   gauge: {
@@ -165,35 +165,35 @@ export default {
       lineStyle: {
         color: [
           [
-            0.2, '#B5C334'
+            0.2, '#B5C334',
           ],
           [
-            0.8, '#27727B'
+            0.8, '#27727B',
           ],
-          [1, '#C1232B']
-        ]
-      }
+          [1, '#C1232B'],
+        ],
+      },
     },
     axisTick: {
       splitNumber: 2,
       length: 5,
       lineStyle: {
-        color: '#fff'
-      }
+        color: '#fff',
+      },
     },
     axisLabel: {
       textStyle: {
-        color: '#fff'
-      }
+        color: '#fff',
+      },
     },
     splitLine: {
       length: '5%',
       lineStyle: {
-        color: '#fff'
-      }
+        color: '#fff',
+      },
     },
     title: {
-      offsetCenter: [0, -20]
-    }
-  }
+      offsetCenter: [0, -20],
+    },
+  },
 }

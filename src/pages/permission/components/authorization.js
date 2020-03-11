@@ -4,14 +4,14 @@ import { rolesDetail, permissionDo } from '../api'
 import emitter from '@/utils/eventBus';
 
 
-export default function Authorization({visible,rolesId,rolesName,callback}) {
-  const [list,setList] = useState([])
-  const [choosed,setChoosed] = useState([])
+export default function Authorization({visible, rolesId, rolesName, callback}) {
+  const [list, setList] = useState([])
+  const [choosed, setChoosed] = useState([])
   
 
   useEffect(() => {
     getDetail()
-  },[])
+  }, [])
 
   const getDetail = () => {
     rolesDetail().then(res => {
@@ -45,7 +45,7 @@ export default function Authorization({visible,rolesId,rolesName,callback}) {
     const data = {
       ...values,
       rolesId,
-      choosed:choosed
+      choosed:choosed,
     }
     permissionDo(data).then(res => {
       if(res.code === '0'){
@@ -59,11 +59,11 @@ export default function Authorization({visible,rolesId,rolesName,callback}) {
 
   const layout = {
     labelCol: {
-      span: 6
+      span: 6,
     },
     wrapperCol: {
-      span: 14
-    }
+      span: 14,
+    },
   };
   
 
@@ -83,7 +83,7 @@ export default function Authorization({visible,rolesId,rolesName,callback}) {
           {...layout}
           form={form} 
           initialValues={{
-            rolesName:rolesName
+            rolesName:rolesName,
           }}
         >
           <Form.Item
@@ -94,7 +94,7 @@ export default function Authorization({visible,rolesId,rolesName,callback}) {
           </Form.Item>
         </Form>
         <Transfer
-          listStyle={{width: 200,height: 300}}
+          listStyle={{width: 200, height: 300}}
           dataSource={list}
           titles={['待选用户', '已选用户']}
           targetKeys={choosed}
