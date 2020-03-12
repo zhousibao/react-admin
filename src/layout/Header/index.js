@@ -23,7 +23,6 @@ class Header extends Component {
       weatherPicUrl:'',
       useName:'超级管理员',
     }
-
   }
   componentDidMount(){
     this.timerId = setInterval(() => {

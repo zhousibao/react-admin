@@ -3,7 +3,7 @@ import {Form, Input, Select, Button} from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 const { Option } = Select
 
-export default function SearchForm({callback, ...rest}){
+export default function SearchForm({callback, cityList, ...rest}){
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -26,10 +26,11 @@ export default function SearchForm({callback, ...rest}){
         name="cityId"
       >
         <Select allowClear placeholder="城市" style={{ width: 120 }}>
-          <Option value={1}>北京市</Option>
-          <Option value={2}>上海市</Option>
-          <Option value={3}>天津市</Option>
-          <Option value={4}>深圳市</Option>
+          {
+            cityList.map(item => (
+              <Option value={item.key} key={item.key}>{item.name}</Option>
+            ))
+          }
         </Select>
       </Form.Item>
       <Form.Item

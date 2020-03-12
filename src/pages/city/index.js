@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import {Card, Button} from 'antd'
 import SearchForm from './components/searchForm'
 import CityTable from './components/cityTable'
@@ -12,7 +13,16 @@ const initialValues = {
   auth_status:undefined,
   search:undefined,
 }
-export default class CityList extends Component {
+
+@connect(
+  state => ({
+    city:state.city,
+  }),
+  {
+    sagaCity:(data)=> ({type:'saga_getCityList', payload:data}),
+  },
+)
+class CityList extends Component {
   constructor(props){
     super(props)
 
@@ -35,6 +45,10 @@ export default class CityList extends Component {
   }
 
   componentDidMount(){
+    const data = {
+      age:3,
+    }
+    this.props.sagaCity(data)
     this.getCityList()
   }
   getCityList = () => {
@@ -94,6 +108,7 @@ export default class CityList extends Component {
         <Card style={{marginBottom:'10px'}}>
           <SearchForm
             {...initialValues}
+            cityList={this.props.city.cityList}
             callback={this.searchList}
           />
         </Card>
@@ -116,3 +131,4 @@ export default class CityList extends Component {
     )
   }
 }
+export default CityList

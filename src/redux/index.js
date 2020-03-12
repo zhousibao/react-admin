@@ -1,27 +1,27 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
-// import thunk from 'redux-thunk'
-// import createSagaMiddleware from "redux-saga";
-
+import createSagaMiddleware from "redux-saga";
 
 // reducer 模块  => 初始化store, 修改状态的函数
 import app from './modules/app'
-// import user from '@/components/Saga/store.js'
-// import mySaga from "@/components/Saga/sagas";
+import city from './modules/city'
 
+
+// saga 模块
+import sage from './saga'
 
 // 创建saga中间件并注册
-// const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
+
 
 const rootReducer = combineReducers({
   app,
+  city,
 });
-const store = createStore(rootReducer,applyMiddleware(logger))
-// const store = createStore(rootReducer,applyMiddleware(logger,thunk,sagaMiddleware))
+const store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleware))
 
 // 中间件运行saga 
-// sagaMiddleware.run(mySaga);
-
+sagaMiddleware.run(sage);
 export default store
 
 
