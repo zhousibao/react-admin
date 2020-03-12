@@ -1,9 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { connect } from 'react-redux'
 import {Form, Input, Select, Button} from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 const { Option } = Select
 
-export default function SearchForm({callback, cityList, ...rest}){
+const SearchForm = connect(
+  state => ({
+    city:state.city,
+  }),
+  {
+    sagaCity:(data)=> ({type:'saga_getCityList', payload:data}),
+  },
+)(({callback, city, sagaCity, ...rest}) => {
+  useEffect(() => {
+    const data = {type:'1'}
+    if(!city.cityList.length){
+      sagaCity(data)
+    }
+  }, [city.cityList.length, sagaCity])
+
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -27,7 +42,7 @@ export default function SearchForm({callback, cityList, ...rest}){
       >
         <Select allowClear placeholder="城市" style={{ width: 120 }}>
           {
-            cityList.map(item => (
+            city.cityList.map(item => (
               <Option value={item.key} key={item.key}>{item.name}</Option>
             ))
           }
@@ -71,4 +86,6 @@ export default function SearchForm({callback, cityList, ...rest}){
       </Form.Item>
     </Form>
   )
-}
+})
+
+export default SearchForm
