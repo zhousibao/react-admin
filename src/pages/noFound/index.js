@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Result, Button } from 'antd';
 import { Link } from 'react-router-dom'
-import './index.less'
-
 
 // 参数1: mapStateToProps = state => ({app:state.app})
 // 参数2: mapDispatchToProps = dispatch => { return { add: () => dispatch({type:'add'})}}
@@ -25,6 +23,8 @@ import './index.less'
   //   add:() => dispatch({type:'add'}),
   //   minus:() => dispatch({type:'minus'})
   // })
+
+  // 因为异步返回的是一个函数，而不是action对象，所以出现了saga,实现将异步也返回一个action对象。
 )
 class NoFound extends Component {
   /**
