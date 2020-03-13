@@ -1,32 +1,39 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense, lazy } from 'react'
 import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
 import App from './App';
-
 import Admin from './layout/admin'
-import Commom from './layout/common'
+import Common from './layout/common'
 import Login from './pages/login'
 import NoFound from './pages/noFound'
-import Home from './pages/home'
 
-import Buttons from './pages/ui/buttons'
-import Modals from './pages/ui/modals'
-import Tabs from './pages/ui/tabs'
-import Gallery from './pages/ui/gallery'
-import Carousel from './pages/ui/carousel'
-import FormLogin from './pages/form/login'
-import FormRegister from './pages/form/register'
-import Basic from './pages/table/basic'
-import Selection from './pages/table/selection'
-import Resize from './pages/table/resize'
+/***
+ * 路由懒加载  
+ * 只懒加载admin的子路由
+ * 如果懒加载全部路由会导致菜单闪烁
+ */
+const Home = lazy(() => import('./pages/home'))
+const Buttons = lazy(() => import('./pages/ui/buttons'))
+const Modals = lazy(() => import('./pages/ui/modals'))
+const Tabs = lazy(() => import('./pages/ui/tabs'))
+const Gallery = lazy(() => import('./pages/ui/gallery'))
+const Carousel = lazy(() => import('./pages/ui/carousel'))
 
-import City from './pages/city'
-import Order from './pages/order'
-import OrderDetail from './pages/order/detail'
-import Bar from './pages/echarts/bar'
-import Pie from './pages/echarts/pie'
-import Line from './pages/echarts/line'
-import Editor from './pages/editor'
-import Permission from './pages/permission'
+const FormLogin = lazy(() => import('./pages/form/login'))
+const FormRegister = lazy(() => import('./pages/form/register'))
+const Basic = lazy(() => import('./pages/table/basic'))
+const Selection = lazy(() => import('./pages/table/selection'))
+const Resize = lazy(() => import('./pages/table/resize'))
+
+const City = lazy(() => import('./pages/city'))
+const Order = lazy(() => import('./pages/order'))
+const OrderDetail = lazy(() => import('./pages/order/detail'))
+
+const Bar = lazy(() => import('./pages/echarts/bar'))
+const Pie = lazy(() => import('./pages/echarts/pie'))
+const Line = lazy(() => import('./pages/echarts/line'))
+
+const Editor = lazy(() => import('./pages/editor'))
+const Permission = lazy(() => import('./pages/permission'))
 
 
 export default class Router extends Component {
@@ -35,43 +42,43 @@ export default class Router extends Component {
       <App>
         <HashRouter>
           <Switch>
-
             <Route path="/login" component={Login}/>
-          
             <Redirect exact from="/" to="/admin/home" />
             <Redirect exact from="/admin" to="/admin/home" />
             <Route path="/admin" render={() => 
               <Admin>
-                <Switch>
-                  <Route path="/admin/home" component={Home}/>
-                  <Route path="/admin/ui/buttons" component={Buttons}/>
-                  <Route path="/admin/ui/modals" component={Modals}/>
-                  <Route path="/admin/ui/tabs" component={Tabs}/>
-                  <Route path="/admin/ui/gallery" component={Gallery}/>
-                  <Route path="/admin/ui/carousel" component={Carousel}/>
-                  <Route path="/admin/form/login" component={FormLogin}/>
-                  <Route path="/admin/form/register" component={FormRegister}/>
-                  <Route path="/admin/table/basic" component={Basic}/>
-                  <Route path="/admin/table/selection" component={Selection}/>
-                  <Route path="/admin/table/resize" component={Resize}/>
+                <Suspense fallback={<div style={{fontSize:20, textAlign:'center'}}>Loading...</div>}>
+                  <Switch>
+                    <Route path="/admin/home" component={Home}/>
+                    <Route path="/admin/ui/buttons" component={Buttons}/>
+                    <Route path="/admin/ui/modals" component={Modals}/>
+                    <Route path="/admin/ui/tabs" component={Tabs}/>
+                    <Route path="/admin/ui/gallery" component={Gallery}/>
+                    <Route path="/admin/ui/carousel" component={Carousel}/>
+                    <Route path="/admin/form/login" component={FormLogin}/>
+                    <Route path="/admin/form/register" component={FormRegister}/>
+                    <Route path="/admin/table/basic" component={Basic}/>
+                    <Route path="/admin/table/selection" component={Selection}/>
+                    <Route path="/admin/table/resize" component={Resize}/>
                 
-                  <Route path="/admin/city" component={City}/>
-                  <Route path="/admin/order" component={Order}/>
+                    <Route path="/admin/city" component={City}/>
+                    <Route path="/admin/order" component={Order}/>
 
-                  <Route path="/admin/echarts/bar" component={Bar}/>
-                  <Route path="/admin/echarts/pie" component={Pie}/>
-                  <Route path="/admin/echarts/line" component={Line}/>
-                  <Route path="/admin/editor" component={Editor}/>
-                  <Route path="/admin/permission" component={Permission}/>
-                </Switch> 
+                    <Route path="/admin/echarts/bar" component={Bar}/>
+                    <Route path="/admin/echarts/pie" component={Pie}/>
+                    <Route path="/admin/echarts/line" component={Line}/>
+                    <Route path="/admin/editor" component={Editor}/>
+                    <Route path="/admin/permission" component={Permission}/>
+                  </Switch> 
+                </Suspense>
               </Admin>
             }/>
             <Route path="/common" render={() => 
-              <Commom>
+              <Common>
                 <Switch>
                   <Route path="/common/orderDetail/:id" component={OrderDetail}/>
                 </Switch>
-              </Commom>
+              </Common>
             }/>
             <Route component={NoFound} />
           </Switch>
