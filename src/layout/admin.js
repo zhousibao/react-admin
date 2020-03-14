@@ -5,14 +5,11 @@ import NavLeft from './NavLeft'
 import Header from './Header'
 import Footer from './Footer'
 import './index.less'
-const { Sider, Content } = Layout;
+const { Sider } = Layout;
 
 
 @connect(
   state => ({app:state.app}),
-  {
-    toggleCollapsed:() => ({type:'toggleCollapsed'}),
-  },
 )
 class Admin extends Component {
   render() {
@@ -29,9 +26,9 @@ class Admin extends Component {
         </Sider>
         <Layout className="site-layout">
           <Header/>
-          <Content className="admin-content">
+          <div className="admin-content">
             {this.props.children}
-          </Content>
+          </div>
           <Footer/>
         </Layout>
       </Layout>

@@ -2,9 +2,9 @@ const {
   override, 
   fixBabelImports,
   addDecoratorsLegacy, 
-  addWebpackAlias ,
+  addWebpackAlias,
   disableEsLint,
-  addLessLoader
+  addLessLoader,
 } = require("customize-cra")
 const path = require('path');
 
@@ -16,11 +16,11 @@ module.exports = override(
   fixBabelImports('import', {
     libraryName: 'antd',
     libraryDirectory: 'es', // 在antd的es目录项查找
-    style: true // 依赖加载css文件
+    style: true, // 依赖加载css文件
   }),
   // WebpackAlias
   addWebpackAlias({
-    '@': path.resolve(__dirname,'src')
+    '@': path.resolve(__dirname, 'src'),
   }),
   // 支持装饰器配置
   addDecoratorsLegacy(),
@@ -29,7 +29,10 @@ module.exports = override(
   addLessLoader({
     javascriptEnabled: true,
     modifyVars: { '@primary-color': '#1890ff' },
-    localIdentName: '[local]--[hash:base64:5]' // if you use CSS Modules, and custom `localIdentName`,default is '[local]--[hash:base64:5]'.
+    modules: true,
+    // strictMath: true,
+    // noIeCompat: true,
+    localIdentName: '[local]--[hash:base64:5]', // if you use CSS Modules, and custom `localIdentName`,default is '[local]--[hash:base64:5]'.
     
-  })
+  }),
 );
