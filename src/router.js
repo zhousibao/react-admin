@@ -1,5 +1,5 @@
 import React, { Component, Suspense, lazy } from 'react'
-import { HashRouter, Route, Switch, Redirect} from 'react-router-dom'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import App from './App';
 import Admin from './layout/admin'
 import Common from './layout/common'
@@ -47,7 +47,7 @@ export default class Router extends Component {
             <Redirect exact from="/admin" to="/admin/home" />
             <Route path="/admin" render={() => 
               <Admin>
-                <Suspense fallback={<div style={{fontSize:20, textAlign:'center'}}>Loading...</div>}>
+                <Suspense fallback={<div style={{ fontSize: 20, textAlign: 'center' }}>Loading...</div>}>
                   <Switch>
                     <Route path="/admin/home" component={Home}/>
                     <Route path="/admin/ui/buttons" component={Buttons}/>

@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
-import { Modal, Form, Input, Radio, message, Tree} from 'antd'
+import React, { useState } from 'react'
+import { Modal, Form, Input, Radio, message, Tree } from 'antd'
 import { permissionDo } from '../api'
 import emitter from '@/utils/eventBus';
 import menu from '@/layout/menu.js'
 
 
-export default function Setpermission({visible, rolesId, rolesName, callback}) {
+export default function Setpermission({ visible, rolesId, rolesName, callback }) {
   const [form] = Form.useForm();
 
   const onOk = () => {
@@ -23,7 +23,7 @@ export default function Setpermission({visible, rolesId, rolesName, callback}) {
     const data = {
       ...values,
       rolesId,
-      permission:checkedKeys,
+      permission: checkedKeys,
     }
     permissionDo(data).then(res => {
       if(res.code === '0'){
@@ -48,7 +48,7 @@ export default function Setpermission({visible, rolesId, rolesName, callback}) {
   const treeData = [{
     title: '平台',
     key: '/all',
-    children:menu,
+    children: menu,
   }]
 
   // 控制选择的
@@ -66,8 +66,8 @@ export default function Setpermission({visible, rolesId, rolesName, callback}) {
         visible={visible}
         okText="确认"
         cancelText="取消"
-        style={{top:'20px'}}
-        bodyStyle={{padding:'20px 15px'}}
+        style={{ top: '20px' }}
+        bodyStyle={{ padding: '20px 15px' }}
         onOk={onOk}
         onCancel={onCancel}
       >
@@ -76,7 +76,7 @@ export default function Setpermission({visible, rolesId, rolesName, callback}) {
           form={form} 
           initialValues={{
             rolesName,
-            status:1,
+            status: 1,
           }}
         >
           <Form.Item

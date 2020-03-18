@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Card, Table } from 'antd'
+import { Card, Table } from 'antd'
 import { tableList } from '../api'
 
 export default function Selection(){
@@ -20,7 +20,7 @@ export default function Selection(){
     {
       title: '姓名',
       dataIndex: 'name',
-      align:'center',
+      align: 'center',
     },
     {
       title: '年龄',
@@ -34,7 +34,7 @@ export default function Selection(){
   ]
 
   const pagination = {
-    pageSize:5,
+    pageSize: 5,
     showTotal: total => `共 ${total} 条`,
   }
 

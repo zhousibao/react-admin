@@ -1,9 +1,9 @@
 import React from 'react'
-import { Modal, Form, Select, Radio, message} from 'antd'
+import { Modal, Form, Select, Radio, message } from 'antd'
 import { addCity } from '../api'
-const {Option} = Select
+const { Option } = Select
 
-export default function openCity({visible, callback}) {
+export default function openCity({ visible, callback }) {
   const [form] = Form.useForm();
 
 
@@ -46,8 +46,8 @@ export default function openCity({visible, callback}) {
         visible={visible}
         okText="确认"
         cancelText="取消"
-        style={{top:'20px'}}
-        bodyStyle={{padding:'20px 15px'}}
+        style={{ top: '20px' }}
+        bodyStyle={{ padding: '20px 15px' }}
         onOk={onOk}
         onCancel={onCancel}
       >
@@ -55,9 +55,9 @@ export default function openCity({visible, callback}) {
           {...layout}
           form={form} 
           initialValues={{
-            cityId:'',
-            mode:'',
-            op_mode:'',
+            cityId: '',
+            mode: '',
+            op_mode: '',
           }}
         >
           <Form.Item

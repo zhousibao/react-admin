@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { Layout } from 'antd';
 import NavLeft from './NavLeft'
 import Header from './Header'
@@ -9,7 +9,7 @@ const { Sider } = Layout;
 
 
 @connect(
-  state => ({app:state.app}),
+  state => ({ app: state.app }),
 )
 class Admin extends Component {
   render() {

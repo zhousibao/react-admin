@@ -9,25 +9,25 @@ import Axios from '@/utils/axios'
 
 @withRouter
 @connect(
-  state => ({app:state.app}),
+  state => ({ app: state.app }),
   {
-    toggleCollapsed:() => ({type:'toggleCollapsed'}),
+    toggleCollapsed: () => ({ type: 'toggleCollapsed' }),
   },
 )
 class Header extends Component {
   constructor(props){
     super(props)
     this.state = {
-      date:'',
-      weather:'',
-      weatherPicUrl:'',
-      useName:'超级管理员',
+      date: '',
+      weather: '',
+      weatherPicUrl: '',
+      useName: '超级管理员',
     }
   }
   componentDidMount(){
     this.timerId = setInterval(() => {
       this.setState({
-        date:formatDate(new Date()),
+        date: formatDate(new Date()),
       })
     }, 1000)
 
@@ -40,13 +40,13 @@ class Header extends Component {
   getWeather(){
     const city = '北京';
     Axios.jsonp({
-      url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
+      url: 'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
     }).then((res)=>{
       if(res.status ==='success'){
         let data = res.results[0].weather_data[0];
         this.setState({
-          weather:data.weather,
-          weatherPicUrl:data.dayPictureUrl,
+          weather: data.weather,
+          weatherPicUrl: data.dayPictureUrl,
         })
       }
     })

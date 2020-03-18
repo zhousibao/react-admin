@@ -16,12 +16,12 @@ import {
   EditOutlined,
   KeyOutlined,
 } from '@ant-design/icons'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 @connect(
   null,
   {
-    changeMenuTitle:(title) => ({type:'changeMenuTitle', payload:title}),
+    changeMenuTitle: (title) => ({ type: 'changeMenuTitle', payload: title }),
   },
 )
 class NavLeft extends PureComponent {
@@ -29,8 +29,8 @@ class NavLeft extends PureComponent {
     super(props)
     
     this.state = {
-      openKeys:[],
-      defaultSelectedKeys:[window.location.hash.replace(/#|\?.*$/g, '')],
+      openKeys: [],
+      defaultSelectedKeys: [window.location.hash.replace(/#|\?.*$/g, '')],
     }
     
   }
@@ -101,17 +101,17 @@ class NavLeft extends PureComponent {
   onOpenChange = (openKeys) => {
     if(!openKeys.length){
       this.setState({
-        openKeys:[],
+        openKeys: [],
       })
     } else{
       const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
       this.setState({
-        openKeys:[latestOpenKey],
+        openKeys: [latestOpenKey],
       })
     }
   }
 
-  onSelect = ({item}) => {
+  onSelect = ({ item }) => {
     // console.log(item.props.title)
     this.props.changeMenuTitle(item.props.title)
   }

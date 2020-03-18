@@ -14,8 +14,8 @@ import Axios from '@/utils/axios'
 // 城市字典
 export function commonCityList(data){
   return Axios.ajax({
-    url:'/common/citylist',
-    method:'POST',
+    url: '/common/citylist',
+    method: 'POST',
     data,
   })
 }

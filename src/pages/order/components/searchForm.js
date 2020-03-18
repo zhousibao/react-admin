@@ -1,10 +1,10 @@
 import React from 'react'
-import {Form, Input, DatePicker, Select, Button} from 'antd'
+import { Form, Input, DatePicker, Select, Button } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 import moment from 'moment'
 const { Option } = Select
 
-export default function SearchForm({callback, ...rest}){
+export default function SearchForm({ callback, ...rest }){
   const [form] = Form.useForm();
 
   const onFinish = (values) => {

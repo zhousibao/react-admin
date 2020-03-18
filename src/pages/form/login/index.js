@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Form, Input, Button, Checkbox} from 'antd'
+import { Card, Form, Input, Button, Checkbox } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';  
 
 import './index.less'
@@ -31,7 +31,7 @@ export default function Login() {
 
   return (
     <div>
-      <Card title="内联表单" style={{marginBottom:'20px'}}>
+      <Card title="内联表单" style={{ marginBottom: '20px' }}>
         <Form layout="inline">
           <FormItem>
             <Input placeholder="请输入用户名"/>
@@ -45,11 +45,11 @@ export default function Login() {
         </Form>
       </Card>
 
-      <Card title="块级表单" style={{marginBottom:'20px'}}>
+      <Card title="块级表单" style={{ marginBottom: '20px' }}>
         <Form
           {...layout}
           initialValues={{
-            remember:true,
+            remember: true,
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -75,7 +75,7 @@ export default function Login() {
                 message: '请输入密码!',
               },
               {
-                len:6,
+                len: 6,
                 message: '请输入6位数密码',
               },
             ]}

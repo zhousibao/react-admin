@@ -1,12 +1,12 @@
 import React from 'react'
-import {Table} from 'antd'
-import {formatDate, pagination} from '@/utils'
+import { Table } from 'antd'
+import { formatDate, pagination } from '@/utils'
 
-export default function CityTable({loading, pagination:paginationParams, cityList, callback}){
+export default function CityTable({ loading, pagination: paginationParams, cityList, callback }){
   const columns = [
     {
-      title:'城市ID',
-      dataIndex:'id',
+      title: '城市ID',
+      dataIndex: 'id',
     },
     {
       title: '城市名称',
@@ -62,7 +62,7 @@ export default function CityTable({loading, pagination:paginationParams, cityLis
       bordered
       columns={columns}
       dataSource={cityList}
-      pagination={pagination({...paginationParams}, changePage)}
+      pagination={pagination({ ...paginationParams }, changePage)}
     />
   )
 }

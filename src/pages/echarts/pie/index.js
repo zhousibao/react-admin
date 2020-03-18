@@ -24,28 +24,28 @@ export default class Pie extends Component {
       text: '用户骑行订单',
       x: 'center',
     },
-    legend : {
+    legend: {
       orient: 'vertical',
       right: 10,
       top: 20,
       data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     tooltip: {
-      trigger : 'item',
-      formatter : "{a} <br/>{b} : {c} ({d}%)",
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} ({d}%)",
     },
     series: [
       {
-        name : '订单量',
-        type : 'pie',
-        radius : '65%',
-        center : [
+        name: '订单量',
+        type: 'pie',
+        radius: '65%',
+        center: [
           '50%', '55%',
         ],
-        data:[
+        data: [
           {
-            value:1000,
-            name:'周一',
+            value: 1000,
+            name: '周一',
           },
           {
             value: 1000,
@@ -72,7 +72,7 @@ export default class Pie extends Component {
             name: '周日',
           },
         ],
-        itemStyle : {
+        itemStyle: {
           emphasis: {
             shadowBlur: 10,
             shadowOffsetX: 0,
@@ -88,28 +88,28 @@ export default class Pie extends Component {
       text: '用户骑行订单',
       x: 'center',
     },
-    legend : {
+    legend: {
       orient: 'vertical',
       right: 10,
       top: 20,
       data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     tooltip: {
-      trigger : 'item',
-      formatter : "{a} <br/>{b} : {c} ({d}%)",
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} ({d}%)",
     },
     series: [
       {
-        name : '订单量',
-        type : 'pie',
+        name: '订单量',
+        type: 'pie',
         radius: ['50%', '80%'],
-        center : [
+        center: [
           '50%', '55%',
         ],
-        data:[
+        data: [
           {
-            value:1000,
-            name:'周一',
+            value: 1000,
+            name: '周一',
           },
           {
             value: 1000,
@@ -136,7 +136,7 @@ export default class Pie extends Component {
             name: '周日',
           },
         ],
-        itemStyle : {
+        itemStyle: {
           emphasis: {
             shadowBlur: 10,
             shadowOffsetX: 0,
@@ -153,28 +153,28 @@ export default class Pie extends Component {
       text: '用户骑行订单',
       x: 'center',
     },
-    legend : {
+    legend: {
       orient: 'vertical',
       right: 10,
       top: 20,
       data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     tooltip: {
-      trigger : 'item',
-      formatter : "{a} <br/>{b} : {c} ({d}%)",
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} ({d}%)",
     },
     series: [
       {
-        name : '订单量',
-        type : 'pie',
-        radius : '80%',
-        center : [
+        name: '订单量',
+        type: 'pie',
+        radius: '80%',
+        center: [
           '50%', '55%',
         ],
-        data:[
+        data: [
           {
-            value:1000,
-            name:'周一',
+            value: 1000,
+            name: '周一',
           },
           {
             value: 1000,
@@ -214,25 +214,25 @@ export default class Pie extends Component {
   render() {
     return (
       <div>
-        <Card title="饼图1" style={{marginBottom:'10px'}}>
+        <Card title="饼图1" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption()} 
             theme="themeLight"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
-        <Card title="饼图2" style={{marginBottom:'10px'}}>
+        <Card title="饼图2" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption2()} 
             theme="themeLight"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
-        <Card title="饼图3" style={{marginBottom:'10px'}}>
+        <Card title="饼图3" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption3()} 
             theme="themeLight"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
       </div>

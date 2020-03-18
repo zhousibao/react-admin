@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import {Card, Button} from 'antd'
+import { Card, Button } from 'antd'
 import SearchForm from './components/searchForm'
 import CityTable from './components/cityTable'
 import OpenCity from './components/openCity'
 import { cityList } from './api'
 
 const initialValues = {
-  cityId:undefined,
-  mode:undefined,
-  op_mode:undefined,
-  auth_status:undefined,
-  search:undefined,
+  cityId: undefined,
+  mode: undefined,
+  op_mode: undefined,
+  auth_status: undefined,
+  search: undefined,
 }
 
 
@@ -19,19 +19,19 @@ class CityList extends Component {
     super(props)
 
     this.state = {
-      form:{
+      form: {
         ...initialValues,
       },
 
-      pagination:{
-        pageNum:1,
-        pageSize:10,
-        total:0,
+      pagination: {
+        pageNum: 1,
+        pageSize: 10,
+        total: 0,
       },
-      cityList:[],
-      loading:false,
+      cityList: [],
+      loading: false,
 
-      visible:false,
+      visible: false,
     }
 
   }
@@ -41,7 +41,7 @@ class CityList extends Component {
   }
   getCityList = () => {
     this.setState({
-      loading:true,
+      loading: true,
     })
     const data = {
       ...this.state.pagination,
@@ -50,40 +50,40 @@ class CityList extends Component {
     cityList(data).then(res => {
       if(res.code === '0'){
         this.setState({
-          cityList:res.data.list,
-          pagination:{ ...this.state.pagination, total:res.data.total},
+          cityList: res.data.list,
+          pagination: { ...this.state.pagination, total: res.data.total },
         })
       }
     }).finally(() => {
       this.setState({
-        loading:false,
+        loading: false,
       })
     })
   }
 
   searchList = (data) => {
     this.setState({
-      form:{...data},
-      pagination:{...this.state.pagination, pageNum:1},
+      form: { ...data },
+      pagination: { ...this.state.pagination, pageNum: 1 },
     })
     this.getCityList()
   }
   
   changePage = (pageNum, pageSize) => {
     this.setState((state, props) => {
-      return {pagination: {...state.pagination, pageNum, pageSize}};
+      return { pagination: { ...state.pagination, pageNum, pageSize }};
     }, () => this.getCityList());
   }
 
   openCityModal = () => {
     this.setState({
-      visible:true,
+      visible: true,
     })
   }
 
   closeCityModal = (type) => {
     this.setState({
-      visible:false,
+      visible: false,
     })
 
     type && this.getCityList()
@@ -93,7 +93,7 @@ class CityList extends Component {
   render() {
     return (
       <div>
-        <Card style={{marginBottom:'10px'}}>
+        <Card style={{ marginBottom: '10px' }}>
           <SearchForm
             {...initialValues}
             callback={this.searchList}

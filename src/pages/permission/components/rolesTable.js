@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table } from 'antd'
 import { rolesList } from '../api'
 import { formatDate } from '@/utils'
 import emitter from '@/utils/eventBus';
 
-export default function RolesTable({callback}){
+export default function RolesTable({ callback }){
   const [list, setList] = useState([])
   const [loading, setLoading] = useState(false)
   const [selectedRowKeys, setSelectedRowKeys] = useState([])
@@ -82,8 +82,8 @@ export default function RolesTable({callback}){
       loading={loading}
       bordered
       scroll={{
-        x:true,
-        y:400,
+        x: true,
+        y: 400,
       }}
       columns={columns}
       dataSource={list}

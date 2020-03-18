@@ -25,19 +25,19 @@ export default class Pie extends Component {
       x: 'center',
     }, 
     tooltip: {
-      trigger : 'axis',
+      trigger: 'axis',
     },
-    xAxis:{
-      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    xAxis: {
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
-    yAxis:{
-      type:'value',
+    yAxis: {
+      type: 'value',
     },
     series: [
       {
-        name : '订单量',
-        type : 'line',
-        data:[1000, 1000, 2000, 1500, 3000, 2000, 1200],
+        name: '订单量',
+        type: 'line',
+        data: [1000, 1000, 2000, 1500, 3000, 2000, 1200],
       },
     ],
   })
@@ -47,24 +47,24 @@ export default class Pie extends Component {
       text: '用户骑行订单',
     }, 
     tooltip: {
-      trigger : 'axis',
+      trigger: 'axis',
     },
-    legend:{
-      data:['OFO订单量', '摩拜订单量'],
+    legend: {
+      data: ['OFO订单量', '摩拜订单量'],
     },
-    xAxis:{
+    xAxis: {
       type: 'category',
       
-      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
-    yAxis:{
-      type:'value',
+    yAxis: {
+      type: 'value',
     },
     series: [
       {
-        name : 'OFO订单量',
-        type : 'line',
-        data:[1000, 1000, 2000, 1500, 3000, 2000, 1200],
+        name: 'OFO订单量',
+        type: 'line',
+        data: [1000, 1000, 2000, 1500, 3000, 2000, 1200],
       },
       {
         name: '摩拜订单量',
@@ -81,22 +81,22 @@ export default class Pie extends Component {
       x: 'center',
     }, 
     tooltip: {
-      trigger : 'axis',
+      trigger: 'axis',
     },
-    xAxis:{
+    xAxis: {
       type: 'category',
       boundaryGap: false,
-      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
-    yAxis:{
-      type:'value',
+    yAxis: {
+      type: 'value',
     },
     series: [
       {
-        name : '订单量',
-        type : 'line',
+        name: '订单量',
+        type: 'line',
         areaStyle: {},
-        data:[1000, 1000, 2000, 1500, 3000, 2000, 1200],
+        data: [1000, 1000, 2000, 1500, 3000, 2000, 1200],
       },
     ],
   })
@@ -104,25 +104,25 @@ export default class Pie extends Component {
   render() {
     return (
       <div>
-        <Card title="折线图1" style={{marginBottom:'10px'}}>
+        <Card title="折线图1" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption()} 
             theme="theme"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
-        <Card title="折线图2" style={{marginBottom:'10px'}}>
+        <Card title="折线图2" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption2()} 
             theme="theme"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
-        <Card title="折线图3" style={{marginBottom:'10px'}}>
+        <Card title="折线图3" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption3()} 
             theme="theme"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
       </div>

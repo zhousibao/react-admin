@@ -5,7 +5,7 @@ export default class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
-      systemName:'react-admin',
+      systemName: 'react-admin',
     }
   }
   render() {

@@ -44,7 +44,7 @@ export default class Axios{
   }
 
   // http
-  static ajax({url, method = 'POST', json = true, params = '', data= ''}){
+  static ajax({ url, method = 'POST', json = true, params = '', data= '' }){
     // easyMock
     const baseURL = 'https://www.studyinghome.com/mock/5e61bd0a597ac8103c4762fd/react-admin-api'
     return new Promise((resolve, reject) => {
@@ -57,7 +57,7 @@ export default class Axios{
         data,
         timeout: 10000, // 请求超时时间
         headers: {
-          'content-type':json ? 'application/json; charset=UTF-8' : 'application/x-www-form-urlencoded; charset=UTF-8',
+          'content-type': json ? 'application/json; charset=UTF-8' : 'application/x-www-form-urlencoded; charset=UTF-8',
         },
       }).then(res => {
         /**

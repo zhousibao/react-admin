@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Card, Button, Modal} from 'antd'
+import { Card, Button, Modal } from 'antd'
 import RolesTable from './components/rolesTable'
 import CreateRoles from './components/createRoles'
 import SetPermission from './components/setPermission'
@@ -9,9 +9,9 @@ export default class Permission extends Component {
   constructor(props){
     super(props)
     this.state = {
-      showCreateRoles:false,
-      showSetPermission:false,
-      showAuthorization:false,
+      showCreateRoles: false,
+      showSetPermission: false,
+      showAuthorization: false,
     }
   }
 
@@ -22,13 +22,13 @@ export default class Permission extends Component {
   openModal = (type) => {
     if(type === 'showCreateRoles'){
       this.setState({
-        [type]:true,
+        [type]: true,
       })
     }else{
       if(!this.rolesId){
         Modal.warning({
-          title:'提醒',
-          content:'请先选择角色',
+          title: '提醒',
+          content: '请先选择角色',
           onOk(){
             // console.log('Ok')
           },
@@ -38,7 +38,7 @@ export default class Permission extends Component {
         })
       } else {
         this.setState({
-          [type]:true,
+          [type]: true,
         })
       }
     }
@@ -53,9 +53,9 @@ export default class Permission extends Component {
 
   close = (type) => {
     this.setState({
-      showCreateRoles:false,
-      showSetPermission:false,
-      showAuthorization:false,
+      showCreateRoles: false,
+      showSetPermission: false,
+      showAuthorization: false,
     })
     if(type){
       this.rolesId = ''

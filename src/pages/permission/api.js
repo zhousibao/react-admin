@@ -14,8 +14,8 @@ import Axios from '@/utils/axios'
 // 角色列表
 export function rolesList(data){
   return Axios.ajax({
-    url:'/permission/rolesList',
-    method:'POST',
+    url: '/permission/rolesList',
+    method: 'POST',
     data,
   })
 }
@@ -23,8 +23,8 @@ export function rolesList(data){
 // 新增角色
 export function createRoles(data){
   return Axios.ajax({
-    url:'/permission/createRoles',
-    method:'POST',
+    url: '/permission/createRoles',
+    method: 'POST',
     data,
   })
 }
@@ -32,8 +32,8 @@ export function createRoles(data){
 // 设置权限、用户授权
 export function permissionDo(data){
   return Axios.ajax({
-    url:'/permission/do',
-    method:'POST',
+    url: '/permission/do',
+    method: 'POST',
     data,
   })
 }
@@ -41,8 +41,8 @@ export function permissionDo(data){
 // 角色用户详情
 export function rolesDetail(data){
   return Axios.ajax({
-    url:'/permission/rolesDetail',
-    method:'POST',
+    url: '/permission/rolesDetail',
+    method: 'POST',
     data,
   })
 }

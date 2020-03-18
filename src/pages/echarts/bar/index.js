@@ -20,24 +20,24 @@ echarts.registerTheme('echartsTheme', echartsTheme)
 
 export default class Bar extends Component {
   getOption = () => ({
-    title:{
-      text:'用户骑行订单',
+    title: {
+      text: '用户骑行订单',
     },
-    tooltip : {
+    tooltip: {
       trigger: 'axis',
     },
-    xAxis:{
+    xAxis: {
       type: 'category',
-      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
-    yAxis:{
-      type:'value',
+    yAxis: {
+      type: 'value',
     },
-    series:[
+    series: [
       {
-        name:'订单量',
-        type:'bar',
-        data:[1000, 2000, 2500, 3000, 2000, 1000, 1500],
+        name: '订单量',
+        type: 'bar',
+        data: [1000, 2000, 2500, 3000, 2000, 1000, 1500],
       },
     ],
   })
@@ -46,14 +46,14 @@ export default class Bar extends Component {
     title: {
       text: '用户骑行订单',
     },
-    tooltip : {
+    tooltip: {
       trigger: 'axis',
     },
-    legend:{
-      data:['OFO', '摩拜', '小蓝'],
+    legend: {
+      data: ['OFO', '摩拜', '小蓝'],
     },
     xAxis: {
-      data:['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
     },
     yAxis: {
       type: 'value',
@@ -80,18 +80,18 @@ export default class Bar extends Component {
   render() {
     return (
       <div>
-        <Card title="柱形图1" style={{marginBottom:'10px'}}>
+        <Card title="柱形图1" style={{ marginBottom: '10px' }}>
           <ReactEcharts 
             option={this.getOption()} 
             theme="echartsTheme"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
         <Card title="柱形图2">
           <ReactEcharts 
             option={this.getOption2()} 
             theme="echartsTheme"
-            style={{height:500}}
+            style={{ height: 500 }}
           />
         </Card>
       </div>

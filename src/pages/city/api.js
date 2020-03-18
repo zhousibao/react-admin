@@ -14,8 +14,8 @@ import Axios from '@/utils/axios'
 // 城市列表
 export function cityList(data){
   return Axios.ajax({
-    url:'/city/list',
-    method:'POST',
+    url: '/city/list',
+    method: 'POST',
     data,
   })
 }
@@ -23,8 +23,8 @@ export function cityList(data){
 // 开通城市
 export function addCity(data){
   return Axios.ajax({
-    url:'/city/add',
-    method:'POST',
+    url: '/city/add',
+    method: 'POST',
     data,
   })
 }

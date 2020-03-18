@@ -1,5 +1,5 @@
 import React from 'react'
-import {PlusOutlined} from '@ant-design/icons'
+import { PlusOutlined } from '@ant-design/icons'
 import moment from 'moment';
 import { formatDate } from '@/utils'
 import './index.less'
@@ -60,22 +60,22 @@ export default function Register() {
 
   return (
     <div>
-      <Card title="注册表单" style={{marginBottom:'20px'}}>
+      <Card title="注册表单" style={{ marginBottom: '20px' }}>
         <Form
           {...layout}
           size="middle"
           initialValues={{
-            username:'张三',
+            username: '张三',
             password: '123456',
-            sex:1,
-            age:20,
-            state:1,
-            like:['篮球', '打游戏'],
-            marry:false,
-            birthday:moment('2008-08-08', 'YYYY-MM-DD'),
-            workTime:[],
-            address:'',
-            agree:true,
+            sex: 1,
+            age: 20,
+            state: 1,
+            like: ['篮球', '打游戏'],
+            marry: false,
+            birthday: moment('2008-08-08', 'YYYY-MM-DD'),
+            workTime: [],
+            address: '',
+            agree: true,
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -101,7 +101,7 @@ export default function Register() {
                 message: '请输入密码!',
               },
               {
-                len:6,
+                len: 6,
                 message: '请输入6位数密码',
               },
             ]}

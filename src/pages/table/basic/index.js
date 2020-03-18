@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import {Card, Table, Tag, Button, Popover, Modal, message} from 'antd'
-import {RightOutlined} from '@ant-design/icons'
-import {tableList} from '../api'
+import React, { Component } from 'react'
+import { Card, Table, Tag, Button, Popover, Modal, message } from 'antd'
+import { RightOutlined } from '@ant-design/icons'
+import { tableList } from '../api'
 
 export default class Basic extends Component{
   constructor(props){
     super(props)
 
     this.state = {
-      loading:false,
+      loading: false,
     }
   }
 
@@ -18,18 +18,18 @@ export default class Basic extends Component{
 
   getTableList = () => {
     this.setState({
-      loading:true,
+      loading: true,
     })
     tableList().then(res => {
       if(res.code === '0'){
         this.setState({
-          loading:false,
-          dataSource:res.data.list,
+          loading: false,
+          dataSource: res.data.list,
         })
       }
     }).catch(err => {
       this.setState({
-        loading:false,
+        loading: false,
       })
     })
   }
@@ -41,7 +41,7 @@ export default class Basic extends Component{
       onCancel: () => {
         message.info('取消删除')
       },
-      onOk:() => {
+      onOk: () => {
         message.success('删除成功')
       },
     })
@@ -53,27 +53,27 @@ export default class Basic extends Component{
       {
         title: '姓名',
         dataIndex: 'name',
-        align:'center',
-        width:100,
-        fixed:'left',
+        align: 'center',
+        width: 100,
+        fixed: 'left',
       },
       {
         title: '年龄',
         dataIndex: 'age',
-        align:'center',
+        align: 'center',
         width: 80,
       },
       {
         title: '性别',
         dataIndex: 'sex',
-        align:'center',
+        align: 'center',
         width: 80,
         render: sex => sex === 1 ? '男':'女',
       },
       {
         title: '爱好',
         dataIndex: 'likeList',
-        align:'center',
+        align: 'center',
         width: 120,
         render: likeList => {
           const content = (
@@ -95,15 +95,15 @@ export default class Basic extends Component{
       {
         title: '状态',
         dataIndex: 'state',
-        align:'center',
+        align: 'center',
         width: 120,
         render: state => {
           const stateList = {
-            1:'风华浪子',
-            2:'咸鱼一条',
-            3:'技术大佬',
-            4:'创业者',
-            5:'已修仙',
+            1: '风华浪子',
+            2: '咸鱼一条',
+            3: '技术大佬',
+            4: '创业者',
+            5: '已修仙',
           }
 
           if(state === 1 || state === 2){
@@ -140,14 +140,14 @@ export default class Basic extends Component{
         width: 200,
       },
       {
-        title:'邮箱',
-        dataIndex:'email',
+        title: '邮箱',
+        dataIndex: 'email',
         width: 200,
       },
       {
         title: '操作',
         width: 130,
-        fixed:'right',
+        fixed: 'right',
         render: (item) => (
           <Button type="danger" size="small" onClick={() => this.delete(item)}>删除</Button>
         ),
@@ -164,8 +164,8 @@ export default class Basic extends Component{
             pagination={false}
             loading={this.state.loading}
             scroll={{
-              x:true,
-              y:500,
+              x: true,
+              y: 500,
             }}
           />
         </Card>

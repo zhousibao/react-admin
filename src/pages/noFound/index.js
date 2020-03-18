@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom'
 // 参数1: mapStateToProps = state => ({app:state.app})
 // 参数2: mapDispatchToProps = dispatch => { return { add: () => dispatch({type:'add'})}}
 @connect(
-  state => ({app:state.app}),
+  state => ({ app: state.app }),
   // 简洁写法
   {
     // 同步返回对象
-    changeMenuTitle:(title) => ({type:'changeMenuTitle', payload:title}),
+    changeMenuTitle: (title) => ({ type: 'changeMenuTitle', payload: title }),
     // 异步返回函数
-    AsyncChangeMenuTitle:(title) => dispatch => {
+    AsyncChangeMenuTitle: (title) => dispatch => {
       setTimeout(() => {
-        dispatch({type:'changeMenuTitle', payload:title})
+        dispatch({ type: 'changeMenuTitle', payload: title })
       }, 1000)
     },
   },

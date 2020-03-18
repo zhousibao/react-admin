@@ -1,9 +1,9 @@
 import React from 'react'
-import { Modal, Form, Input, Radio, message} from 'antd'
+import { Modal, Form, Input, Radio, message } from 'antd'
 import { createRoles } from '../api'
 import emitter from '@/utils/eventBus';
 
-export default function CreateRoles({visible, callback}) {
+export default function CreateRoles({ visible, callback }) {
   const [form] = Form.useForm();
 
 
@@ -47,8 +47,8 @@ export default function CreateRoles({visible, callback}) {
         visible={visible}
         okText="确认"
         cancelText="取消"
-        style={{top:'20px'}}
-        bodyStyle={{padding:'20px 15px'}}
+        style={{ top: '20px' }}
+        bodyStyle={{ padding: '20px 15px' }}
         onOk={onOk}
         onCancel={onCancel}
       >
@@ -56,8 +56,8 @@ export default function CreateRoles({visible, callback}) {
           {...layout}
           form={form} 
           initialValues={{
-            name:undefined,
-            status:1,
+            name: undefined,
+            status: 1,
           }}
         >
           <Form.Item

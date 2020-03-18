@@ -25,6 +25,13 @@ module.exports = {
     "comma-dangle": [2, "always-multiline"],
     // 控制逗号前后的空格
     "comma-spacing": [2, { "before": false, "after": true }],
+    'key-spacing': [2, {
+      'beforeColon': false,
+      'afterColon': true
+    }],
+    'object-curly-spacing': [2, 'always', {
+      objectsInObjects: false
+    }],
   },
 
   parserOptions: {

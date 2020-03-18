@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import {login} from './aip'
+import { login } from './aip'
 import './index.less'
 
 export default class Login extends Component {
@@ -33,7 +33,7 @@ export default class Login extends Component {
             className="form-con"
             size="large"
             initialValues={{
-              remember:true,
+              remember: true,
             }}
             onFinish={this.onFinish}
           >
@@ -56,7 +56,7 @@ export default class Login extends Component {
                   message: '请输入密码!',
                 },
                 {
-                  len:6,
+                  len: 6,
                   message: '请输入6位数密码',
                 },
               ]}

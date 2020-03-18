@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Card, Table} from 'antd'
+import React, { Component } from 'react'
+import { Card, Table } from 'antd'
 import { Resizable } from 'react-resizable';
 import './index.less'
 import { tableList1 } from '../api'
@@ -29,48 +29,48 @@ export default class Resize extends Component{
     super(props)
 
     this.state = {
-      loading:false,
+      loading: false,
       columns: [
         {
           title: '姓名',
           dataIndex: 'name',
-          align:'center',
+          align: 'center',
           width: 200,
         },
         {
           title: '姓名',
           dataIndex: 'name',
-          align:'center',
+          align: 'center',
           width: 200,
         },
         {
           title: '姓名',
           dataIndex: 'name',
-          align:'center',
+          align: 'center',
           width: 200,
         },
         {
           title: '姓名',
           dataIndex: 'name',
-          align:'center',
+          align: 'center',
           width: 200,
         },
         {
           title: '年龄',
           dataIndex: 'age',
-          align:'center',
+          align: 'center',
           width: 200,
         },
         {
           title: '性别',
           dataIndex: 'sex',
-          align:'center',
+          align: 'center',
           width: 200,
         },
         {
           title: '薪资',
           dataIndex: 'salary',
-          align:'center',
+          align: 'center',
           width: 200,
         },
       ],
@@ -89,18 +89,18 @@ export default class Resize extends Component{
 
   getTableList = () => {
     this.setState({
-      loading:true,
+      loading: true,
     })
     tableList1().then(res => {
       if(res.code === '0'){
         this.setState({
-          loading:false,
-          dataSource:res.data.list,
+          loading: false,
+          dataSource: res.data.list,
         })
       }
     }).catch(err => {
       this.setState({
-        loading:false,
+        loading: false,
       })
     })
   }

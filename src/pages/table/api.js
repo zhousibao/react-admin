@@ -13,14 +13,14 @@ import Axios from '@/utils/axios'
 
 export function tableList(){
   return Axios.ajax({
-    url:'/table/list',
-    method:'GET',
+    url: '/table/list',
+    method: 'GET',
   })
 }
 
 export function tableList1(){
   return Axios.ajax({
-    url:'/table/list1',
-    method:'GET',
+    url: '/table/list1',
+    method: 'GET',
   })
 }

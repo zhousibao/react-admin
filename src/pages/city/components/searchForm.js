@@ -1,19 +1,19 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import {Form, Input, Select, Button} from 'antd'
+import { Form, Input, Select, Button } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 const { Option } = Select
 
 const SearchForm = connect(
   state => ({
-    city:state.city,
+    city: state.city,
   }),
   {
-    sagaCity:(data)=> ({type:'saga_getCityList', payload:data}),
+    sagaCity: (data)=> ({ type: 'saga_getCityList', payload: data }),
   },
-)(({callback, city, sagaCity, ...rest}) => {
+)(({ callback, city, sagaCity, ...rest }) => {
   useEffect(() => {
-    const data = {type:'1'}
+    const data = { type: '1' }
     if(!city.cityList.length){
       sagaCity(data)
     }
