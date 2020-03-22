@@ -46,7 +46,7 @@ export default class Axios{
   // http
   static ajax({ url, method = 'POST', json = true, params = '', data= '' }){
     // easyMock
-    const baseURL = 'https://www.studyinghome.com/mock/5e61bd0a597ac8103c4762fd/react-admin-api'
+    const baseURL = 'http://mock.studyinghome.com/mock/5e61bd0a597ac8103c4762fd/react-admin-api'
     return new Promise((resolve, reject) => {
       axios({
         baseURL,
