@@ -1,7 +1,11 @@
 import React from 'react'
+import { createHashHistory } from 'history';
+//import { createBrowserHistory } from 'history'; // 如果是history路由
 import { Table, Button, Modal, message } from 'antd'
 import { pagination } from '@/utils'
-import { closeOrder } from '../api'
+import { closeOrder } from '../api' // 如果是hash路由
+const history = createHashHistory();
+console.log(history)
 
 export default function OrderTable({ loading, pagination: paginationParams, list, callback }){
   const columns = [
@@ -80,10 +84,11 @@ export default function OrderTable({ loading, pagination: paginationParams, list
     },
   ]
 
+
   const changePage = (pageNum, pageSize) => callback('change', pageNum, pageSize)
   const goDetail = (item) => {
     const href = `/#/common/orderDetail/${item.id}`
-    window.open(href)
+    window.open(href)    
   }
   const closeConfirm = (item) => {
     Modal.confirm({
