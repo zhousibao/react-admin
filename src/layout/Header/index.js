@@ -19,8 +19,6 @@ class Header extends Component {
     super(props)
     this.state = {
       date: '',
-      weather: '',
-      weatherPicUrl: '',
       useName: '超级管理员',
     }
   }
@@ -31,26 +29,12 @@ class Header extends Component {
       })
     }, 1000)
 
-    this.getWeather()
   }
   componentWillUnmount(){
     clearInterval(this.timerId)
   }
 
-  getWeather(){
-    const city = '北京';
-    Axios.jsonp({
-      url: 'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
-    }).then((res)=>{
-      if(res.status ==='success'){
-        let data = res.results[0].weather_data[0];
-        this.setState({
-          weather: data.weather,
-          weatherPicUrl: data.dayPictureUrl,
-        })
-      }
-    })
-  }
+
   toggleCollapsed = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -86,10 +70,7 @@ class Header extends Component {
             
         <div className="right">
           <div className="date">{this.state.date}</div>
-          <div className="weather">{this.state.weather}</div>
-          <img src={this.state.weatherPicUrl} alt="weather" className="weather-img"/>
          
-
           <Dropdown overlay={menu}>
             <div className="user">
               <img src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" alt="avatar"/>

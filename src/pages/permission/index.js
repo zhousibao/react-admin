@@ -68,8 +68,8 @@ export default class Permission extends Component {
     return (
       <div>
         <Card>
-          <Button type="primary" onClick={() => this.openModal('showCreateRoles')}>创建角色</Button>
-          <Button type="primary" onClick={() => this.openModal('showSetPermission')}>设置权限</Button>
+          <Button type="primary" style={{ marginRight: '10px' }} onClick={() => this.openModal('showCreateRoles')}>创建角色</Button>
+          <Button type="primary" style={{ marginRight: '10px' }} onClick={() => this.openModal('showSetPermission')}>设置权限</Button>
           <Button type="primary" onClick={() => this.openModal('showAuthorization')}>用户授权</Button>
         </Card>
         <Card>
