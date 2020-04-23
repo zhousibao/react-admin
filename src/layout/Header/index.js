@@ -5,7 +5,6 @@ import './index.less'
 import { Dropdown, Menu } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, LoginOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
-import Axios from '@/utils/axios'
 
 @withRouter
 @connect(
