@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Tabs, message } from 'antd'
 import { AppleOutlined, AndroidOutlined } from '@ant-design/icons';
 
-import './index.less'
 const { TabPane } = Tabs;
 export default class Tab extends React.Component {
   constructor(props){

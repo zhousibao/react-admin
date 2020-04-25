@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Card, Modal, Button } from 'antd';
+import { Card, Modal, Space, Button } from 'antd';
 
-import './index.less'
 export default class Modals extends Component {
   constructor(props){
     super(props)
@@ -49,10 +48,12 @@ export default class Modals extends Component {
         </Card>
 
         <Card title="信息确认框" style={{ marginBottom: '20px' }}>
-          <Button type="primary" onClick={() => this.handleConfirm('confirm')}>Confirm</Button>
-          <Button type="primary" onClick={() => this.handleConfirm('info')}>Info</Button>
-          <Button type="primary" onClick={() => this.handleConfirm('success')}>Success</Button>
-          <Button type="primary" onClick={() => this.handleConfirm('warning')}>Warning</Button>
+          <Space>
+            <Button type="primary" onClick={() => this.handleConfirm('confirm')}>Confirm</Button>
+            <Button type="primary" onClick={() => this.handleConfirm('info')}>Info</Button>
+            <Button type="primary" onClick={() => this.handleConfirm('success')}>Success</Button>
+            <Button type="primary" onClick={() => this.handleConfirm('warning')}>Warning</Button>
+          </Space>
         </Card>
 
         <Modal

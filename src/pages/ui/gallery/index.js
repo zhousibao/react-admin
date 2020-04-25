@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Row, Col, Modal } from 'antd'
-import './index.less'
+import style from './index.module.less'
 export default class Gallery extends Component {
   state = {
     visible: false,
@@ -22,7 +22,7 @@ export default class Gallery extends Component {
     const cardList = imgList.map((list) => list.map(item => 
       <Card
         key={item}
-        cover={<img src={'/gallery/'+ item} alt="cover-img" className="cover-img" onClick={() => this.openGallery(item)}/>}
+        cover={<img src={'/gallery/'+ item} alt="cover-img" className={style.cover_img} onClick={() => this.openGallery(item)}/>}
         style={{ marginBottom: '10px' }}
       >
         <Card.Meta title="Europe Street beat" description="www.instagram.com" />
@@ -30,7 +30,7 @@ export default class Gallery extends Component {
     ))
 
     return (
-      <div className="sallery-div">
+      <div className={style.sallery_div}>
         <Row gutter={8}>
           <Col md={6}>
             {cardList[0]}
@@ -57,7 +57,7 @@ export default class Gallery extends Component {
           }}
           footer={null}
         >
-          <img src={'/gallery/'+this.state.showImg} alt="showImg" className="showImg"/>
+          <img src={'/gallery/'+this.state.showImg} alt="showImg" className={style.showImg}/>
         </Modal>
       </div>
     )
