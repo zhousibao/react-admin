@@ -22,7 +22,6 @@
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "css-loader": "3.4.2",
-    "customize-cra": "^0.9.1",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "draft-js": "^0.11.4",
@@ -61,7 +60,6 @@
     "postcss-safe-parser": "4.0.1",
     "react": "^16.13.0",
     "react-app-polyfill": "^1.0.6",
-    "react-app-rewired": "^2.1.5",
     "react-dev-utils": "^10.2.0",
     "react-dom": "^16.13.0",
     "react-draft-wysiwyg": "^1.14.4",
@@ -88,9 +86,6 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -152,27 +147,6 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-decorators",
-        {
-          "legacy": true
-        }
-      ],
-      [
-        "import",
-        {
-          "libraryName": "antd",
-          "style": "css"
-        }
-        
-      ]
     ]
   }
 }
