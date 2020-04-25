@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { login } from './aip'
-import './index.less'
+import style from './index.module.less'
 
 export default class Login extends Component {
 
@@ -19,18 +19,18 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="login">
-        <div className="login-title">
-          <div className="con">
+      <div className={style.login}>
+        <div className={style.login_title}>
+          <div className={style.con}>
             <img src="/assets/logo-ant.svg" alt="logo"/>
             <p>管理后台系统</p>
           </div>
         </div>
 
 
-        <div className="login-form">
+        <div className={style.login_form}>
           <Form
-            className="form-con"
+            className={style.form_con}
             size="large"
             initialValues={{
               remember: true,
@@ -72,7 +72,7 @@ export default class Login extends Component {
               <Checkbox>记住账号</Checkbox>
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button">
+              <Button type="primary" htmlType="submit" className={style.login_form_button}>
               登录
               </Button>
             </Form.Item>

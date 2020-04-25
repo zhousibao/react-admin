@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 import NavLeft from './NavLeft'
 import Header from './Header'
 import Footer from './Footer'
-import './index.less'
+import style from './style.module.less'
 const { Sider } = Layout;
 
 
@@ -14,9 +14,9 @@ const { Sider } = Layout;
 class Admin extends Component {
   render() {
     return (
-      <Layout className="admin">
-        <Sider trigger={null} collapsible collapsed={this.props.app.collapsed} className="admin-sider">
-          <div className="logo">
+      <Layout className={style.admin}>
+        <Sider trigger={null} collapsible collapsed={this.props.app.collapsed} className={style.admin_sider}>
+          <div className={style.logo}>
             <img src="/assets/logo-ant.svg" alt="logo"/>
             {
               !this.props.app.collapsed && (<p>管理后台系统</p>)
@@ -24,9 +24,9 @@ class Admin extends Component {
           </div>
           <NavLeft/>
         </Sider>
-        <Layout className="site-layout">
+        <Layout className={style.site_layout}>
           <Header/>
-          <div className="admin-content">
+          <div className={style.admin_content}>
             {this.props.children}
           </div>
           <Footer/>

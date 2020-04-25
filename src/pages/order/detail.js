@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
-import './detail.less'
+import style from './detail.module.less'
 import { orderDetail } from './api'
 
 export default class Detail extends Component {
@@ -113,48 +113,48 @@ export default class Detail extends Component {
     return (
       <div>
         <Card title="订单详情">
-          <div className="orderDetail">
-            <p className="title">基础信息</p>
+          <div className={style.orderDetail}>
+            <p className={style.title}>基础信息</p>
             <ul>
               <li>
-                <div className="left">用车模式</div>
-                <div className="content">{info.mode === 1 ?'服务区':'停车点'}</div>
+                <div className={style.left}>用车模式</div>
+                <div className={style.content}>{info.mode === 1 ?'服务区':'停车点'}</div>
               </li>
               <li>
-                <div className="left">订单编号</div>
-                <div className="content">{info.order_sn}</div>
+                <div className={style.left}>订单编号</div>
+                <div className={style.content}>{info.order_sn}</div>
               </li>
               <li>
-                <div className="left">车辆编号</div>
-                <div className="content">{info.bike_sn}</div>
+                <div className={style.left}>车辆编号</div>
+                <div className={style.content}>{info.bike_sn}</div>
               </li>
               <li>
-                <div className="left">用户姓名</div>
-                <div className="content">{info.user_name}</div>
+                <div className={style.left}>用户姓名</div>
+                <div className={style.content}>{info.user_name}</div>
               </li>
               <li>
-                <div className="left">手机号码</div>
-                <div className="content">{info.mobile}</div>
+                <div className={style.left}>手机号码</div>
+                <div className={style.content}>{info.mobile}</div>
               </li>
             </ul>
-            <p className="title">行驶轨迹</p>
-            <ul className="detail-form">
+            <p className={style.title}>行驶轨迹</p>
+            <ul>
               <li>
-                <div className="left">行程起点</div>
-                <div className="content">{info.start_location}</div>
+                <div className={style.left}>行程起点</div>
+                <div className={style.content}>{info.start_location}</div>
               </li>
               <li>
-                <div className="left">行程终点</div>
-                <div className="content">{info.end_location}</div>
+                <div className={style.left}>行程终点</div>
+                <div className={style.content}>{info.end_location}</div>
               </li>
               <li>
-                <div className="left">行驶里程</div>
-                <div className="content">{info.distance/1000}公里</div>
+                <div className={style.left}>行驶里程</div>
+                <div className={style.content}>{info.distance/1000}公里</div>
               </li>
             </ul>
           </div>
 
-          <div id="mapCon" className="order-map"></div>
+          <div id="mapCon" className={style.order_map}></div>
         </Card>
       </div>
     )

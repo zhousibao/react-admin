@@ -1,8 +1,6 @@
 import React from 'react'
 import { Card, Form, Input, Button, Checkbox } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';  
-
-import './index.less'
 const FormItem = Form.Item
 
 export default function Login() {

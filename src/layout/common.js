@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import HeaderCommon from './HeaderCommon'
-import './index.less'
+import style from './style.module.less'
 
 export default class Common extends Component {
   render() {
     return (
-      <div className="common">
+      <div className={style.common}>
         <HeaderCommon/>
-        <div className="common-content">
+        <div className={style.common_content}>
           {this.props.children}
         </div>
       </div>

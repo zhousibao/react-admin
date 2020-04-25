@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './index.less'
+import style from './index.module.less'
 
 export default class Home extends Component {
   constructor(props){
@@ -21,9 +21,9 @@ export default class Home extends Component {
   }
   render() {
     return (
-      <div className="home">
-        <p className="title" onClick={(e) => this.handleC(e)}>欢迎使用{this.state.systemName}管理系统</p>
-        <img src="https://wpimg.wallstcn.com/0e03b7da-db9e-4819-ba10-9016ddfdaed3" alt="" className="img"/>
+      <div className={style.home}>
+        <p className={style.title} onClick={(e) => this.handleC(e)}>欢迎使用{this.state.systemName}管理系统</p>
+        <img src="https://wpimg.wallstcn.com/0e03b7da-db9e-4819-ba10-9016ddfdaed3" alt="" className={style.img}/>
       </div>
     )
   }

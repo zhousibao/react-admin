@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './index.less'
+import style from './index.module.less'
 import { Button } from 'antd'
 import { LogoutOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
@@ -26,14 +26,14 @@ export default class Header extends Component {
 
   render() {
     return (
-      <div className="top">
-        <div className="left">
+      <div className={style.top}>
+        <div className={style.left}>
           <img src="/assets/logo-ant.svg" alt="logo"/>
           <p>管理后台系统</p>
         </div>
-        <div className="right">
-          <div className="date">{this.state.date}</div>
-          <div className="name">{this.state.useName}</div>
+        <div className={style.right}>
+          <div className={style.date}>{this.state.date}</div>
+          <div className={style.name}>{this.state.useName}</div>
           <Button type="danger" shape="circle" size="small">
             <LogoutOutlined />
           </Button>

@@ -2,7 +2,6 @@ import React from 'react'
 import { PlusOutlined } from '@ant-design/icons'
 import moment from 'moment';
 import { formatDate } from '@/utils'
-import './index.less'
 import {
   Card,
   Form,

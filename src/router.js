@@ -41,47 +41,49 @@ export default class Router extends Component {
     return (
       <App>
         <HashRouter>
-          <Switch>
-            <Route path="/login" component={Login}/>
-            <Redirect exact from="/" to="/admin/home" />
-            <Redirect exact from="/admin" to="/admin/home" />
-            <Route path="/admin" render={() => 
-              <Admin>
-                <Suspense fallback={<div style={{ fontSize: 20, textAlign: 'center' }}>Loading...</div>}>
-                  <Switch>
-                    <Route path="/admin/home" component={Home}/>
-                    <Route path="/admin/ui/buttons" component={Buttons}/>
-                    <Route path="/admin/ui/modals" component={Modals}/>
-                    <Route path="/admin/ui/tabs" component={Tabs}/>
-                    <Route path="/admin/ui/gallery" component={Gallery}/>
-                    <Route path="/admin/ui/carousel" component={Carousel}/>
-                    <Route path="/admin/form/login" component={FormLogin}/>
-                    <Route path="/admin/form/register" component={FormRegister}/>
-                    <Route path="/admin/table/basic" component={Basic}/>
-                    <Route path="/admin/table/selection" component={Selection}/>
-                    <Route path="/admin/table/resize" component={Resize}/>
+          <Suspense fallback={<div style={{ fontSize: 20, textAlign: 'center' }}>Loading...</div>}>
+            <Switch>
+              <Route path="/login" component={Login}/>
+              <Redirect exact from="/" to="/admin/home" />
+              <Redirect exact from="/admin" to="/admin/home" />
+              <Route path="/admin" render={() => 
+                <Admin>
+                  <Suspense fallback={<div style={{ fontSize: 20, textAlign: 'center' }}>Loading...</div>}>
+                    <Switch>
+                      <Route path="/admin/home" component={Home}/>
+                      <Route path="/admin/ui/buttons" component={Buttons}/>
+                      <Route path="/admin/ui/modals" component={Modals}/>
+                      <Route path="/admin/ui/tabs" component={Tabs}/>
+                      <Route path="/admin/ui/gallery" component={Gallery}/>
+                      <Route path="/admin/ui/carousel" component={Carousel}/>
+                      <Route path="/admin/form/login" component={FormLogin}/>
+                      <Route path="/admin/form/register" component={FormRegister}/>
+                      <Route path="/admin/table/basic" component={Basic}/>
+                      <Route path="/admin/table/selection" component={Selection}/>
+                      <Route path="/admin/table/resize" component={Resize}/>
                 
-                    <Route path="/admin/city" component={City}/>
-                    <Route path="/admin/order" component={Order}/>
+                      <Route path="/admin/city" component={City}/>
+                      <Route path="/admin/order" component={Order}/>
 
-                    <Route path="/admin/echarts/bar" component={Bar}/>
-                    <Route path="/admin/echarts/pie" component={Pie}/>
-                    <Route path="/admin/echarts/line" component={Line}/>
-                    <Route path="/admin/editor" component={Editor}/>
-                    <Route path="/admin/permission" component={Permission}/>
-                  </Switch> 
-                </Suspense>
-              </Admin>
-            }/>
-            <Route path="/common" render={() => 
-              <Common>
-                <Switch>
-                  <Route path="/common/orderDetail/:id" component={OrderDetail}/>
-                </Switch>
-              </Common>
-            }/>
-            <Route component={NoFound} />
-          </Switch>
+                      <Route path="/admin/echarts/bar" component={Bar}/>
+                      <Route path="/admin/echarts/pie" component={Pie}/>
+                      <Route path="/admin/echarts/line" component={Line}/>
+                      <Route path="/admin/editor" component={Editor}/>
+                      <Route path="/admin/permission" component={Permission}/>
+                    </Switch> 
+                  </Suspense>
+                </Admin>
+              }/>
+              <Route path="/common" render={() => 
+                <Common>
+                  <Switch>
+                    <Route path="/common/orderDetail/:id" component={OrderDetail}/>
+                  </Switch>
+                </Common>
+              }/>
+              <Route component={NoFound} />
+            </Switch>
+          </Suspense>
         </HashRouter>
       </App>
       

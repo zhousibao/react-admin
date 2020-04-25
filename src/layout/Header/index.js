@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import './index.less'
+
 import { Dropdown, Menu } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, LoginOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
+
+import style from './index.module.less'
 
 @withRouter
 @connect(
@@ -55,23 +57,23 @@ class Header extends Component {
       </Menu>
     )
     return (
-      <div className="header">
-        <div className="left">
+      <div className={style.header}>
+        <div className={style.left}>
           {
             this.props.app.collapsed ? 
-              (<MenuUnfoldOutlined className="left-icon" onClick={this.props.toggleCollapsed}/>) : (<MenuFoldOutlined className="left-icon" onClick={this.props.toggleCollapsed}/>)
+              (<MenuUnfoldOutlined className={style.left_icon} onClick={this.props.toggleCollapsed}/>) : (<MenuFoldOutlined className={style.left_icon}  onClick={this.props.toggleCollapsed}/>)
           }
-          <div className="menu-title">
+          <div className={style.menu_title}>
             {this.props.app.menuTitle}
           </div>
           
         </div>
             
-        <div className="right">
-          <div className="date">{this.state.date}</div>
+        <div className={style.right}>
+          <div className={style.date}>{this.state.date}</div>
          
           <Dropdown overlay={menu}>
-            <div className="user">
+            <div className={style.user}>
               <img src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" alt="avatar"/>
               <span>{this.state.useName}</span>
             </div>

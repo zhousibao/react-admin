@@ -3,7 +3,7 @@ import { Button, Card, Modal } from 'antd'
 import { Editor } from 'react-draft-wysiwyg'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 import draftjs from 'draftjs-to-html'
-import './index.less'
+import style from './index.module.less'
 export default class RichText extends React.Component{
   constructor(props){
     super(props)
@@ -52,9 +52,9 @@ export default class RichText extends React.Component{
             editorState={editorState}
             onContentStateChange={this.onEditorChange}
             onEditorStateChange={this.onEditorStateChange}
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="wrapperClassName"
-            editorClassName="editorClassName"
+            toolbarclassName={style.toolbarClassName}
+            wrapperclassName={style.wrapperClassName}
+            editorclassName={style.editorClassName}
           />
         </Card>
         <Modal
