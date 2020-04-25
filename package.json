@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
-    "antd": "^4.0.1",
+    "antd": "4.0.1",
     "axios": "^0.19.2",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
@@ -88,11 +88,9 @@
     "start:dev": "env-cmd -f .env.development node scripts/start.js",
     "start:fat": "env-cmd -f .env.fat node scripts/start.js",
     "start:pro": "env-cmd -f .env.production node scripts/start.js",
-    
     "build": "node scripts/build.js",
     "build:fat": "env-cmd -f .env.fat npm run build",
     "build:pro": "env-cmd -f .env.production npm run build",
-
     "test": "node scripts/test.js"
   },
   "browserslist": {
