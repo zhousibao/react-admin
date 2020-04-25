@@ -5,7 +5,7 @@ export default class Carousels extends Component {
   render() {
     return (
       <div>
-        <Card title="文字背景轮播" style={{marginBottom:'20px'}}>
+        <Card title="文字背景轮播" style={{ marginBottom: '20px' }}>
           <Carousel autoplay effect="fade">
             <div>
               <h3>第一张</h3>
@@ -19,7 +19,7 @@ export default class Carousels extends Component {
           </Carousel>
         </Card>
 
-        <Card title="图片背景轮播" style={{marginBottom:'20px'}} className="wrap">
+        <Card title="图片背景轮播" style={{ marginBottom: '20px' }} className="wrap">
           <Carousel autoplay effect="fade">
             <div>
               <img src="/carousel/carousel-1.jpg" alt=""/>

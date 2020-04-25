@@ -54,9 +54,7 @@ export default function Selection(){
     onSelectAll: (selected, selectedRows) => {
       const arr = []
       if(selected){
-        selectedRows.map(item => {
-          arr.push(item.key)
-        })
+        selectedRows.map(item => arr.push(item.key))
       }
       setSelectedRowKeys(arr)
     },

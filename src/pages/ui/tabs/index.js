@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Tabs, message} from 'antd'
+import { Card, Tabs, message } from 'antd'
 import { AppleOutlined, AndroidOutlined } from '@ant-design/icons';
 
 import './index.less'
@@ -66,7 +66,7 @@ export default class Tab extends React.Component {
   render(){
     return (
       <div>
-        <Card title="tabs标签页" style={{marginBottom:'20px'}}>
+        <Card title="tabs标签页" style={{ marginBottom: '20px' }}>
           <Tabs defaultActiveKey="1" onChange={this.callback}>
             <TabPane tab="Tab 1" key="1">
               Content of Tab Pane 1
@@ -80,7 +80,7 @@ export default class Tab extends React.Component {
           </Tabs>
         </Card>
 
-        <Card title="带图标的tabs标签页" style={{marginBottom:'20px'}}>
+        <Card title="带图标的tabs标签页" style={{ marginBottom: '20px' }}>
           <Tabs defaultActiveKey="1" size="large">
             <TabPane tab={
               <span>
@@ -104,7 +104,7 @@ export default class Tab extends React.Component {
           </Tabs>
         </Card>
 
-        <Card title="可编辑的标签页" style={{marginBottom:'20px'}}>
+        <Card title="可编辑的标签页" style={{ marginBottom: '20px' }}>
           <Tabs 
             activeKey={this.state.activeKey}
             type="editable-card" 

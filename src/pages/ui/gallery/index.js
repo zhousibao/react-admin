@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import {Card, Row, Col, Modal} from 'antd'
+import { Card, Row, Col, Modal } from 'antd'
 import './index.less'
 export default class Gallery extends Component {
   state = {
-    visible:false,
+    visible: false,
   }
   openGallery = (src) => {
     this.setState({
-      showImg:src,
-      visible:true,
+      showImg: src,
+      visible: true,
     })
   }
   render() {
@@ -23,7 +23,7 @@ export default class Gallery extends Component {
       <Card
         key={item}
         cover={<img src={'/gallery/'+ item} alt="cover-img" className="cover-img" onClick={() => this.openGallery(item)}/>}
-        style={{marginBottom:'10px'}}
+        style={{ marginBottom: '10px' }}
       >
         <Card.Meta title="Europe Street beat" description="www.instagram.com" />
       </Card>,
@@ -52,7 +52,7 @@ export default class Gallery extends Component {
           width={500}
           onCancel={() => {
             this.setState({
-              visible:false,
+              visible: false,
             })
           }}
           footer={null}
