@@ -8,8 +8,26 @@ export default class Home extends Component {
     this.state = {
       systemName: systemName,
       env: env,
+      val: 0,
     }
   }
+
+  componentDidMount() {
+    this.setState({ val: this.state.val + 1 })
+    console.log('a', this.state.val)
+
+    this.setState({ val: this.state.val + 1 })
+    console.log('b', this.state.val)
+
+    setTimeout(_ => {
+      this.setState({ val: this.state.val + 1 })
+      console.log('c', this.state.val);
+
+      this.setState({ val: this.state.val + 1 })
+      console.log('d', this.state.val)
+    }, 0)
+  }
+
   handleC = (event) => {
     console.log(event)
     console.log(event.target)
@@ -18,8 +36,6 @@ export default class Home extends Component {
     console.log(event.nativeEvent)
     console.log(event.nativeEvent.target)
     console.log(event.nativeEvent.currentTarget)
-
-
   }
   render() {
     return (
