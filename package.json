@@ -93,6 +93,7 @@
     "build:pro": "env-cmd -f .env.production npm run build",
     "test": "node scripts/test.js"
   },
+  "homepage": ".",
   "browserslist": {
     "production": [
       ">0.2%",
