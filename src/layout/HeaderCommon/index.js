@@ -3,6 +3,7 @@ import style from './index.module.less'
 import { Button } from 'antd'
 import { LogoutOutlined } from '@ant-design/icons';
 import { formatDate } from '@/utils'
+import Logo from '@/assets/logo-ant.svg'
 
 export default class Header extends Component {
   constructor(props){
@@ -28,7 +29,7 @@ export default class Header extends Component {
     return (
       <div className={style.top}>
         <div className={style.left}>
-          <img src="/assets/logo-ant.svg" alt="logo"/>
+          <img src={Logo} alt="logo"/>
           <p>管理后台系统</p>
         </div>
         <div className={style.right}>

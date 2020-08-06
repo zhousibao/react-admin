@@ -30,7 +30,6 @@ class NoFound extends Component {
   /**
    * 挂载阶段
    */
-
   // 初始化阶段
   constructor(props){
     super(props)

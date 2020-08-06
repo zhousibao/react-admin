@@ -3,6 +3,7 @@ import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { login } from './aip'
 import style from './index.module.less'
+import Logo from '@/assets/logo-ant.svg'
 
 export default class Login extends Component {
 
@@ -22,7 +23,7 @@ export default class Login extends Component {
       <div className={style.login}>
         <div className={style.login_title}>
           <div className={style.con}>
-            <img src="/assets/logo-ant.svg" alt="logo"/>
+            <img src={Logo} alt="logo"/>
             <p>管理后台系统</p>
           </div>
         </div>

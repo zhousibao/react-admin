@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { Layout } from 'antd';
 import NavLeft from './NavLeft'
 import Header from './Header'
-import Footer from './Footer'
+
 import style from './style.module.less'
+import Logo from '@/assets/logo-ant.svg'
 const { Sider } = Layout;
 
 
@@ -17,7 +18,7 @@ class Admin extends Component {
       <Layout className={style.admin}>
         <Sider trigger={null} collapsible collapsed={this.props.app.collapsed} className={style.admin_sider}>
           <div className={style.logo}>
-            <img src="/assets/logo-ant.svg" alt="logo"/>
+            <img src={Logo} alt="logo"/>
             {
               !this.props.app.collapsed && (<p>管理后台系统</p>)
             }
@@ -29,7 +30,6 @@ class Admin extends Component {
           <div className={style.admin_content}>
             {this.props.children}
           </div>
-          <Footer/>
         </Layout>
       </Layout>
     )

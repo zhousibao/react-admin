@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Card } from 'antd'
 import style from './detail.module.less'
 import { orderDetail } from './api'
+import startPointImg from '@/assets/start_point.png'
+import endPointImg from '@/assets/end_point.png'
 
 export default class Detail extends Component {
   constructor(props){
@@ -55,7 +57,7 @@ export default class Detail extends Component {
       let first = positionList[0];
       let last = positionList[positionList.length-1];
       startPoint = new window.BMap.Point(first.lon, first.lat);
-      let startIcon = new window.BMap.Icon('/assets/start_point.png', new window.BMap.Size(36, 42), {
+      let startIcon = new window.BMap.Icon(startPointImg, new window.BMap.Size(36, 42), {
         imageSize: new window.BMap.Size(36, 42),
         anchor: new window.BMap.Size(18, 42),
       })
@@ -64,7 +66,7 @@ export default class Detail extends Component {
       this.map.addOverlay(startMarker);
 
       endPoint = new window.BMap.Point(last.lon, last.lat);
-      let endIcon = new window.BMap.Icon('/assets/end_point.png', new window.BMap.Size(36, 42), {
+      let endIcon = new window.BMap.Icon(endPointImg, new window.BMap.Size(36, 42), {
         imageSize: new window.BMap.Size(36, 42),
         anchor: new window.BMap.Size(18, 42),
       })
