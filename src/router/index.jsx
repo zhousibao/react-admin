@@ -1,39 +1,39 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
-import App from './App';
-import Admin from './layout/admin'
-import Common from './layout/common'
-import Login from './pages/login'
-import NoFound from './pages/noFound'
+import App from '@/App';
+import Admin from '@/layout/admin'
+import Common from '@/layout/common'
+import Login from '@/pages/login'
+import NoFound from '@/pages/noFound'
 
 /***
  * 路由懒加载  
  * 只懒加载admin的子路由
  * 如果懒加载全部路由会导致菜单闪烁
  */
-const Home = lazy(() => import('./pages/home'))
-const Buttons = lazy(() => import('./pages/ui/buttons'))
-const Modals = lazy(() => import('./pages/ui/modals'))
-const Tabs = lazy(() => import('./pages/ui/tabs'))
-const Gallery = lazy(() => import('./pages/ui/gallery'))
-const Carousel = lazy(() => import('./pages/ui/carousel'))
+const Home = lazy(() => import('@/pages/home'))
+const Buttons = lazy(() => import('@/pages/ui/buttons'))
+const Modals = lazy(() => import('@/pages/ui/modals'))
+const Tabs = lazy(() => import('@/pages/ui/tabs'))
+const Gallery = lazy(() => import('@/pages/ui/gallery'))
+const Carousel = lazy(() => import('@/pages/ui/carousel'))
 
-const FormLogin = lazy(() => import('./pages/form/login'))
-const FormRegister = lazy(() => import('./pages/form/register'))
-const Basic = lazy(() => import('./pages/table/basic'))
-const Selection = lazy(() => import('./pages/table/selection'))
-const Resize = lazy(() => import('./pages/table/resize'))
+const FormLogin = lazy(() => import('@/pages/form/login'))
+const FormRegister = lazy(() => import('@/pages/form/register'))
+const Basic = lazy(() => import('@/pages/table/basic'))
+const Selection = lazy(() => import('@/pages/table/selection'))
+const Resize = lazy(() => import('@/pages/table/resize'))
 
-const City = lazy(() => import('./pages/city'))
-const Order = lazy(() => import('./pages/order'))
-const OrderDetail = lazy(() => import('./pages/order/detail'))
+const City = lazy(() => import('@/pages/city'))
+const Order = lazy(() => import('@/pages/order'))
+const OrderDetail = lazy(() => import('@/pages/order/detail'))
 
-const Bar = lazy(() => import('./pages/echarts/bar'))
-const Pie = lazy(() => import('./pages/echarts/pie'))
-const Line = lazy(() => import('./pages/echarts/line'))
+const Bar = lazy(() => import('@/pages/echarts/bar'))
+const Pie = lazy(() => import('@/pages/echarts/pie'))
+const Line = lazy(() => import('@/pages/echarts/line'))
 
-const Editor = lazy(() => import('./pages/editor'))
-const Permission = lazy(() => import('./pages/permission'))
+const Editor = lazy(() => import('@/pages/editor'))
+const Permission = lazy(() => import('@/pages/permission'))
 
 
 export default class Router extends Component {

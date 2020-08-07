@@ -1,68 +1,77 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React-admin
 
-## Available Scripts
+一个基于 [Create React App](https://github.com/facebook/create-react-app) 搭建的后台管理系统项目。
 
-In the project directory, you can run:
+## 技术栈
+react、redux、redux-saga、react-router-dom、axios、less、sass、antd
 
-### `yarn start`
+## scripts
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### `yarn start`
+开发环境 [http://localhost:2008](http://localhost:2008)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `yarn pro`
+生产环境打包
 
-### `yarn test`
+`更多请查看package.json`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 项目依赖介绍
 
-### `yarn build`
+- 路由: react-router-dom
+- 数据管理react-redux、redux、redux-saga 
+- 组件库按需加载: antd、babel-plugin-import 
+- 配置lessModule: less、less-loader 
+- 从文件读取配置变量: env-cmd
+- 日期时间: moment
+- 加载进度: nprogress
+- 本地代理: http-proxy-middleware
+- EventEmitter事件总栈: events
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 温馨提示
+- react life cycle 请查看src/pages/noFound.jsx
+- redux关联组件 请查看src/pages/login/index.jsx
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 项目目录
+```
+├── README.md
+├── config // webpack配置
+├── package.json
+├── public
+├── scripts // 打包配置
+├── src // 项目代码
+│   ├── App.jsx
+│   ├── assets // 静态资源
+│   ├── components // 全局组件
+│   ├── config.js // 全局配置
+│   ├── index.jsx // 入口文件
+│   ├── pages // pages
+│   │   ├── home
+│   │   │   ├── components // 页面组件
+│   │   │   ├── index.module.less // module.less
+│   │   │   └── index.jsx
+│   │   └── noFound.jsx // 404
+│   ├── redux // redux
+│   │   ├── index.js
+│   │   ├── modules // 模块
+│   │   └── saga.ts // saga
+│   ├── router // 路由
+│   ├── server // server地址
+│   ├── serviceWorker.js
+│   ├── setupProxy.js // dev proxy配置
+│   ├── style // 全局样式
+│   └── utils // 工具
+├── jsconfig.json
+└── yarn.lock
+```
 
-### `yarn eject`
+## 代码规范
+本项目采用了  ESLint 来进行代码规范约束，配置文件为根目录下的 .eslintrc.js 文件。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 推荐编辑器
+强烈推荐 VSCode 进行代码编辑
 
 ## Learn More
-
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

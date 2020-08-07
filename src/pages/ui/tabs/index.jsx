@@ -7,7 +7,7 @@ export default class Tab extends React.Component {
   constructor(props){
     super(props)
 
-    this.newTabIndex = 0;
+    this.newTabIndex = 0
     const panes = [
       { title: 'Tab 1', content: 'Content of Tab 1', key: '1' },
       { title: 'Tab 2', content: 'Content of Tab 2', key: '2' },
