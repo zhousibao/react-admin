@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Card } from 'antd'
+import { orderDetail } from '@/server/order'
+
+
 import style from './detail.module.less'
-import { orderDetail } from './api'
 import startPointImg from '@/assets/start_point.png'
 import endPointImg from '@/assets/end_point.png'
 

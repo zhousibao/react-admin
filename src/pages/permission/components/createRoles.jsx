@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, Form, Input, Radio, message } from 'antd'
-import { createRoles } from '../api'
+import { createRoles } from '@/server/permission'
 import emitter from '@/utils/eventBus';
 
 export default function CreateRoles({ visible, callback }) {

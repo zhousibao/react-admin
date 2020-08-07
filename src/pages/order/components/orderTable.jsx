@@ -3,7 +3,7 @@ import { createHashHistory } from 'history';
 //import { createBrowserHistory } from 'history'; // 如果是history路由
 import { Table, Button, Modal, message } from 'antd'
 import { pagination } from '@/utils'
-import { closeOrder } from '../api' // 如果是hash路由
+import { closeOrder } from '@/server/order' // 如果是hash路由
 const history = createHashHistory();
 console.log(history)
 

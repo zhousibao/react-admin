@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, Form, Select, Radio, message } from 'antd'
-import { addCity } from '../api'
+import { addCity } from '@/server/city'
 const { Option } = Select
 
 export default function openCity({ visible, callback }) {

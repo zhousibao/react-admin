@@ -3,7 +3,7 @@ import { Card, Button } from 'antd'
 import SearchForm from './components/searchForm'
 import CityTable from './components/cityTable'
 import OpenCity from './components/openCity'
-import { cityList } from './api'
+import { cityList } from '@/server/city'
 
 const initialValues = {
   cityId: undefined,

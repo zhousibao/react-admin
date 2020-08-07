@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Table } from 'antd'
-import { tableList } from '../api'
+import { tableList } from '@/server/table'
 
 export default function Selection(){
 

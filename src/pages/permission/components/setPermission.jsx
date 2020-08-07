@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Modal, Form, Input, Radio, message, Tree } from 'antd'
-import { permissionDo } from '../api'
+import { permissionDo } from '@/server/permission'
 import emitter from '@/utils/eventBus';
-import menu from '@/layout/menu.js'
+import menu from '@/layout/menu'
 
 
 export default function Setpermission({ visible, rolesId, rolesName, callback }) {

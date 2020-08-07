@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Modal, Form, Input, message, Transfer } from 'antd'
-import { rolesDetail, permissionDo } from '../api'
 import emitter from '@/utils/eventBus';
 
+import { rolesDetail, permissionDo } from '@/server/permission'
 
 export default function Authorization({ visible, rolesId, rolesName, callback }) {
   const [list, setList] = useState([])

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Table } from 'antd'
-import { rolesList } from '../api'
+import { rolesList } from '@/server/permission'
 import { formatDate } from '@/utils'
 import emitter from '@/utils/eventBus';
 

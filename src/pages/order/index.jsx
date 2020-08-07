@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card } from 'antd'
 import SearchForm from './components/searchForm'
 import OrderTable from './components/orderTable'
-import { orderList } from './api'
+import { orderList } from '@/server/order'
 import { formatDate } from '@/utils'
 
 const initialValues = {

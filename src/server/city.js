@@ -1,4 +1,4 @@
-import Axios from '@/utils/axios'
+import request from '@/utils/axios'
 
 /** *
  * ajax({url,method,content,params,data})
@@ -13,8 +13,8 @@ import Axios from '@/utils/axios'
 
 // 城市列表
 export function cityList(data){
-  return Axios.ajax({
-    url: '/city/list',
+  return request({
+    url: 'api/city/list',
     method: 'POST',
     data,
   })
@@ -22,8 +22,8 @@ export function cityList(data){
 
 // 开通城市
 export function addCity(data){
-  return Axios.ajax({
-    url: '/city/add',
+  return request({
+    url: 'api/city/add',
     method: 'POST',
     data,
   })

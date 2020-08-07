@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Table, Tag, Button, Popover, Modal, message } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
-import { tableList } from '../api'
+import { tableList } from '@/server/table'
 
 export default class Basic extends Component{
   constructor(props){

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Table } from 'antd'
 import { Resizable } from 'react-resizable';
 import './index.less'
-import { tableList1 } from '../api'
+import { tableList1 } from '@/server/table'
 
 const ResizeableTitle = props => {
   const { onResize, width, ...restProps } = props;
