@@ -4,6 +4,7 @@ import createSagaMiddleware from "redux-saga";
 
 // reducer 模块  => 初始化store, 修改状态的函数
 import app from './modules/app'
+import user from './modules/user'
 import city from './modules/city'
 
 
@@ -16,6 +17,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
   app,
+  user,
   city,
 });
 const store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleware))

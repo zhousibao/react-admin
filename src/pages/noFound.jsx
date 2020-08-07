@@ -1,41 +1,25 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import { Result, Button } from 'antd';
 import { Link } from 'react-router-dom'
 
-// 参数1: mapStateToProps = state => ({app:state.app})
-// 参数2: mapDispatchToProps = dispatch => { return { add: () => dispatch({type:'add'})}}
-@connect(
-  state => ({ app: state.app }),
-  // 简洁写法
-  {
-    // 同步返回对象
-    changeMenuTitle: (title) => ({ type: 'changeMenuTitle', payload: title }),
-    // 异步返回函数
-    AsyncChangeMenuTitle: (title) => dispatch => {
-      setTimeout(() => {
-        dispatch({ type: 'changeMenuTitle', payload: title })
-      }, 1000)
-    },
-  },
-  // 完整写法
-  // dispatch => ({
-  //   add:() => dispatch({type:'add'}),
-  //   minus:() => dispatch({type:'minus'})
-  // })
-
-  // 因为异步返回的是一个函数，而不是action对象，所以出现了saga,实现将异步也返回一个action对象。
-)
-class NoFound extends Component {
+export default class NoFound extends Component {
   /**
    * 挂载阶段
    */
   // 初始化阶段
   constructor(props){
     super(props)
-    this.state = { }
+    this.state = { 
+      count: 0,
+    }
 
     console.log('props', props)
+  }
+
+  handleClick = () => {
+    this.setState((state, props) => {
+      return { count: state.count + 1 }
+    })
   }
   
   static getDerivedStateFromProps(props, state){
@@ -49,18 +33,23 @@ class NoFound extends Component {
     console.log('render')
     // 不要在render里面修改state,会触发死循环导致栈溢出。
     return (
-      <div>
+      <>
+        <div 
+          onClick={this.handleClick} 
+          style={{ 'color': '#999', textAlign: 'center', cursor: 'pointer' }}
+        >点击更新state</div>
         <Result
           status="404"
           title="404"
           subTitle="抱歉，你访问的页面不存在。"
+          
           extra={
             <Link to="/admin/home">
               <Button type="primary">返回首页</Button>
             </Link>
           }
         />
-      </div>
+      </>
     )
   }
   // 挂载完成后
@@ -133,4 +122,3 @@ class NoFound extends Component {
    */
 
 }
-export default NoFound

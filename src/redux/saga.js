@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { commonCityList } from '@/pages/home/api'
+import { commonCityList } from '@/server'
 
 
 // worker Saga : 将在 action 被 dispatch 时调用

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import style from './index.module.less'
 import { APP_NAME, APP_ENV } from '@/config'
+
+import style from './index.module.less'
 
 export default class Home extends Component {
   constructor(props){
