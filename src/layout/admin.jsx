@@ -14,13 +14,14 @@ const { Sider } = Layout;
 )
 class Admin extends Component {
   render() {
+    const { appName } = this.props.app
     return (
       <Layout className={style.admin}>
         <Sider trigger={null} collapsible collapsed={this.props.app.collapsed} className={style.admin_sider}>
           <div className={style.logo}>
             <img src={Logo} alt="logo"/>
             {
-              !this.props.app.collapsed && (<p>管理后台系统</p>)
+              !this.props.app.collapsed && (<p>{appName}</p>)
             }
           </div>
           <NavLeft/>
