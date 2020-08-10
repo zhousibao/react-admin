@@ -44,7 +44,7 @@ export default class RichText extends React.Component{
     return (
       <div>
         <Card>
-          <Button type="primary" onClick={this.handleClearContent}>清空内容</Button>
+          <Button type="primary" className="mr10" onClick={this.handleClearContent}>清空内容</Button>
           <Button type="primary" onClick={this.handleGetText}>获取HTML文本</Button>
         </Card>
         <Card title="富文本编辑器">

@@ -81,7 +81,7 @@ const SearchForm = connect(
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit" icon={<SearchOutlined/>}>搜索</Button>
+        <Button type="primary" htmlType="submit" icon={<SearchOutlined/>} className="mr10">搜索</Button>
         <Button onClick={onReset}>重置</Button>
       </Form.Item>
     </Form>

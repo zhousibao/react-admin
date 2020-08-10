@@ -10,7 +10,10 @@ import style from './index.module.less'
 
 @withRouter
 @connect(
-  state => ({ app: state.app }),
+  state => ({ 
+    app: state.app, 
+    userInfo: state.user.userInfo, 
+  }),
   {
     toggleCollapsed: () => ({ type: 'toggleCollapsed' }),
   },
@@ -20,7 +23,6 @@ class Header extends Component {
     super(props)
     this.state = {
       date: '',
-      useName: '超级管理员',
     }
   }
   componentDidMount(){
@@ -49,6 +51,7 @@ class Header extends Component {
 
   
   render() {
+    const { userInfo } = this.props
     const menu = (
       <Menu>
         <Menu.Item onClick={this.logout}>
@@ -75,7 +78,7 @@ class Header extends Component {
           <Dropdown overlay={menu}>
             <div className={style.user}>
               <img src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" alt="avatar"/>
-              <span>{this.state.useName}</span>
+              <span>{userInfo.name}</span>
             </div>
           </Dropdown>
         </div>
